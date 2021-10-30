@@ -134,13 +134,6 @@
     <Content Include="Images\myinf.png" />
     <Content Include="Images\refesh.png" />
     <Content Include="Images\tick-icon-png-17.jpg" />
-    <Content Include="Appdata\QLLichTrinhchuyenbay.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Appdata\QLLichTrinhchuyenbay_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>QLLichTrinhchuyenbay.mdf</DependentUpon>
-    </Content>
     <Content Include="Images\tim.png" />
     <Content Include="Images\tk.png" />
     <Content Include="Images\xoa.png" />
@@ -156,6 +149,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Appdata\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
