@@ -58,9 +58,9 @@ namespace QLLTCB
             // pictureBox3
             // 
             this.pictureBox3.Image = global::QLLTCB.Properties.Resources._2;
-            this.pictureBox3.Location = new System.Drawing.Point(295, 0);
+            this.pictureBox3.Location = new System.Drawing.Point(286, 0);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(543, 101);
+            this.pictureBox3.Size = new System.Drawing.Size(552, 101);
             this.pictureBox3.TabIndex = 8;
             this.pictureBox3.TabStop = false;
             // 
@@ -135,7 +135,7 @@ namespace QLLTCB
             this.pictureBox1.Image = global::QLLTCB.Properties.Resources.logomaybay2;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(298, 136);
+            this.pictureBox1.Size = new System.Drawing.Size(289, 140);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -163,6 +163,7 @@ namespace QLLTCB
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IsMdiContainer = true;
             this.Name = "fmMain";
             this.Text = "QuanLyLichTrinhChuyenBay";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
