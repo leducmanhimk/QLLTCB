@@ -35,7 +35,7 @@ namespace QLLTCB
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(367, 263);
+            this.label1.Location = new System.Drawing.Point(352, 180);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 20);
             this.label1.TabIndex = 0;
