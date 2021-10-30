@@ -116,14 +116,18 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\2.png" />
     <Content Include="Images\acount.png" />
     <Content Include="Images\add.png" />
     <Content Include="Images\apply.png" />
+    <Content Include="Images\bn3.png" />
     <Content Include="Images\close.png" />
     <Content Include="Images\dang xuat.png" />
     <Content Include="Images\del.png" />
     <Content Include="Images\exit.png" />
     <Content Include="Images\logo.png" />
+    <Content Include="Images\logomaybay.png" />
+    <Content Include="Images\logomaybay2.png" />
     <Content Include="Images\logonew.png" />
     <Content Include="Images\maybay.png" />
     <Content Include="Images\maybayicon.ico" />
