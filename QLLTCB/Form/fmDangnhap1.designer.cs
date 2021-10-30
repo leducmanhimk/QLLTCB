@@ -140,6 +140,7 @@
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fmDangnhap1";
             this.Text = "Đăng Nhập";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

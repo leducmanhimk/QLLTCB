@@ -1,8 +1,11 @@
 ﻿using QLLTCB;
+using QLLTCB.KetNoi;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -21,9 +24,14 @@ namespace QuanLyLichTrinhChuyenBay
 
         private void button1_Click(object sender, EventArgs e)
         {
-            fmMain trangchu = new fmMain();
-            trangchu.Show();
-            this.Hide();
+            SqlConnection con = new SqlConnection();
+            string connec = ConfigurationManager.ConnectionStrings["QLLTCB"].ConnectionString;
+            con.Open();
+
+            
+            
+            label3.Text = "kết nối thành công!";
+            
         }
     }
 }

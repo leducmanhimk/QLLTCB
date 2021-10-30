@@ -10,10 +10,11 @@ namespace QLLTCB.KetNoi
 {
     class KetNoi
     {
-        SqlConnection con;
+        SqlConnection con = new SqlConnection();
         public KetNoi() { }
         //khởi tạo kết nối
         public void Khoitaoketnoi() {
+           
             string connec = ConfigurationManager.ConnectionStrings["QLLTCB"].ConnectionString;
             con.Open();
         }
