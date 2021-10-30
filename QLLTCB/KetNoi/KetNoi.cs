@@ -10,7 +10,6 @@ namespace QLLTCB.KetNoi
 {
     class KetNoi
     {
-        
         SqlConnection con;
         public KetNoi() { }
         //khởi tạo kết nối
@@ -23,4 +22,5 @@ namespace QLLTCB.KetNoi
             con.Close();
         }
     }
+    
 }
