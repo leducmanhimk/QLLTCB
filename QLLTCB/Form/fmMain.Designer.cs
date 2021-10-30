@@ -32,12 +32,12 @@ namespace QLLTCB
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmMain));
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_thoat = new System.Windows.Forms.Button();
+            this.btn_dangxuat = new System.Windows.Forms.Button();
+            this.btn_taikhoan = new System.Windows.Forms.Button();
+            this.btn_admin = new System.Windows.Forms.Button();
+            this.btn_sanbay = new System.Windows.Forms.Button();
+            this.btn_lichbay = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -60,108 +60,120 @@ namespace QLLTCB
             this.pictureBox3.Image = global::QLLTCB.Properties.Resources._2;
             this.pictureBox3.Location = new System.Drawing.Point(286, 0);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(552, 101);
+            this.pictureBox3.Size = new System.Drawing.Size(575, 101);
             this.pictureBox3.TabIndex = 8;
             this.pictureBox3.TabStop = false;
             // 
-            // button6
+            // btn_thoat
             // 
-            this.button6.Image = global::QLLTCB.Properties.Resources.close;
-            this.button6.Location = new System.Drawing.Point(26, 582);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(232, 79);
-            this.button6.TabIndex = 7;
-            this.button6.Text = "Thoát";
-            this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button6.UseVisualStyleBackColor = true;
+            this.btn_thoat.Image = global::QLLTCB.Properties.Resources.close;
+            this.btn_thoat.Location = new System.Drawing.Point(26, 582);
+            this.btn_thoat.Name = "btn_thoat";
+            this.btn_thoat.Size = new System.Drawing.Size(232, 79);
+            this.btn_thoat.TabIndex = 7;
+            this.btn_thoat.Text = "Thoát";
+            this.btn_thoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btn_thoat.UseVisualStyleBackColor = true;
+            this.btn_thoat.UseWaitCursor = true;
             // 
-            // button5
+            // btn_dangxuat
             // 
-            this.button5.Image = global::QLLTCB.Properties.Resources.exit;
-            this.button5.Location = new System.Drawing.Point(26, 486);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(232, 79);
-            this.button5.TabIndex = 6;
-            this.button5.Text = "đăng xuất";
-            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button5.UseVisualStyleBackColor = true;
+            this.btn_dangxuat.Image = global::QLLTCB.Properties.Resources.exit;
+            this.btn_dangxuat.Location = new System.Drawing.Point(26, 464);
+            this.btn_dangxuat.Name = "btn_dangxuat";
+            this.btn_dangxuat.Size = new System.Drawing.Size(232, 79);
+            this.btn_dangxuat.TabIndex = 6;
+            this.btn_dangxuat.Text = "đăng xuất";
+            this.btn_dangxuat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btn_dangxuat.UseVisualStyleBackColor = true;
+            this.btn_dangxuat.UseWaitCursor = true;
             // 
-            // button4
+            // btn_taikhoan
             // 
-            this.button4.Image = global::QLLTCB.Properties.Resources.acount;
-            this.button4.Location = new System.Drawing.Point(26, 366);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(232, 79);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "Tài khoản  của tôi";
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button4.UseVisualStyleBackColor = true;
+            this.btn_taikhoan.Image = global::QLLTCB.Properties.Resources.acount;
+            this.btn_taikhoan.Location = new System.Drawing.Point(26, 355);
+            this.btn_taikhoan.Name = "btn_taikhoan";
+            this.btn_taikhoan.Size = new System.Drawing.Size(232, 79);
+            this.btn_taikhoan.TabIndex = 5;
+            this.btn_taikhoan.Text = "Tài khoản  của tôi";
+            this.btn_taikhoan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btn_taikhoan.UseVisualStyleBackColor = true;
+            this.btn_taikhoan.UseWaitCursor = true;
             // 
-            // button3
+            // btn_admin
             // 
-            this.button3.Image = global::QLLTCB.Properties.Resources.tk;
-            this.button3.Location = new System.Drawing.Point(26, 253);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(232, 79);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Admins";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn_admin.Image = global::QLLTCB.Properties.Resources.tk;
+            this.btn_admin.Location = new System.Drawing.Point(26, 253);
+            this.btn_admin.Name = "btn_admin";
+            this.btn_admin.Size = new System.Drawing.Size(232, 79);
+            this.btn_admin.TabIndex = 4;
+            this.btn_admin.Text = "Admins";
+            this.btn_admin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btn_admin.UseVisualStyleBackColor = true;
+            this.btn_admin.UseWaitCursor = true;
             // 
-            // button2
+            // btn_sanbay
             // 
-            this.button2.Image = global::QLLTCB.Properties.Resources.myinf;
-            this.button2.Location = new System.Drawing.Point(26, 138);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(232, 79);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Sân bay của tôi";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_sanbay.Image = global::QLLTCB.Properties.Resources.myinf;
+            this.btn_sanbay.Location = new System.Drawing.Point(26, 138);
+            this.btn_sanbay.Name = "btn_sanbay";
+            this.btn_sanbay.Size = new System.Drawing.Size(232, 79);
+            this.btn_sanbay.TabIndex = 3;
+            this.btn_sanbay.Text = "Sân bay của tôi";
+            this.btn_sanbay.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btn_sanbay.UseVisualStyleBackColor = true;
+            this.btn_sanbay.UseWaitCursor = true;
             // 
-            // button1
+            // btn_lichbay
             // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(26, 22);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(232, 79);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Lịch Trình Bay";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_lichbay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_lichbay.Image = ((System.Drawing.Image)(resources.GetObject("btn_lichbay.Image")));
+            this.btn_lichbay.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_lichbay.Location = new System.Drawing.Point(26, 22);
+            this.btn_lichbay.Name = "btn_lichbay";
+            this.btn_lichbay.Size = new System.Drawing.Size(232, 79);
+            this.btn_lichbay.TabIndex = 2;
+            this.btn_lichbay.Text = "Lịch Trình Bay";
+            this.btn_lichbay.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btn_lichbay.UseVisualStyleBackColor = true;
+            this.btn_lichbay.UseWaitCursor = true;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::QLLTCB.Properties.Resources.logomaybay2;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(-1, -3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(289, 140);
+            this.pictureBox1.Size = new System.Drawing.Size(289, 151);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button6);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Location = new System.Drawing.Point(0, 136);
+            this.panel1.Controls.Add(this.btn_lichbay);
+            this.panel1.Controls.Add(this.btn_sanbay);
+            this.panel1.Controls.Add(this.btn_admin);
+            this.panel1.Controls.Add(this.btn_thoat);
+            this.panel1.Controls.Add(this.btn_taikhoan);
+            this.panel1.Controls.Add(this.btn_dangxuat);
+            this.panel1.Location = new System.Drawing.Point(0, 146);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(288, 691);
+            this.panel1.Size = new System.Drawing.Size(288, 690);
             this.panel1.TabIndex = 10;
+            this.panel1.UseWaitCursor = true;
             // 
             // fmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1291, 809);
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(1291, 825);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Name = "fmMain";
@@ -177,12 +189,12 @@ namespace QLLTCB
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btn_lichbay;
+        private System.Windows.Forms.Button btn_sanbay;
+        private System.Windows.Forms.Button btn_admin;
+        private System.Windows.Forms.Button btn_taikhoan;
+        private System.Windows.Forms.Button btn_dangxuat;
+        private System.Windows.Forms.Button btn_thoat;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Panel panel1;
