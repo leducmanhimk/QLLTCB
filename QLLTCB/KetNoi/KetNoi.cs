@@ -10,7 +10,7 @@ namespace QLLTCB.KetNoi
 {
     class KetNoi
     {
-        string ConnectionString = "";
+        
         SqlConnection con;
         public KetNoi() { }
         //khởi tạo kết nối
