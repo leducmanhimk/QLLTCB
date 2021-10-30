@@ -62,6 +62,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form\fmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\fmMain.Designer.cs">
+      <DependentUpon>fmMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\fmDangnhap1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,9 @@
     <EmbeddedResource Include="Form\fmDangnhap1.resx">
       <DependentUpon>fmDangnhap1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\fmMain.resx">
+      <DependentUpon>fmMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -91,6 +100,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -106,8 +116,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\acount.png" />
+    <Content Include="Images\add.png" />
+    <Content Include="Images\apply.png" />
+    <Content Include="Images\close.png" />
+    <Content Include="Images\dang xuat.png" />
+    <Content Include="Images\del.png" />
+    <Content Include="Images\exit.png" />
+    <Content Include="Images\logo.png" />
     <Content Include="Images\logonew.png" />
+    <Content Include="Images\maybay.png" />
     <Content Include="Images\maybayicon.ico" />
+    <Content Include="Images\myinf.png" />
+    <Content Include="Images\refesh.png" />
     <Content Include="Images\tick-icon-png-17.jpg" />
     <Content Include="Appdata\QLLichTrinhchuyenbay.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -116,6 +137,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>QLLichTrinhchuyenbay.mdf</DependentUpon>
     </Content>
+    <Content Include="Images\tim.png" />
+    <Content Include="Images\tk.png" />
+    <Content Include="Images\xoa.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
