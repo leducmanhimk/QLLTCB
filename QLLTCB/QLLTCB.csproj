@@ -108,10 +108,10 @@
     <Content Include="Images\logonew.png" />
     <Content Include="Images\maybayicon.ico" />
     <Content Include="Images\tick-icon-png-17.jpg" />
-    <Content Include="QLLichTrinhchuyenbay.mdf">
+    <Content Include="Appdata\QLLichTrinhchuyenbay.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="QLLichTrinhchuyenbay_log.ldf">
+    <Content Include="Appdata\QLLichTrinhchuyenbay_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>QLLichTrinhchuyenbay.mdf</DependentUpon>
     </Content>
