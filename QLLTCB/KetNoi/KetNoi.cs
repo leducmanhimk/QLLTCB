@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,7 @@ namespace QLLTCB.KetNoi
         public KetNoi() { }
         //khởi tạo kết nối
         public void Khoitaoketnoi() {
-            con = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = D:\C#\QLLTCB\QLLTCB\Appdata\QLLichTrinhchuyenbay.mdf;Integrated Security=True");
+            string connec = ConfigurationManager.ConnectionStrings["QLLTCB"].ConnectionString;
             con.Open();
         }
         //đóng kết nôi
