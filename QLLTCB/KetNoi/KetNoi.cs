@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -16,7 +17,11 @@ namespace QLLTCB.KetNoi
         public void Khoitaoketnoi() {
            
             string connec = ConfigurationManager.ConnectionStrings["QLLTCB"].ConnectionString;
-            con.Open();
+            con = new SqlConnection(connec);
+            if (con.State != ConnectionState.Open)
+            {
+                con.Open();
+            }           
         }
         //đóng kết nôi
         public void DongketNoi() {
