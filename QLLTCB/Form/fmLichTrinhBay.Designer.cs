@@ -37,17 +37,19 @@ namespace QLLTCB
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(404, 200);
+            this.label1.Location = new System.Drawing.Point(269, 130);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 20);
+            this.label1.Size = new System.Drawing.Size(49, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Xin chào";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(384, 269);
+            this.button1.Location = new System.Drawing.Point(256, 175);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(108, 86);
+            this.button1.Size = new System.Drawing.Size(72, 56);
             this.button1.TabIndex = 1;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
@@ -55,22 +57,24 @@ namespace QLLTCB
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(1142, 190);
+            this.button2.Location = new System.Drawing.Point(497, 146);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(108, 86);
+            this.button2.Size = new System.Drawing.Size(72, 56);
             this.button2.TabIndex = 2;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // fmLichTrinhBay
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1289, 581);
+            this.ClientSize = new System.Drawing.Size(670, 444);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "fmLichTrinhBay";
             this.Text = "fmLichTrinhBay";
             this.ResumeLayout(false);

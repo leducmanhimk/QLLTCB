@@ -17,7 +17,7 @@ namespace QLLTCB
         {
             InitializeComponent();
         }
-
+        
         private void btn_thoat_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -41,6 +41,7 @@ namespace QLLTCB
         private void fmMain_Load(object sender, EventArgs e)
         {
             this.Size = new System.Drawing.Size(1000, 550);
+            OpenChildForm(new fmLichTrinhBay());
         }
     }
 }
