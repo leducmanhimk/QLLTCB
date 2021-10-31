@@ -42,6 +42,14 @@ namespace QLLTCB
         {
             this.Size = new System.Drawing.Size(1000, 550);
             OpenChildForm(new fmLichTrinhBay());
+            toolTip1.SetToolTip(btn_lichbay, "hiển thị thông tin về lịch bay");
+            toolTip1.SetToolTip(btn_sanbay, "hiển thị thông tin về sân bay!");
+            toolTip1.SetToolTip(btn_taikhoan, "quản lý thông tin về tài khoản");
+            toolTip1.SetToolTip(btn_thoat, "thoát khỏi ứng dụng");
+            toolTip1.SetToolTip(btn_admin, "quản lý thông tin người dùng");
+            toolTip1.SetToolTip(btn_dangxuat, "đăng xuất khỏi chương trình");
         }
+
+       
     }
 }

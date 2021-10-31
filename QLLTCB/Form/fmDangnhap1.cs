@@ -51,7 +51,7 @@ namespace QuanLyLichTrinhChuyenBay
                 
                 this.Hide();
                 ma.Show();
-
+                con.DongketNoi();
             }
             catch (Exception)
             {
@@ -59,7 +59,7 @@ namespace QuanLyLichTrinhChuyenBay
 
                 throw;
             }
-            con.Khoitaoketnoi();
+            
             
             
             
