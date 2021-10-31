@@ -24,19 +24,20 @@ namespace QuanLyLichTrinhChuyenBay
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection();
-            string connec = ConfigurationManager.ConnectionStrings["QLLTCB"].ConnectionString;
-            con = new SqlConnection(connec);
-            con.Open();
-
-            if (con.State == ConnectionState.Open)
+            KetNoi con = new KetNoi();
+            try
             {
+                con.Khoitaoketnoi();
                 label3.Text = "kết nối thành công!";
             }
-            else
+            catch (Exception)
             {
                 label3.Text = "kết nối thất bại!";
+
+                throw;
             }
+            con.Khoitaoketnoi();
+            
             
             
         }
