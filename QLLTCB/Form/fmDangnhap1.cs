@@ -24,12 +24,31 @@ namespace QuanLyLichTrinhChuyenBay
         fmMain ma = new fmMain();
         private void button1_Click(object sender, EventArgs e)
         {
+            if (textBox1.Text.Trim() == "")
+            {
+                errorProvider1.SetError(textBox1, "bạn chưa điền tên tài khoản!");
+                return;
+            }
+           
+            else
+            {
+                errorProvider1.Clear();
+            }
+            if (textBox2.Text.Trim() == "")
+            {
+                errorProvider1.SetError(textBox2, "bạn chưa điền mật khẩu!");
+                return;
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
             KetNoi con = new KetNoi();
             try
             {
                
                 con.Khoitaoketnoi();
-                label3.Text = "kết nối thành công!";
+                
                 this.Hide();
                 ma.Show();
 

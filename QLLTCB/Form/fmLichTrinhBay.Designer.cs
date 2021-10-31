@@ -31,9 +31,6 @@ namespace QLLTCB
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.qLLichTrinhchuyenbayDataSet = new QLLTCB.QLLichTrinhchuyenbayDataSet();
-            this.schedulesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.schedulesTableAdapter = new QLLTCB.QLLichTrinhchuyenbayDataSetTableAdapters.SchedulesTableAdapter();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,16 +39,24 @@ namespace QLLTCB
             this.flightNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.economyPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.confirmedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.schedulesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.qLLichTrinhchuyenbayDataSet = new QLLTCB.QLLichTrinhchuyenbayDataSet();
+            this.schedulesTableAdapter = new QLLTCB.QLLichTrinhchuyenbayDataSetTableAdapters.SchedulesTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLLichTrinhchuyenbayDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.schedulesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLLichTrinhchuyenbayDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.ColumnHeadersHeight = 34;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn,
             this.dateDataGridViewTextBoxColumn,
@@ -64,24 +69,11 @@ namespace QLLTCB
             this.dataGridView1.DataSource = this.schedulesBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 90);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(1262, 448);
             this.dataGridView1.TabIndex = 1;
-            // 
-            // qLLichTrinhchuyenbayDataSet
-            // 
-            this.qLLichTrinhchuyenbayDataSet.DataSetName = "QLLichTrinhchuyenbayDataSet";
-            this.qLLichTrinhchuyenbayDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // schedulesBindingSource
-            // 
-            this.schedulesBindingSource.DataMember = "Schedules";
-            this.schedulesBindingSource.DataSource = this.qLLichTrinhchuyenbayDataSet;
-            // 
-            // schedulesTableAdapter
-            // 
-            this.schedulesTableAdapter.ClearBeforeFill = true;
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -147,6 +139,20 @@ namespace QLLTCB
             this.confirmedDataGridViewCheckBoxColumn.Name = "confirmedDataGridViewCheckBoxColumn";
             this.confirmedDataGridViewCheckBoxColumn.Width = 150;
             // 
+            // schedulesBindingSource
+            // 
+            this.schedulesBindingSource.DataMember = "Schedules";
+            this.schedulesBindingSource.DataSource = this.qLLichTrinhchuyenbayDataSet;
+            // 
+            // qLLichTrinhchuyenbayDataSet
+            // 
+            this.qLLichTrinhchuyenbayDataSet.DataSetName = "QLLichTrinhchuyenbayDataSet";
+            this.qLLichTrinhchuyenbayDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // schedulesTableAdapter
+            // 
+            this.schedulesTableAdapter.ClearBeforeFill = true;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -170,8 +176,8 @@ namespace QLLTCB
             this.Text = "fmLichTrinhBay";
             this.Load += new System.EventHandler(this.fmLichTrinhBay_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLLichTrinhchuyenbayDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.schedulesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLLichTrinhchuyenbayDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
