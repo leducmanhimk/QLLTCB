@@ -48,6 +48,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="envdte, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\VSSDK.DTE.7.0.4\lib\net20\envdte.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\VSSDK.DTE.7.0.4\lib\net20\stdole.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -62,6 +72,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form\fmLichTrinhBay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\fmLichTrinhBay.Designer.cs">
+      <DependentUpon>fmLichTrinhBay.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\fmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +99,9 @@
     <Compile Include="KetNoi\KetNoi.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form\fmLichTrinhBay.resx">
+      <DependentUpon>fmLichTrinhBay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\fmDangnhap1.resx">
       <DependentUpon>fmDangnhap1.cs</DependentUpon>
     </EmbeddedResource>
@@ -144,6 +163,7 @@
     <Content Include="Images\tim.png" />
     <Content Include="Images\tk.png" />
     <Content Include="Images\xoa.png" />
+    <None Include="Images\ảnh nền tìm kiếm  vé máy bay %282%29.jpg" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
