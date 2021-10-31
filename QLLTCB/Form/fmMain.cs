@@ -16,5 +16,10 @@ namespace QLLTCB
         {
             InitializeComponent();
         }
+
+        private void btn_thoat_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
