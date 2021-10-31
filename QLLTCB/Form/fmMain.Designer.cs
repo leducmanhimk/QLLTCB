@@ -49,9 +49,9 @@ namespace QLLTCB
             // pictureBox4
             // 
             this.pictureBox4.Image = global::QLLTCB.Properties.Resources.bn3;
-            this.pictureBox4.Location = new System.Drawing.Point(829, 0);
+            this.pictureBox4.Location = new System.Drawing.Point(818, 0);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(472, 101);
+            this.pictureBox4.Size = new System.Drawing.Size(785, 101);
             this.pictureBox4.TabIndex = 9;
             this.pictureBox4.TabStop = false;
             // 
@@ -69,7 +69,7 @@ namespace QLLTCB
             this.btn_thoat.Image = global::QLLTCB.Properties.Resources.close;
             this.btn_thoat.Location = new System.Drawing.Point(26, 582);
             this.btn_thoat.Name = "btn_thoat";
-            this.btn_thoat.Size = new System.Drawing.Size(232, 79);
+            this.btn_thoat.Size = new System.Drawing.Size(232, 86);
             this.btn_thoat.TabIndex = 7;
             this.btn_thoat.Text = "Thoát";
             this.btn_thoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -81,7 +81,7 @@ namespace QLLTCB
             this.btn_dangxuat.Image = global::QLLTCB.Properties.Resources.exit;
             this.btn_dangxuat.Location = new System.Drawing.Point(26, 464);
             this.btn_dangxuat.Name = "btn_dangxuat";
-            this.btn_dangxuat.Size = new System.Drawing.Size(232, 79);
+            this.btn_dangxuat.Size = new System.Drawing.Size(232, 86);
             this.btn_dangxuat.TabIndex = 6;
             this.btn_dangxuat.Text = "đăng xuất";
             this.btn_dangxuat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -90,10 +90,11 @@ namespace QLLTCB
             // 
             // btn_taikhoan
             // 
+            this.btn_taikhoan.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.btn_taikhoan.Image = global::QLLTCB.Properties.Resources.acount;
             this.btn_taikhoan.Location = new System.Drawing.Point(26, 355);
             this.btn_taikhoan.Name = "btn_taikhoan";
-            this.btn_taikhoan.Size = new System.Drawing.Size(232, 79);
+            this.btn_taikhoan.Size = new System.Drawing.Size(232, 86);
             this.btn_taikhoan.TabIndex = 5;
             this.btn_taikhoan.Text = "Tài khoản  của tôi";
             this.btn_taikhoan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -103,9 +104,9 @@ namespace QLLTCB
             // btn_admin
             // 
             this.btn_admin.Image = global::QLLTCB.Properties.Resources.tk;
-            this.btn_admin.Location = new System.Drawing.Point(26, 253);
+            this.btn_admin.Location = new System.Drawing.Point(26, 244);
             this.btn_admin.Name = "btn_admin";
-            this.btn_admin.Size = new System.Drawing.Size(232, 79);
+            this.btn_admin.Size = new System.Drawing.Size(232, 86);
             this.btn_admin.TabIndex = 4;
             this.btn_admin.Text = "Admins";
             this.btn_admin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -117,7 +118,7 @@ namespace QLLTCB
             this.btn_sanbay.Image = global::QLLTCB.Properties.Resources.myinf;
             this.btn_sanbay.Location = new System.Drawing.Point(26, 138);
             this.btn_sanbay.Name = "btn_sanbay";
-            this.btn_sanbay.Size = new System.Drawing.Size(232, 79);
+            this.btn_sanbay.Size = new System.Drawing.Size(232, 86);
             this.btn_sanbay.TabIndex = 3;
             this.btn_sanbay.Text = "Sân bay của tôi";
             this.btn_sanbay.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -127,11 +128,12 @@ namespace QLLTCB
             // btn_lichbay
             // 
             this.btn_lichbay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_lichbay.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.btn_lichbay.Image = ((System.Drawing.Image)(resources.GetObject("btn_lichbay.Image")));
             this.btn_lichbay.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_lichbay.Location = new System.Drawing.Point(26, 22);
             this.btn_lichbay.Name = "btn_lichbay";
-            this.btn_lichbay.Size = new System.Drawing.Size(232, 79);
+            this.btn_lichbay.Size = new System.Drawing.Size(232, 82);
             this.btn_lichbay.TabIndex = 2;
             this.btn_lichbay.Text = "Lịch Trình Bay";
             this.btn_lichbay.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -156,6 +158,7 @@ namespace QLLTCB
             this.panel1.Controls.Add(this.btn_thoat);
             this.panel1.Controls.Add(this.btn_taikhoan);
             this.panel1.Controls.Add(this.btn_dangxuat);
+            this.panel1.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.panel1.Location = new System.Drawing.Point(0, 146);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(288, 690);
@@ -168,11 +171,12 @@ namespace QLLTCB
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1291, 825);
+            this.ClientSize = new System.Drawing.Size(1596, 825);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox1);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;

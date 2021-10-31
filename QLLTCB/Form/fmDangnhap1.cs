@@ -21,14 +21,18 @@ namespace QuanLyLichTrinhChuyenBay
         {
             InitializeComponent();
         }
-
+        fmMain ma = new fmMain();
         private void button1_Click(object sender, EventArgs e)
         {
             KetNoi con = new KetNoi();
             try
             {
+               
                 con.Khoitaoketnoi();
                 label3.Text = "kết nối thành công!";
+                this.Hide();
+                ma.Show();
+
             }
             catch (Exception)
             {
