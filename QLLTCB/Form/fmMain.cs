@@ -37,5 +37,10 @@ namespace QLLTCB
         {
             OpenChildForm(new fmLichTrinhBay());
         }
+
+        private void fmMain_Load(object sender, EventArgs e)
+        {
+            this.Size = new System.Drawing.Size(1000, 550);
+        }
     }
 }

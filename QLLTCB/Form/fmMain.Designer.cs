@@ -32,6 +32,7 @@ namespace QLLTCB
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmMain));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_lichbay = new System.Windows.Forms.Button();
             this.btn_sanbay = new System.Windows.Forms.Button();
             this.btn_admin = new System.Windows.Forms.Button();
@@ -42,13 +43,12 @@ namespace QLLTCB
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelchild = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -65,7 +65,7 @@ namespace QLLTCB
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(279, 695);
+            this.panel1.Size = new System.Drawing.Size(279, 769);
             this.panel1.TabIndex = 10;
             // 
             // panel2
@@ -74,15 +74,25 @@ namespace QLLTCB
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(279, 90);
+            this.panel2.Size = new System.Drawing.Size(279, 130);
             this.panel2.TabIndex = 8;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(276, 127);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // btn_lichbay
             // 
             this.btn_lichbay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_lichbay.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.btn_lichbay.Image = ((System.Drawing.Image)(resources.GetObject("btn_lichbay.Image")));
-            this.btn_lichbay.Location = new System.Drawing.Point(26, 96);
+            this.btn_lichbay.Location = new System.Drawing.Point(26, 136);
             this.btn_lichbay.Name = "btn_lichbay";
             this.btn_lichbay.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn_lichbay.Size = new System.Drawing.Size(232, 77);
@@ -96,7 +106,7 @@ namespace QLLTCB
             // 
             this.btn_sanbay.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.btn_sanbay.Image = ((System.Drawing.Image)(resources.GetObject("btn_sanbay.Image")));
-            this.btn_sanbay.Location = new System.Drawing.Point(26, 188);
+            this.btn_sanbay.Location = new System.Drawing.Point(26, 232);
             this.btn_sanbay.Name = "btn_sanbay";
             this.btn_sanbay.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn_sanbay.Size = new System.Drawing.Size(232, 86);
@@ -110,7 +120,7 @@ namespace QLLTCB
             // 
             this.btn_admin.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.btn_admin.Image = ((System.Drawing.Image)(resources.GetObject("btn_admin.Image")));
-            this.btn_admin.Location = new System.Drawing.Point(26, 289);
+            this.btn_admin.Location = new System.Drawing.Point(26, 346);
             this.btn_admin.Name = "btn_admin";
             this.btn_admin.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btn_admin.Size = new System.Drawing.Size(232, 86);
@@ -124,7 +134,7 @@ namespace QLLTCB
             // 
             this.btn_thoat.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.btn_thoat.Image = ((System.Drawing.Image)(resources.GetObject("btn_thoat.Image")));
-            this.btn_thoat.Location = new System.Drawing.Point(26, 602);
+            this.btn_thoat.Location = new System.Drawing.Point(26, 671);
             this.btn_thoat.Name = "btn_thoat";
             this.btn_thoat.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btn_thoat.Size = new System.Drawing.Size(232, 86);
@@ -138,7 +148,7 @@ namespace QLLTCB
             // 
             this.btn_taikhoan.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.btn_taikhoan.Image = ((System.Drawing.Image)(resources.GetObject("btn_taikhoan.Image")));
-            this.btn_taikhoan.Location = new System.Drawing.Point(26, 392);
+            this.btn_taikhoan.Location = new System.Drawing.Point(26, 451);
             this.btn_taikhoan.Name = "btn_taikhoan";
             this.btn_taikhoan.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btn_taikhoan.Size = new System.Drawing.Size(232, 86);
@@ -151,7 +161,7 @@ namespace QLLTCB
             // 
             this.btn_dangxuat.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.btn_dangxuat.Image = ((System.Drawing.Image)(resources.GetObject("btn_dangxuat.Image")));
-            this.btn_dangxuat.Location = new System.Drawing.Point(26, 496);
+            this.btn_dangxuat.Location = new System.Drawing.Point(26, 559);
             this.btn_dangxuat.Name = "btn_dangxuat";
             this.btn_dangxuat.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btn_dangxuat.Size = new System.Drawing.Size(232, 86);
@@ -167,15 +177,15 @@ namespace QLLTCB
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(279, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1507, 80);
+            this.panel3.Size = new System.Drawing.Size(1197, 80);
             this.panel3.TabIndex = 9;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(580, 0);
+            this.pictureBox3.Location = new System.Drawing.Point(571, 0);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(940, 80);
+            this.pictureBox3.Size = new System.Drawing.Size(626, 80);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 13;
             this.pictureBox3.TabStop = false;
@@ -195,39 +205,32 @@ namespace QLLTCB
             this.panelchild.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelchild.Location = new System.Drawing.Point(279, 80);
             this.panelchild.Name = "panelchild";
-            this.panelchild.Size = new System.Drawing.Size(1507, 615);
+            this.panelchild.Size = new System.Drawing.Size(1197, 689);
             this.panelchild.TabIndex = 11;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(276, 90);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // fmMain
             // 
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1786, 695);
+            this.AutoScroll = true;
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(1476, 769);
             this.Controls.Add(this.panelchild);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fmMain";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QuanLyLichTrinhChuyenBay";
+            this.Load += new System.EventHandler(this.fmMain_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
