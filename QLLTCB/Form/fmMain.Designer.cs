@@ -111,7 +111,6 @@ namespace QLLTCB
             this.btn_admin.Text = "Admins";
             this.btn_admin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btn_admin.UseVisualStyleBackColor = true;
-            this.btn_admin.UseWaitCursor = true;
             // 
             // btn_sanbay
             // 
@@ -128,7 +127,7 @@ namespace QLLTCB
             // btn_lichbay
             // 
             this.btn_lichbay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_lichbay.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.btn_lichbay.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.btn_lichbay.Image = ((System.Drawing.Image)(resources.GetObject("btn_lichbay.Image")));
             this.btn_lichbay.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_lichbay.Location = new System.Drawing.Point(26, 22);
@@ -138,7 +137,6 @@ namespace QLLTCB
             this.btn_lichbay.Text = "Lịch Trình Bay";
             this.btn_lichbay.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btn_lichbay.UseVisualStyleBackColor = true;
-            this.btn_lichbay.UseWaitCursor = true;
             // 
             // pictureBox1
             // 
@@ -158,12 +156,11 @@ namespace QLLTCB
             this.panel1.Controls.Add(this.btn_thoat);
             this.panel1.Controls.Add(this.btn_taikhoan);
             this.panel1.Controls.Add(this.btn_dangxuat);
-            this.panel1.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.panel1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.panel1.Location = new System.Drawing.Point(0, 146);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(288, 690);
             this.panel1.TabIndex = 10;
-            this.panel1.UseWaitCursor = true;
             // 
             // fmMain
             // 
