@@ -21,5 +21,12 @@ namespace QLLTCB
         {
             MessageBox.Show("bạn đã ấn vào nút này");
         }
+
+        private void fmLichTrinhBay_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'qLLichTrinhchuyenbayDataSet.Schedules' table. You can move, or remove it, as needed.
+            this.schedulesTableAdapter.Fill(this.qLLichTrinhchuyenbayDataSet.Schedules);
+
+        }
     }
 }

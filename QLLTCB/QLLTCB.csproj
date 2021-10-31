@@ -99,6 +99,11 @@
     <Compile Include="KetNoi\KetNoi.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QLLichTrinhchuyenbayDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLLichTrinhchuyenbayDataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form\fmLichTrinhBay.resx">
       <DependentUpon>fmLichTrinhBay.cs</DependentUpon>
     </EmbeddedResource>
@@ -163,6 +168,17 @@
     <Content Include="Images\tim.png" />
     <Content Include="Images\tk.png" />
     <Content Include="Images\xoa.png" />
+    <None Include="QLLichTrinhchuyenbayDataSet.xsc">
+      <DependentUpon>QLLichTrinhchuyenbayDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLLichTrinhchuyenbayDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLLichTrinhchuyenbayDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLLichTrinhchuyenbayDataSet.xss">
+      <DependentUpon>QLLichTrinhchuyenbayDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Resources\logomaybay2.png" />
     <None Include="Images\ảnh nền tìm kiếm  vé máy bay %282%29.jpg" />
   </ItemGroup>
