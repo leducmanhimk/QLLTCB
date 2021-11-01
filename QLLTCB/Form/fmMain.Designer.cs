@@ -56,6 +56,7 @@ namespace QLLTCB
             // panel1
             // 
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel1.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.btn_lichbay);
             this.panel1.Controls.Add(this.btn_sanbay);

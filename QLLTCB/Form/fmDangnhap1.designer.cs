@@ -46,7 +46,7 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.MediumBlue;
+            this.button1.BackColor = System.Drawing.Color.CornflowerBlue;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
