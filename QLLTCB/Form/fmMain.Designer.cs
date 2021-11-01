@@ -118,6 +118,7 @@ namespace QLLTCB
             this.btn_sanbay.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_sanbay.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_sanbay.UseVisualStyleBackColor = true;
+            this.btn_sanbay.Click += new System.EventHandler(this.btn_sanbay_Click);
             // 
             // btn_admin
             // 
@@ -132,6 +133,7 @@ namespace QLLTCB
             this.btn_admin.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_admin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_admin.UseVisualStyleBackColor = true;
+            this.btn_admin.Click += new System.EventHandler(this.btn_admin_Click);
             // 
             // btn_thoat
             // 
@@ -159,6 +161,7 @@ namespace QLLTCB
             this.btn_taikhoan.Text = "Tài khoản của tôi";
             this.btn_taikhoan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_taikhoan.UseVisualStyleBackColor = true;
+            this.btn_taikhoan.Click += new System.EventHandler(this.btn_taikhoan_Click);
             // 
             // btn_dangxuat
             // 
@@ -172,6 +175,7 @@ namespace QLLTCB
             this.btn_dangxuat.Text = "đăng xuất";
             this.btn_dangxuat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_dangxuat.UseVisualStyleBackColor = true;
+            this.btn_dangxuat.Click += new System.EventHandler(this.btn_dangxuat_Click);
             // 
             // panel3
             // 

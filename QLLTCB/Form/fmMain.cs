@@ -17,7 +17,7 @@ namespace QLLTCB
         {
             InitializeComponent();
         }
-        
+        //sự kiện khi kick vào nút  thoát
         private void btn_thoat_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -33,11 +33,13 @@ namespace QLLTCB
             childform.BringToFront();
             childform.Show();
         }
+        //sự kiện khi ấn vào nút lịch trình bay
         private void btn_lichbay_Click(object sender, EventArgs e)
         {
             OpenChildForm(new fmLichTrinhBay());
         }
 
+        //sự kiện load trang
         private void fmMain_Load(object sender, EventArgs e)
         {
             this.Size = new System.Drawing.Size(1000, 550);
@@ -49,7 +51,25 @@ namespace QLLTCB
             toolTip1.SetToolTip(btn_admin, "quản lý thông tin người dùng");
             toolTip1.SetToolTip(btn_dangxuat, "đăng xuất khỏi chương trình");
         }
+        //sự kiện khi kich vào nút sân bay
+        private void btn_sanbay_Click(object sender, EventArgs e)
+        {
 
-       
+        }
+        //sự kiện khi kick vào nút admin
+        private void btn_admin_Click(object sender, EventArgs e)
+        {
+
+        }
+        //sự kiện khi kich vào nút tài khoản
+        private void btn_taikhoan_Click(object sender, EventArgs e)
+        {
+
+        }
+        //sự kiện khi kick nào nút đẵng xuất
+        private void btn_dangxuat_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
