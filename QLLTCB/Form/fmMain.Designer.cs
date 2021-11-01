@@ -82,9 +82,9 @@ namespace QLLTCB
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(5, -1);
+            this.pictureBox1.Location = new System.Drawing.Point(-15, -15);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(276, 151);
+            this.pictureBox1.Size = new System.Drawing.Size(308, 167);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -210,10 +210,6 @@ namespace QLLTCB
             this.panelchild.Size = new System.Drawing.Size(1005, 683);
             this.panelchild.TabIndex = 11;
             // 
-            // toolTip1
-            // 
-            this.toolTip1.ToolTipTitle = "hiển thị thông tin về lịch bay";
-            // 
             // fmMain
             // 
             this.AllowDrop = true;
@@ -229,7 +225,7 @@ namespace QLLTCB
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "QuanLyLichTrinhChuyenBay";
+            this.Text = "Quản Lý Lịch Trình Chuyến Bay";
             this.Load += new System.EventHandler(this.fmMain_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
