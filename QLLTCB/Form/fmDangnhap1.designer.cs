@@ -46,7 +46,7 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.DeepPink;
+            this.button1.BackColor = System.Drawing.Color.MediumBlue;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -121,8 +121,8 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::QLLTCB.Properties.Resources.logomaybay2;
-            this.pictureBox1.Location = new System.Drawing.Point(127, 12);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(131, 30);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(246, 145);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

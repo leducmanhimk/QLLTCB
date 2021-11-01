@@ -72,7 +72,7 @@ namespace QLLTCB
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1262, 448);
+            this.dataGridView1.Size = new System.Drawing.Size(1262, 365);
             this.dataGridView1.TabIndex = 1;
             // 
             // iDDataGridViewTextBoxColumn
@@ -81,6 +81,7 @@ namespace QLLTCB
             this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
             this.iDDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
             this.iDDataGridViewTextBoxColumn.Width = 150;
             // 
             // dateDataGridViewTextBoxColumn
@@ -89,6 +90,7 @@ namespace QLLTCB
             this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
             this.dateDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
             this.dateDataGridViewTextBoxColumn.Width = 150;
             // 
             // timeDataGridViewTextBoxColumn
@@ -97,6 +99,7 @@ namespace QLLTCB
             this.timeDataGridViewTextBoxColumn.HeaderText = "Time";
             this.timeDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.timeDataGridViewTextBoxColumn.Name = "timeDataGridViewTextBoxColumn";
+            this.timeDataGridViewTextBoxColumn.ReadOnly = true;
             this.timeDataGridViewTextBoxColumn.Width = 150;
             // 
             // aircraftIDDataGridViewTextBoxColumn
@@ -105,6 +108,7 @@ namespace QLLTCB
             this.aircraftIDDataGridViewTextBoxColumn.HeaderText = "AircraftID";
             this.aircraftIDDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.aircraftIDDataGridViewTextBoxColumn.Name = "aircraftIDDataGridViewTextBoxColumn";
+            this.aircraftIDDataGridViewTextBoxColumn.ReadOnly = true;
             this.aircraftIDDataGridViewTextBoxColumn.Width = 150;
             // 
             // routeIDDataGridViewTextBoxColumn
@@ -113,6 +117,7 @@ namespace QLLTCB
             this.routeIDDataGridViewTextBoxColumn.HeaderText = "RouteID";
             this.routeIDDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.routeIDDataGridViewTextBoxColumn.Name = "routeIDDataGridViewTextBoxColumn";
+            this.routeIDDataGridViewTextBoxColumn.ReadOnly = true;
             this.routeIDDataGridViewTextBoxColumn.Width = 150;
             // 
             // flightNumberDataGridViewTextBoxColumn
@@ -121,6 +126,7 @@ namespace QLLTCB
             this.flightNumberDataGridViewTextBoxColumn.HeaderText = "FlightNumber";
             this.flightNumberDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.flightNumberDataGridViewTextBoxColumn.Name = "flightNumberDataGridViewTextBoxColumn";
+            this.flightNumberDataGridViewTextBoxColumn.ReadOnly = true;
             this.flightNumberDataGridViewTextBoxColumn.Width = 150;
             // 
             // economyPriceDataGridViewTextBoxColumn
@@ -129,6 +135,7 @@ namespace QLLTCB
             this.economyPriceDataGridViewTextBoxColumn.HeaderText = "EconomyPrice";
             this.economyPriceDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.economyPriceDataGridViewTextBoxColumn.Name = "economyPriceDataGridViewTextBoxColumn";
+            this.economyPriceDataGridViewTextBoxColumn.ReadOnly = true;
             this.economyPriceDataGridViewTextBoxColumn.Width = 150;
             // 
             // confirmedDataGridViewCheckBoxColumn
@@ -137,6 +144,7 @@ namespace QLLTCB
             this.confirmedDataGridViewCheckBoxColumn.HeaderText = "Confirmed";
             this.confirmedDataGridViewCheckBoxColumn.MinimumWidth = 8;
             this.confirmedDataGridViewCheckBoxColumn.Name = "confirmedDataGridViewCheckBoxColumn";
+            this.confirmedDataGridViewCheckBoxColumn.ReadOnly = true;
             this.confirmedDataGridViewCheckBoxColumn.Width = 150;
             // 
             // schedulesBindingSource
@@ -158,7 +166,7 @@ namespace QLLTCB
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label1.Location = new System.Drawing.Point(430, 19);
+            this.label1.Location = new System.Drawing.Point(423, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(430, 58);
             this.label1.TabIndex = 2;
