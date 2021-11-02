@@ -28,5 +28,7 @@ namespace QLLTCB
             this.schedulesTableAdapter.Fill(this.qLLichTrinhchuyenbayDataSet.Schedules);
 
         }
+
+        
     }
 }

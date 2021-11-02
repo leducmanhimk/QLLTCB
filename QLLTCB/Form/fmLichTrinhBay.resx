@@ -132,6 +132,22 @@
   <metadata name="schedulesTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>584, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAhdJREFUSEvl
+        VMtOFEEUnY9QWSh+AxD1K1gQSACFhIUaNTwCMfFDIBL8B5A49AjKa3h0d1VBfLDDOAZmqqv1A8bFsCjv
+        be5M9YueHpdwkpPOVJ17am717VO4OThWx/ddJWZcj68xJU6Y4jV84m/gtPBEN0k7B/vDusBwCXgB1Bls
+        cMUX7d/2HSrNB8c76oXiaswsm77wHP/oEVlkA4VQ9Ddhko916OoBWaWDrkjFCjul3Pe/3CbLJOCFvksp
+        asvdalnvnO+aNY+9JcsocIpA0O4lJ1iu7ennn1/qiY2nevNsu7neYJLdI2sDpthsuDgPsYNnn17o/tUB
+        /bg0rku/1lt7ON5kbQAbVlOQh5cdvAoOGLHGtFUpRfa5z4tkbUAfWkRoe44+lHZkDZnooPIxoQF+I2sD
+        WJRhkS1d/br8Rk9uzeh9edBaj3ewVrFaezFKsjZgPv8eFhV/WnqwOByYTW/PBR2FOxgtjV3VQZNfydrg
+        MpuiwuXTldBBs50cgAnwgawNMATTxMs/3uuh4khgjhy2nmRdkaHPJsnaANMUNhsJMbB5UO4DwMepOXfJ
+        OgpM05SCgCunqzCmba6ICOM7T5ZJYFyDKDJl/8EqpMctskyH8MVDENZjhXlZd5XbR1bZEFL0uIqfp5hk
+        UeIfJIt8wLjGNIXi1GEIseH6fKHtFWUB05R7fAqziD7YWvCE7wDH9MopuoYoFP4BCPHBogDd4fAAAAAA
+        SUVORK5CYII=
+</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>78</value>
   </metadata>
