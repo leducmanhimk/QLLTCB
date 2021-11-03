@@ -1,7 +1,11 @@
-﻿using System;
+﻿using QLLTCB;
+using QLLTCB.KetNoi;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +16,7 @@ namespace QLLTCB
 {
     public partial class fmQLsanbay : Form
     {
+        
         public fmQLsanbay()
         {
             InitializeComponent();
@@ -34,9 +39,18 @@ namespace QLLTCB
 
         private void fmQLsanbay_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'qLLichTrinhchuyenbayDataSet2.Routes' table. You can move, or remove it, as needed.
-            this.routesTableAdapter.Fill(this.qLLichTrinhchuyenbayDataSet2.Routes);
+            
+            SqlConnection con = new SqlConnection();
+            string connec = ConfigurationManager.ConnectionStrings["QLLTCB"].ConnectionString;
+            con = new SqlConnection(connec);
+            con.Open();
+            string sql = "select * from  Routes";
+            SqlDataAdapter da = new SqlDataAdapter(sql, con);
+            DataSet dsr = new DataSet();
+            da.Fill(dsr);
 
+            dtgrout.DataSource = dsr.Tables[0];
+            dtgrout.Refresh();
         }
     }
 }

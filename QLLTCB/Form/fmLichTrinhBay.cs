@@ -19,12 +19,7 @@ namespace QLLTCB
 
         
 
-        private void fmLichTrinhBay_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'qLLichTrinhchuyenbayDataSet.Schedules' table. You can move, or remove it, as needed.
-            this.schedulesTableAdapter.Fill(this.qLLichTrinhchuyenbayDataSet.Schedules);
-
-        }
+       
 
         private void button1_Click_1(object sender, EventArgs e)
         {
