@@ -54,7 +54,7 @@ namespace QLLTCB
         //sự kiện khi kich vào nút sân bay
         private void btn_sanbay_Click(object sender, EventArgs e)
         {
-
+            OpenChildForm(new fmQLsanbay());
         }
         //sự kiện khi kick vào nút admin
         private void btn_admin_Click(object sender, EventArgs e)

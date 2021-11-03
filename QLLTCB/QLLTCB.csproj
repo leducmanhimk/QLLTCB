@@ -72,6 +72,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form\fmQLsanbay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\fmQLsanbay.Designer.cs">
+      <DependentUpon>fmQLsanbay.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\fmLichTrinhBay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\fmMain.resx">
       <DependentUpon>fmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\fmQLsanbay.resx">
+      <DependentUpon>fmQLsanbay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
