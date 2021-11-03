@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace QLLTCB.KetNoi
 {
-    class KetNoi
+    class connect
     {
         SqlConnection con = new SqlConnection();
-        public KetNoi() { }
+        public connect() { }
         //khởi tạo kết nối
         public void Khoitaoketnoi() {
            

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QLLTCB.KetNoi;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -55,6 +56,7 @@ namespace QLLTCB
         private void btn_sanbay_Click(object sender, EventArgs e)
         {
             OpenChildForm(new fmQLsanbay());
+            connect con = new connect();
         }
         //sự kiện khi kick vào nút admin
         private void btn_admin_Click(object sender, EventArgs e)

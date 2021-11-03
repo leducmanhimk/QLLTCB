@@ -17,6 +17,7 @@ namespace QuanLyLichTrinhChuyenBay
    
     public partial class fmDangnhap1 : Form
     {
+        
         public fmDangnhap1()
         {
             InitializeComponent();
@@ -43,7 +44,7 @@ namespace QuanLyLichTrinhChuyenBay
             {
                 errorProvider1.Clear();
             }
-            KetNoi con = new KetNoi();
+            connect con = new connect();
             try
             {
                

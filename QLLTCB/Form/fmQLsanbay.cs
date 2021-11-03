@@ -39,11 +39,8 @@ namespace QLLTCB
 
         private void fmQLsanbay_Load(object sender, EventArgs e)
         {
-            
-            SqlConnection con = new SqlConnection();
-            string connec = ConfigurationManager.ConnectionStrings["QLLTCB"].ConnectionString;
-            con = new SqlConnection(connec);
-            con.Open();
+
+            connect con = new connect();
             string sql = "select * from  Routes";
             SqlDataAdapter da = new SqlDataAdapter(sql, con);
             DataSet dsr = new DataSet();

@@ -102,7 +102,7 @@
     <Compile Include="Form\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="KetNoi\KetNoi.cs" />
+    <Compile Include="KetNoi\connect.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Dataset\QLLichTrinhchuyenbayDataSet.Designer.cs">
