@@ -29,6 +29,7 @@ namespace QLLTCB
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmQLsanbay));
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -38,18 +39,27 @@ namespace QLLTCB
             this.btn_add = new System.Windows.Forms.Button();
             this.btm_sreach = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.txt_flighttime = new System.Windows.Forms.TextBox();
+            this.cb_AAID = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cb_DPID = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt_khoangcach = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_masanbay = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.qLLichTrinhchuyenbayDataSet2 = new QLLTCB.QLLichTrinhchuyenbayDataSet2();
+            this.routesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.routesTableAdapter = new QLLTCB.QLLichTrinhchuyenbayDataSet2TableAdapters.RoutesTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.qLLichTrinhchuyenbayDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.routesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -83,34 +93,35 @@ namespace QLLTCB
             this.dataGridView2.Location = new System.Drawing.Point(12, 27);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(344, 250);
+            this.dataGridView2.Size = new System.Drawing.Size(393, 250);
             this.dataGridView2.TabIndex = 5;
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.panel1.Controls.Add(this.btn_update);
             this.panel1.Controls.Add(this.btn_add);
             this.panel1.Controls.Add(this.btm_sreach);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.comboBox2);
+            this.panel1.Controls.Add(this.txt_flighttime);
+            this.panel1.Controls.Add(this.cb_AAID);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.cb_DPID);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.txt_khoangcach);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txt_masanbay);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(411, 284);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(420, 94);
+            this.panel1.Size = new System.Drawing.Size(420, 108);
             this.panel1.TabIndex = 6;
             // 
             // btn_update
             // 
             this.btn_update.Image = ((System.Drawing.Image)(resources.GetObject("btn_update.Image")));
             this.btn_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_update.Location = new System.Drawing.Point(287, 51);
+            this.btn_update.Location = new System.Drawing.Point(279, 70);
             this.btn_update.Name = "btn_update";
             this.btn_update.Size = new System.Drawing.Size(75, 37);
             this.btn_update.TabIndex = 12;
@@ -123,7 +134,7 @@ namespace QLLTCB
             // 
             this.btn_add.Image = ((System.Drawing.Image)(resources.GetObject("btn_add.Image")));
             this.btn_add.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_add.Location = new System.Drawing.Point(186, 54);
+            this.btn_add.Location = new System.Drawing.Point(177, 72);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(67, 33);
             this.btn_add.TabIndex = 11;
@@ -136,7 +147,7 @@ namespace QLLTCB
             // 
             this.btm_sreach.Image = ((System.Drawing.Image)(resources.GetObject("btm_sreach.Image")));
             this.btm_sreach.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btm_sreach.Location = new System.Drawing.Point(86, 53);
+            this.btm_sreach.Location = new System.Drawing.Point(62, 72);
             this.btm_sreach.Name = "btm_sreach";
             this.btm_sreach.Size = new System.Drawing.Size(75, 33);
             this.btm_sreach.TabIndex = 10;
@@ -154,20 +165,23 @@ namespace QLLTCB
             this.label6.TabIndex = 9;
             this.label6.Text = "Flighttime:";
             // 
-            // textBox3
+            // txt_flighttime
             // 
-            this.textBox3.Location = new System.Drawing.Point(332, 21);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(51, 20);
-            this.textBox3.TabIndex = 8;
+            this.txt_flighttime.Location = new System.Drawing.Point(332, 21);
+            this.txt_flighttime.Name = "txt_flighttime";
+            this.txt_flighttime.Size = new System.Drawing.Size(51, 20);
+            this.txt_flighttime.TabIndex = 8;
             // 
-            // comboBox2
+            // cb_AAID
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(243, 21);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(63, 21);
-            this.comboBox2.TabIndex = 7;
+            this.cb_AAID.DataSource = this.routesBindingSource;
+            this.cb_AAID.DisplayMember = "ArrivalAiportID";
+            this.cb_AAID.FormattingEnabled = true;
+            this.cb_AAID.Location = new System.Drawing.Point(243, 21);
+            this.cb_AAID.Name = "cb_AAID";
+            this.cb_AAID.Size = new System.Drawing.Size(63, 21);
+            this.cb_AAID.TabIndex = 7;
+            this.cb_AAID.ValueMember = "ArrivalAiportID";
             // 
             // label5
             // 
@@ -178,13 +192,16 @@ namespace QLLTCB
             this.label5.TabIndex = 6;
             this.label5.Text = "AAID:";
             // 
-            // comboBox1
+            // cb_DPID
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(159, 22);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(63, 21);
-            this.comboBox1.TabIndex = 5;
+            this.cb_DPID.DataSource = this.routesBindingSource;
+            this.cb_DPID.DisplayMember = "DepartureAiportID";
+            this.cb_DPID.FormattingEnabled = true;
+            this.cb_DPID.Location = new System.Drawing.Point(159, 22);
+            this.cb_DPID.Name = "cb_DPID";
+            this.cb_DPID.Size = new System.Drawing.Size(63, 21);
+            this.cb_DPID.TabIndex = 5;
+            this.cb_DPID.ValueMember = "DepartureAiportID";
             // 
             // label4
             // 
@@ -195,12 +212,12 @@ namespace QLLTCB
             this.label4.TabIndex = 4;
             this.label4.Text = "DPID:";
             // 
-            // textBox2
+            // txt_khoangcach
             // 
-            this.textBox2.Location = new System.Drawing.Point(86, 23);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(51, 20);
-            this.textBox2.TabIndex = 3;
+            this.txt_khoangcach.Location = new System.Drawing.Point(86, 23);
+            this.txt_khoangcach.Name = "txt_khoangcach";
+            this.txt_khoangcach.Size = new System.Drawing.Size(51, 20);
+            this.txt_khoangcach.TabIndex = 3;
             // 
             // label3
             // 
@@ -211,12 +228,12 @@ namespace QLLTCB
             this.label3.TabIndex = 2;
             this.label3.Text = "Distance:";
             // 
-            // textBox1
+            // txt_masanbay
             // 
-            this.textBox1.Location = new System.Drawing.Point(16, 23);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(51, 20);
-            this.textBox1.TabIndex = 1;
+            this.txt_masanbay.Location = new System.Drawing.Point(16, 23);
+            this.txt_masanbay.Name = "txt_masanbay";
+            this.txt_masanbay.Size = new System.Drawing.Size(51, 20);
+            this.txt_masanbay.TabIndex = 1;
             // 
             // label2
             // 
@@ -227,11 +244,55 @@ namespace QLLTCB
             this.label2.TabIndex = 0;
             this.label2.Text = "ID:";
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.panel2.Controls.Add(this.textBox4);
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Location = new System.Drawing.Point(12, 284);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(393, 107);
+            this.panel2.TabIndex = 7;
+            // 
+            // button1
+            // 
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(124, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 33);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "&Sreach";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(3, 7);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(115, 20);
+            this.textBox4.TabIndex = 13;
+            // 
+            // qLLichTrinhchuyenbayDataSet2
+            // 
+            this.qLLichTrinhchuyenbayDataSet2.DataSetName = "QLLichTrinhchuyenbayDataSet2";
+            this.qLLichTrinhchuyenbayDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // routesBindingSource
+            // 
+            this.routesBindingSource.DataMember = "Routes";
+            this.routesBindingSource.DataSource = this.qLLichTrinhchuyenbayDataSet2;
+            // 
+            // routesTableAdapter
+            // 
+            this.routesTableAdapter.ClearBeforeFill = true;
+            // 
             // fmQLsanbay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(843, 404);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
@@ -239,10 +300,15 @@ namespace QLLTCB
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fmQLsanbay";
             this.Text = "fmQLsanbay";
+            this.Load += new System.EventHandler(this.fmQLsanbay_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.qLLichTrinhchuyenbayDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.routesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -255,17 +321,23 @@ namespace QLLTCB
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_masanbay;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_khoangcach;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cb_DPID;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cb_AAID;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txt_flighttime;
         private System.Windows.Forms.Button btm_sreach;
         private System.Windows.Forms.Button btn_add;
         private System.Windows.Forms.Button btn_update;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Button button1;
+        private QLLichTrinhchuyenbayDataSet2 qLLichTrinhchuyenbayDataSet2;
+        private System.Windows.Forms.BindingSource routesBindingSource;
+        private QLLichTrinhchuyenbayDataSet2TableAdapters.RoutesTableAdapter routesTableAdapter;
     }
 }

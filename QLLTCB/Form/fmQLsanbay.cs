@@ -31,5 +31,12 @@ namespace QLLTCB
         {
 
         }
+
+        private void fmQLsanbay_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'qLLichTrinhchuyenbayDataSet2.Routes' table. You can move, or remove it, as needed.
+            this.routesTableAdapter.Fill(this.qLLichTrinhchuyenbayDataSet2.Routes);
+
+        }
     }
 }
