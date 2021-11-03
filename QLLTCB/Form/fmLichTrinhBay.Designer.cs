@@ -49,7 +49,7 @@ namespace QLLTCB
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_chapnhan = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -61,15 +61,15 @@ namespace QLLTCB
             this.label5 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btn_sua = new System.Windows.Forms.Button();
+            this.btn_huy = new System.Windows.Forms.Button();
+            this.btn_reset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.schedulesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLLichTrinhchuyenbayDataSet)).BeginInit();
@@ -84,6 +84,9 @@ namespace QLLTCB
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridView1.ColumnHeadersHeight = 34;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -96,12 +99,14 @@ namespace QLLTCB
             this.economyPriceDataGridViewTextBoxColumn,
             this.confirmedDataGridViewCheckBoxColumn});
             this.dataGridView1.DataSource = this.schedulesBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(2, 65);
+            this.dataGridView1.Location = new System.Drawing.Point(11, 42);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1262, 285);
+            this.dataGridView1.Size = new System.Drawing.Size(827, 185);
             this.dataGridView1.TabIndex = 1;
             // 
             // iDDataGridViewTextBoxColumn
@@ -195,9 +200,10 @@ namespace QLLTCB
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.LimeGreen;
-            this.label1.Location = new System.Drawing.Point(484, 9);
+            this.label1.Location = new System.Drawing.Point(323, 6);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(221, 30);
+            this.label1.Size = new System.Drawing.Size(157, 22);
             this.label1.TabIndex = 2;
             this.label1.Text = "Quản Lý lịch Trình";
             // 
@@ -208,10 +214,11 @@ namespace QLLTCB
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.groupBox1.Location = new System.Drawing.Point(51, 481);
+            this.groupBox1.Location = new System.Drawing.Point(34, 313);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 5, 3, 3);
-            this.groupBox1.Size = new System.Drawing.Size(1117, 85);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 3, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(745, 55);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Định Tuyến";
@@ -219,33 +226,36 @@ namespace QLLTCB
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(710, 39);
+            this.label4.Location = new System.Drawing.Point(473, 25);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(125, 20);
+            this.label4.Size = new System.Drawing.Size(89, 13);
             this.label4.TabIndex = 2;
             this.label4.Text = "Quãng Đường:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(327, 39);
+            this.label3.Location = new System.Drawing.Point(218, 25);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 20);
+            this.label3.Size = new System.Drawing.Size(34, 13);
             this.label3.TabIndex = 1;
             this.label3.Text = "Đến:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(124, 39);
+            this.label2.Location = new System.Drawing.Point(83, 25);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(34, 20);
+            this.label2.Size = new System.Drawing.Size(26, 13);
             this.label2.TabIndex = 0;
             this.label2.Text = "Từ:";
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.btn_chapnhan);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.comboBox3);
             this.groupBox2.Controls.Add(this.label8);
@@ -258,109 +268,121 @@ namespace QLLTCB
             this.groupBox2.Controls.Add(this.comboBox1);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.groupBox2.Location = new System.Drawing.Point(51, 356);
+            this.groupBox2.Location = new System.Drawing.Point(34, 231);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 5, 3, 3);
-            this.groupBox2.Size = new System.Drawing.Size(1117, 115);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 3, 2, 2);
+            this.groupBox2.Size = new System.Drawing.Size(745, 75);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Lọc Bằng";
             // 
-            // button1
+            // btn_chapnhan
             // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(895, 59);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(189, 47);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Chấp nhận";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.btn_chapnhan.Image = ((System.Drawing.Image)(resources.GetObject("btn_chapnhan.Image")));
+            this.btn_chapnhan.Location = new System.Drawing.Point(597, 38);
+            this.btn_chapnhan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_chapnhan.Name = "btn_chapnhan";
+            this.btn_chapnhan.Size = new System.Drawing.Size(126, 31);
+            this.btn_chapnhan.TabIndex = 11;
+            this.btn_chapnhan.Text = "Chấp nhận";
+            this.btn_chapnhan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_chapnhan.UseVisualStyleBackColor = true;
+            this.btn_chapnhan.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(859, 29);
+            this.label9.Location = new System.Drawing.Point(573, 19);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(74, 20);
+            this.label9.Size = new System.Drawing.Size(53, 13);
             this.label9.TabIndex = 10;
             this.label9.Text = "Xắp xếp";
             // 
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(939, 24);
+            this.comboBox3.Location = new System.Drawing.Point(626, 16);
+            this.comboBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(127, 28);
+            this.comboBox3.Size = new System.Drawing.Size(86, 21);
             this.comboBox3.TabIndex = 9;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(437, 69);
+            this.label8.Location = new System.Drawing.Point(291, 45);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(113, 20);
+            this.label8.Size = new System.Drawing.Size(81, 13);
             this.label8.TabIndex = 8;
             this.label8.Text = "Số Hiệu Bay:";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(556, 69);
+            this.textBox1.Location = new System.Drawing.Point(371, 45);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(158, 26);
+            this.textBox1.Size = new System.Drawing.Size(107, 20);
             this.textBox1.TabIndex = 7;
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(157, 74);
+            this.dateTimePicker1.Location = new System.Drawing.Point(105, 48);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(160, 26);
+            this.dateTimePicker1.Size = new System.Drawing.Size(108, 20);
             this.dateTimePicker1.TabIndex = 6;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(86, 80);
+            this.label7.Location = new System.Drawing.Point(57, 52);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(54, 20);
+            this.label7.Size = new System.Drawing.Size(40, 13);
             this.label7.TabIndex = 5;
             this.label7.Text = "Ngày:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(503, 27);
+            this.label6.Location = new System.Drawing.Point(335, 18);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(47, 20);
+            this.label6.Size = new System.Drawing.Size(34, 13);
             this.label6.TabIndex = 3;
             this.label6.Text = "Đến:";
             // 
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(556, 22);
+            this.comboBox2.Location = new System.Drawing.Point(371, 14);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(158, 28);
+            this.comboBox2.Size = new System.Drawing.Size(107, 21);
             this.comboBox2.TabIndex = 4;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(106, 30);
+            this.label5.Location = new System.Drawing.Point(71, 19);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(34, 20);
+            this.label5.Size = new System.Drawing.Size(26, 13);
             this.label5.TabIndex = 3;
             this.label5.Text = "Từ:";
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(157, 27);
+            this.comboBox1.Location = new System.Drawing.Point(105, 18);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(160, 28);
+            this.comboBox1.Size = new System.Drawing.Size(108, 21);
             this.comboBox1.TabIndex = 0;
             // 
             // groupBox3
@@ -372,19 +394,42 @@ namespace QLLTCB
             this.groupBox3.Controls.Add(this.textBox3);
             this.groupBox3.Controls.Add(this.textBox2);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(246, 572);
+            this.groupBox3.Location = new System.Drawing.Point(164, 372);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(753, 97);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Size = new System.Drawing.Size(502, 63);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Sửa";
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(40, 31);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(40, 13);
+            this.label12.TabIndex = 15;
+            this.label12.Text = "Ngày:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(177, 31);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(66, 13);
+            this.label11.TabIndex = 14;
+            this.label11.Text = "Thời Gian:";
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(465, 47);
+            this.label10.Location = new System.Drawing.Point(310, 31);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(135, 20);
+            this.label10.Size = new System.Drawing.Size(96, 13);
             this.label10.TabIndex = 12;
             this.label10.Text = "Giá Thương mại";
             // 
@@ -392,90 +437,79 @@ namespace QLLTCB
             // 
             this.dateTimePicker2.CustomFormat = "dd/MM/yyyy";
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(115, 46);
+            this.dateTimePicker2.Location = new System.Drawing.Point(77, 30);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(145, 26);
+            this.dateTimePicker2.Size = new System.Drawing.Size(98, 20);
             this.dateTimePicker2.TabIndex = 12;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(600, 44);
+            this.textBox3.Location = new System.Drawing.Point(400, 29);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(85, 26);
+            this.textBox3.Size = new System.Drawing.Size(58, 20);
             this.textBox3.TabIndex = 13;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(353, 44);
+            this.textBox2.Location = new System.Drawing.Point(235, 29);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(85, 26);
+            this.textBox2.Size = new System.Drawing.Size(58, 20);
             this.textBox2.TabIndex = 12;
             // 
-            // label11
+            // btn_sua
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(266, 48);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(91, 20);
-            this.label11.TabIndex = 14;
-            this.label11.Text = "Thời Gian:";
+            this.btn_sua.BackColor = System.Drawing.Color.Gold;
+            this.btn_sua.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_sua.Location = new System.Drawing.Point(177, 456);
+            this.btn_sua.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_sua.Name = "btn_sua";
+            this.btn_sua.Size = new System.Drawing.Size(89, 36);
+            this.btn_sua.TabIndex = 16;
+            this.btn_sua.Text = "Sửa chuyến bay";
+            this.btn_sua.UseVisualStyleBackColor = false;
             // 
-            // label12
+            // btn_huy
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(60, 47);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(54, 20);
-            this.label12.TabIndex = 15;
-            this.label12.Text = "Ngày:";
+            this.btn_huy.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btn_huy.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btn_huy.Location = new System.Drawing.Point(38, 456);
+            this.btn_huy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_huy.Name = "btn_huy";
+            this.btn_huy.Size = new System.Drawing.Size(89, 36);
+            this.btn_huy.TabIndex = 17;
+            this.btn_huy.Text = "Hủy chuyến bay";
+            this.btn_huy.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btn_reset
             // 
-            this.button2.BackColor = System.Drawing.Color.Gold;
-            this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button2.Location = new System.Drawing.Point(265, 701);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(134, 56);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "Sửa chuyến bay";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.button3.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button3.Location = new System.Drawing.Point(57, 701);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(134, 56);
-            this.button3.TabIndex = 17;
-            this.button3.Text = "Hủy chuyến bay";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.Gold;
-            this.button4.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.button4.Location = new System.Drawing.Point(1054, 701);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(134, 56);
-            this.button4.TabIndex = 18;
-            this.button4.Text = "Làm mới";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btn_reset.BackColor = System.Drawing.Color.Gold;
+            this.btn_reset.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.btn_reset.Location = new System.Drawing.Point(703, 456);
+            this.btn_reset.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_reset.Name = "btn_reset";
+            this.btn_reset.Size = new System.Drawing.Size(89, 36);
+            this.btn_reset.TabIndex = 18;
+            this.btn_reset.Text = "Làm mới";
+            this.btn_reset.UseVisualStyleBackColor = false;
             // 
             // fmLichTrinhBay
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1301, 790);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.ClientSize = new System.Drawing.Size(870, 502);
+            this.Controls.Add(this.btn_reset);
+            this.Controls.Add(this.btn_huy);
+            this.Controls.Add(this.btn_sua);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "fmLichTrinhBay";
             this.Text = "fmLichTrinhBay";
             this.Load += new System.EventHandler(this.fmLichTrinhBay_Load);
@@ -499,14 +533,6 @@ namespace QLLTCB
         private QLLichTrinhchuyenbayDataSet qLLichTrinhchuyenbayDataSet;
         private System.Windows.Forms.BindingSource schedulesBindingSource;
         private QLLichTrinhchuyenbayDataSetTableAdapters.SchedulesTableAdapter schedulesTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn timeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn aircraftIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn routeIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn flightNumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn economyPriceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn confirmedDataGridViewCheckBoxColumn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label4;
@@ -523,7 +549,7 @@ namespace QLLTCB
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_chapnhan;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
@@ -531,8 +557,16 @@ namespace QLLTCB
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btn_sua;
+        private System.Windows.Forms.Button btn_huy;
+        private System.Windows.Forms.Button btn_reset;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn timeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn aircraftIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn routeIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn flightNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn economyPriceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn confirmedDataGridViewCheckBoxColumn;
     }
 }
