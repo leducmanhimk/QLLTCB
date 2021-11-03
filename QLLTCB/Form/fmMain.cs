@@ -42,7 +42,7 @@ namespace QLLTCB
         //sự kiện load trang
         private void fmMain_Load(object sender, EventArgs e)
         {
-            this.Size = new System.Drawing.Size(1000, 550);
+            this.Size = new System.Drawing.Size(1050, 600);
             OpenChildForm(new fmLichTrinhBay());
             toolTip1.SetToolTip(btn_lichbay, "hiển thị thông tin về lịch bay");
             toolTip1.SetToolTip(btn_sanbay, "hiển thị thông tin về sân bay!");

@@ -17,10 +17,7 @@ namespace QLLTCB
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("bạn đã ấn vào nút này");
-        }
+        
 
         private void fmLichTrinhBay_Load(object sender, EventArgs e)
         {
@@ -29,6 +26,9 @@ namespace QLLTCB
 
         }
 
-        
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            MessageBox.Show("bạn đã ấn vào nút này");
+        }
     }
 }
