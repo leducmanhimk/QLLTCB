@@ -11,10 +11,10 @@ namespace QLLTCB.KetNoi
 {
     class connect
     {
-        SqlConnection con = new SqlConnection();
+        
         public connect() { }
         //khởi tạo kết nối
-        public void Khoitaoketnoi() {
+        public void Khoitaoketnoi(SqlConnection con) {
            
             string connec = ConfigurationManager.ConnectionStrings["QLLTCB"].ConnectionString;
             con = new SqlConnection(connec);
@@ -24,7 +24,7 @@ namespace QLLTCB.KetNoi
             }           
         }
         //đóng kết nôi
-        public void DongketNoi() {
+        public void DongketNoi(SqlConnection con) {
             con.Close();
         }
     }

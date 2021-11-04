@@ -44,15 +44,16 @@ namespace QuanLyLichTrinhChuyenBay
             {
                 errorProvider1.Clear();
             }
+            SqlConnection connection = new SqlConnection();
             connect con = new connect();
             try
             {
                
-                con.Khoitaoketnoi();
+                con.Khoitaoketnoi(connection);
                 
                 this.Hide();
                 ma.Show();
-                con.DongketNoi();
+                con.DongketNoi(connection);
             }
             catch (Exception)
             {
