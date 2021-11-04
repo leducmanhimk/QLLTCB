@@ -29,7 +29,6 @@ namespace QLLTCB
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmQLsanbay));
             this.label1 = new System.Windows.Forms.Label();
             this.dtgrout = new System.Windows.Forms.DataGridView();
@@ -51,12 +50,10 @@ namespace QLLTCB
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dtgrout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -135,7 +132,7 @@ namespace QLLTCB
             this.btn_add.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_add.Location = new System.Drawing.Point(177, 72);
             this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(67, 33);
+            this.btn_add.Size = new System.Drawing.Size(71, 33);
             this.btn_add.TabIndex = 11;
             this.btn_add.Text = "&Add";
             this.btn_add.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -173,8 +170,14 @@ namespace QLLTCB
             // 
             // cb_AAID
             // 
-            this.cb_AAID.DisplayMember = "ArrivalAiportID";
             this.cb_AAID.FormattingEnabled = true;
+            this.cb_AAID.Items.AddRange(new object[] {
+            "HAN",
+            "CSY",
+            "DME",
+            "KHV",
+            "NGS",
+            "LAS"});
             this.cb_AAID.Location = new System.Drawing.Point(260, 23);
             this.cb_AAID.Name = "cb_AAID";
             this.cb_AAID.Size = new System.Drawing.Size(85, 21);
@@ -191,13 +194,18 @@ namespace QLLTCB
             // 
             // cb_DPID
             // 
-            this.cb_DPID.DisplayMember = "DepartureAiportID";
             this.cb_DPID.FormattingEnabled = true;
+            this.cb_DPID.Items.AddRange(new object[] {
+            "HAN",
+            "CSY",
+            "DME",
+            "KHV",
+            "NGS",
+            "LAS"});
             this.cb_DPID.Location = new System.Drawing.Point(149, 23);
             this.cb_DPID.Name = "cb_DPID";
             this.cb_DPID.Size = new System.Drawing.Size(87, 21);
             this.cb_DPID.TabIndex = 5;
-            this.cb_DPID.ValueMember = "DepartureAiportID";
             // 
             // label4
             // 
@@ -268,10 +276,7 @@ namespace QLLTCB
             this.button1.Text = "&Sreach";
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // fmQLsanbay
             // 
@@ -293,7 +298,6 @@ namespace QLLTCB
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -321,6 +325,5 @@ namespace QLLTCB
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
