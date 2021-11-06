@@ -151,21 +151,11 @@ namespace QLLTCB
 
             cmd = new SqlCommand(sql, sqlConnection);
             cmd.ExecuteNonQuery();
-            string sql1 = "select * from  Routes";
-            SqlDataAdapter da = new SqlDataAdapter(sql1, sqlConnection);
-            DataSet dsr = new DataSet();
-            da.Fill(dsr);
-
-            dtgrout.DataSource = dsr.Tables[0];
-            dtgrout.Columns[0].Width = 60;
-            dtgrout.Columns[1].Width = 70;
-            dtgrout.Columns[2].Width = 70;
-            dtgrout.Columns[3].Width = 60;
-            dtgrout.Columns[4].Width = 60;
-            dtgrout.Refresh();
+            LoadDataRouts();
             sqlConnection.Close();
-            MessageBox.Show("bạn đã thêm thành công!");
+            MessageBox.Show("bạn đã thêm thành công!","Thành công",MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
+       
         //sự kiện bấm vào nút cập nhật
         private void btn_update_Click(object sender, EventArgs e)
         {
@@ -200,7 +190,8 @@ namespace QLLTCB
             }
             try
             {
-                sql = "UPDATE Routes SET DepartureAiportID='" + cb_DPID.SelectedItem + "',ArrivalAiportID='" + cb_AAID.SelectedItem + "',Distance='" + txt_khoangcach.Text.ToString() + "',FlightTime='" + txt_flighttime.Text + "'WHERE ID='" + txt_masanbay.Text + "'";
+                sql = "UPDATE Routes SET DepartureAiportID='" + cb_DPID.SelectedItem + "',ArrivalAiportID='" + cb_AAID.SelectedItem + "',Distance='" + txt_khoangcach.Text.ToString() + "',FlightTime='" + txt_flighttime.Text + "'WHERE ID='" 
+                    + txt_masanbay.Text + "'";
                 cmd = new SqlCommand(sql, sqlConnection);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Sửa Đổi dữ Liệu thành công!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -209,7 +200,7 @@ namespace QLLTCB
             }
             catch (Exception)
             {
-
+                MessageBox.Show("Thất bại!,sửa đổi dữ liệu thất bại", "thất bại!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 throw;
             }
             

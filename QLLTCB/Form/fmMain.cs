@@ -43,7 +43,7 @@ namespace QLLTCB
         //sự kiện load trang
         private void fmMain_Load(object sender, EventArgs e)
         {
-            this.Size = new System.Drawing.Size(1050, 600);
+            this.Size = new System.Drawing.Size(1070, 600);
             OpenChildForm(new fmLichTrinhBay());
             toolTip1.SetToolTip(btn_lichbay, "hiển thị thông tin về lịch bay");
             toolTip1.SetToolTip(btn_sanbay, "hiển thị thông tin về sân bay!");
@@ -71,7 +71,7 @@ namespace QLLTCB
         //sự kiện khi kick nào nút đẵng xuất
         private void btn_dangxuat_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Bạn có chắc là sẽ Đăng xuất?", "Đăng xuất", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
         }
     }
 }
