@@ -29,6 +29,7 @@ namespace QLLTCB
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmQLsanbay));
             this.label1 = new System.Windows.Forms.Label();
             this.dtgrout = new System.Windows.Forms.DataGridView();
@@ -50,10 +51,12 @@ namespace QLLTCB
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dtgrout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -77,7 +80,7 @@ namespace QLLTCB
             this.dtgrout.Name = "dtgrout";
             this.dtgrout.ReadOnly = true;
             this.dtgrout.RowHeadersWidth = 62;
-            this.dtgrout.Size = new System.Drawing.Size(420, 250);
+            this.dtgrout.Size = new System.Drawing.Size(425, 250);
             this.dtgrout.TabIndex = 4;
             // 
             // dataGridView2
@@ -110,7 +113,7 @@ namespace QLLTCB
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(411, 284);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(420, 108);
+            this.panel1.Size = new System.Drawing.Size(425, 108);
             this.panel1.TabIndex = 6;
             // 
             // btn_update
@@ -170,6 +173,8 @@ namespace QLLTCB
             // 
             // cb_AAID
             // 
+            this.cb_AAID.DisplayMember = "HAN";
+            this.cb_AAID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_AAID.FormattingEnabled = true;
             this.cb_AAID.Items.AddRange(new object[] {
             "HAN",
@@ -178,7 +183,7 @@ namespace QLLTCB
             "KHV",
             "NGS",
             "LAS"});
-            this.cb_AAID.Location = new System.Drawing.Point(260, 23);
+            this.cb_AAID.Location = new System.Drawing.Point(177, 21);
             this.cb_AAID.Name = "cb_AAID";
             this.cb_AAID.Size = new System.Drawing.Size(85, 21);
             this.cb_AAID.TabIndex = 7;
@@ -186,7 +191,7 @@ namespace QLLTCB
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(257, 9);
+            this.label5.Location = new System.Drawing.Point(174, 5);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(35, 13);
             this.label5.TabIndex = 6;
@@ -194,6 +199,8 @@ namespace QLLTCB
             // 
             // cb_DPID
             // 
+            this.cb_DPID.DisplayMember = "HAN";
+            this.cb_DPID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_DPID.FormattingEnabled = true;
             this.cb_DPID.Items.AddRange(new object[] {
             "HAN",
@@ -202,7 +209,7 @@ namespace QLLTCB
             "KHV",
             "NGS",
             "LAS"});
-            this.cb_DPID.Location = new System.Drawing.Point(149, 23);
+            this.cb_DPID.Location = new System.Drawing.Point(72, 24);
             this.cb_DPID.Name = "cb_DPID";
             this.cb_DPID.Size = new System.Drawing.Size(87, 21);
             this.cb_DPID.TabIndex = 5;
@@ -210,7 +217,7 @@ namespace QLLTCB
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(156, 7);
+            this.label4.Location = new System.Drawing.Point(69, 8);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(36, 13);
             this.label4.TabIndex = 4;
@@ -218,7 +225,7 @@ namespace QLLTCB
             // 
             // txt_khoangcach
             // 
-            this.txt_khoangcach.Location = new System.Drawing.Point(71, 23);
+            this.txt_khoangcach.Location = new System.Drawing.Point(279, 24);
             this.txt_khoangcach.Name = "txt_khoangcach";
             this.txt_khoangcach.Size = new System.Drawing.Size(67, 20);
             this.txt_khoangcach.TabIndex = 3;
@@ -226,7 +233,7 @@ namespace QLLTCB
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(69, 7);
+            this.label3.Location = new System.Drawing.Point(276, 7);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 13);
             this.label3.TabIndex = 2;
@@ -278,11 +285,15 @@ namespace QLLTCB
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // fmQLsanbay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(843, 404);
+            this.ClientSize = new System.Drawing.Size(848, 404);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView2);
@@ -298,6 +309,7 @@ namespace QLLTCB
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -325,5 +337,6 @@ namespace QLLTCB
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
