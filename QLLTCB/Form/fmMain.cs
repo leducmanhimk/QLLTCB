@@ -1,4 +1,5 @@
 ﻿using QLLTCB.KetNoi;
+using QuanLyLichTrinhChuyenBay;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -71,11 +72,17 @@ namespace QLLTCB
         //sự kiện khi kick nào nút đẵng xuất
         private void btn_dangxuat_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Bạn có chắc là sẽ Đăng xuất?", "Đăng xuất", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (dialogResult == DialogResult.Yes)
+            DialogResult dialog = new DialogResult();
+             dialog = MessageBox.Show("Bạn có chắc là sẽ Đăng xuất?", "Đăng xuất", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialog == DialogResult.Yes)
             {
-                Application.Exit();
-
+                fmDangnhap1 dangnhap1 = new fmDangnhap1();
+                this.Hide();
+                dangnhap1.Show();
+            }
+            else
+            {
+                MessageBox.Show("bạn đã hủy đằn nhập!");
             }
             
         }

@@ -22,12 +22,12 @@ namespace QuanLyLichTrinhChuyenBay
         {
             InitializeComponent();
         }
-        fmMain ma = new fmMain();
+        fmMain main = new fmMain();
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text.Trim() == "")
+            if (txt_email.Text.Trim() == "")
             {
-                errorProvider1.SetError(textBox1, "bạn chưa điền tên tài khoản!");
+                errorProvider1.SetError(txt_email, "bạn chưa điền tên tài khoản!");
                 return;
             }
            
@@ -35,25 +35,38 @@ namespace QuanLyLichTrinhChuyenBay
             {
                 errorProvider1.Clear();
             }
-            if (textBox2.Text.Trim() == "")
+            if (txt_matkhau.Text.Trim() == "")
             {
-                errorProvider1.SetError(textBox2, "bạn chưa điền mật khẩu!");
+                errorProvider1.SetError(txt_matkhau, "bạn chưa điền mật khẩu!");
                 return;
             }
             else
             {
                 errorProvider1.Clear();
             }
-            SqlConnection connection = new SqlConnection();
-            connect con = new connect();
             try
             {
-               
-                con.Khoitaoketnoi(connection);
+                SqlConnection sqlConnection = new SqlConnection();
+                string connect = ConfigurationManager.ConnectionStrings["QLLTCB"].ConnectionString;
+                sqlConnection = new SqlConnection(connect);
+                if (sqlConnection.State != ConnectionState.Open)
+                {
+                    sqlConnection.Open();
+                }
+                string sql = "select * from Admins where Admin_email='"+txt_email.Text.Trim()+ "' and Admin_password='"+txt_matkhau.Text.Trim()+"'";
+                SqlDataAdapter da = new SqlDataAdapter(sql, sqlConnection);
+                DataTable dataTable = new DataTable();
+                da.Fill(dataTable);
+                if (dataTable.Rows.Count == 1)
+                {
+                    this.Hide();
+                    main.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Tài khoản hoặc mật khẩu không đúng!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
                 
-                this.Hide();
-                ma.Show();
-                con.DongketNoi(connection);
             }
             catch (Exception)
             {
