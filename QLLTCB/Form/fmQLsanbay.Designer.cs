@@ -35,6 +35,7 @@ namespace QLLTCB
             this.dtgrout = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.btn_update = new System.Windows.Forms.Button();
             this.btn_add = new System.Windows.Forms.Button();
             this.btm_sreach = new System.Windows.Forms.Button();
@@ -52,6 +53,8 @@ namespace QLLTCB
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtgrout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel1.SuspendLayout();
@@ -82,6 +85,7 @@ namespace QLLTCB
             this.dtgrout.RowHeadersWidth = 62;
             this.dtgrout.Size = new System.Drawing.Size(425, 250);
             this.dtgrout.TabIndex = 4;
+            this.dtgrout.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgrout_CellContentClick);
             // 
             // dataGridView2
             // 
@@ -98,6 +102,7 @@ namespace QLLTCB
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.btn_update);
             this.panel1.Controls.Add(this.btn_add);
             this.panel1.Controls.Add(this.btm_sreach);
@@ -116,15 +121,29 @@ namespace QLLTCB
             this.panel1.Size = new System.Drawing.Size(425, 108);
             this.panel1.TabIndex = 6;
             // 
+            // button2
+            // 
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(318, 67);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 33);
+            this.button2.TabIndex = 13;
+            this.button2.Text = "Lưu";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // btn_update
             // 
             this.btn_update.Image = ((System.Drawing.Image)(resources.GetObject("btn_update.Image")));
             this.btn_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_update.Location = new System.Drawing.Point(279, 70);
+            this.btn_update.Location = new System.Drawing.Point(224, 67);
             this.btn_update.Name = "btn_update";
-            this.btn_update.Size = new System.Drawing.Size(75, 37);
+            this.btn_update.Size = new System.Drawing.Size(88, 33);
             this.btn_update.TabIndex = 12;
-            this.btn_update.Text = "&Update";
+            this.btn_update.Text = "&Cập nhật";
             this.btn_update.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_update.UseVisualStyleBackColor = true;
             this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
@@ -133,11 +152,11 @@ namespace QLLTCB
             // 
             this.btn_add.Image = ((System.Drawing.Image)(resources.GetObject("btn_add.Image")));
             this.btn_add.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_add.Location = new System.Drawing.Point(177, 72);
+            this.btn_add.Location = new System.Drawing.Point(130, 67);
             this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(71, 33);
+            this.btn_add.Size = new System.Drawing.Size(75, 33);
             this.btn_add.TabIndex = 11;
-            this.btn_add.Text = "&Add";
+            this.btn_add.Text = "&Thêm";
             this.btn_add.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_add.UseVisualStyleBackColor = true;
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
@@ -146,11 +165,11 @@ namespace QLLTCB
             // 
             this.btm_sreach.Image = ((System.Drawing.Image)(resources.GetObject("btm_sreach.Image")));
             this.btm_sreach.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btm_sreach.Location = new System.Drawing.Point(62, 72);
+            this.btm_sreach.Location = new System.Drawing.Point(29, 67);
             this.btm_sreach.Name = "btm_sreach";
-            this.btm_sreach.Size = new System.Drawing.Size(75, 33);
+            this.btm_sreach.Size = new System.Drawing.Size(83, 33);
             this.btm_sreach.TabIndex = 10;
-            this.btm_sreach.Text = "&Sreach";
+            this.btm_sreach.Text = "&Tìm kiếm";
             this.btm_sreach.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btm_sreach.UseVisualStyleBackColor = true;
             this.btm_sreach.Click += new System.EventHandler(this.btm_sreach_Click);
@@ -166,6 +185,7 @@ namespace QLLTCB
             // 
             // txt_flighttime
             // 
+            this.txt_flighttime.Enabled = false;
             this.txt_flighttime.Location = new System.Drawing.Point(359, 22);
             this.txt_flighttime.Name = "txt_flighttime";
             this.txt_flighttime.Size = new System.Drawing.Size(51, 20);
@@ -175,6 +195,7 @@ namespace QLLTCB
             // 
             this.cb_AAID.DisplayMember = "HAN";
             this.cb_AAID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_AAID.Enabled = false;
             this.cb_AAID.FormattingEnabled = true;
             this.cb_AAID.Items.AddRange(new object[] {
             "HAN",
@@ -201,6 +222,7 @@ namespace QLLTCB
             // 
             this.cb_DPID.DisplayMember = "HAN";
             this.cb_DPID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_DPID.Enabled = false;
             this.cb_DPID.FormattingEnabled = true;
             this.cb_DPID.Items.AddRange(new object[] {
             "HAN",
@@ -225,6 +247,7 @@ namespace QLLTCB
             // 
             // txt_khoangcach
             // 
+            this.txt_khoangcach.Enabled = false;
             this.txt_khoangcach.Location = new System.Drawing.Point(279, 24);
             this.txt_khoangcach.Name = "txt_khoangcach";
             this.txt_khoangcach.Size = new System.Drawing.Size(67, 20);
@@ -241,6 +264,7 @@ namespace QLLTCB
             // 
             // txt_masanbay
             // 
+            this.txt_masanbay.Enabled = false;
             this.txt_masanbay.Location = new System.Drawing.Point(3, 23);
             this.txt_masanbay.Name = "txt_masanbay";
             this.txt_masanbay.Size = new System.Drawing.Size(51, 20);
@@ -258,6 +282,7 @@ namespace QLLTCB
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.textBox4);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Location = new System.Drawing.Point(12, 284);
@@ -267,7 +292,7 @@ namespace QLLTCB
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(3, 7);
+            this.textBox4.Location = new System.Drawing.Point(3, 23);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(115, 20);
             this.textBox4.TabIndex = 13;
@@ -276,11 +301,11 @@ namespace QLLTCB
             // 
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(124, 3);
+            this.button1.Location = new System.Drawing.Point(124, 16);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 33);
+            this.button1.Size = new System.Drawing.Size(82, 33);
             this.button1.TabIndex = 13;
-            this.button1.Text = "&Sreach";
+            this.button1.Text = "Tìm&Kiếm";
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -288,6 +313,15 @@ namespace QLLTCB
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(3, 5);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(98, 13);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "Nhập mã hoặc tên:";
             // 
             // fmQLsanbay
             // 
@@ -338,5 +372,8 @@ namespace QLLTCB
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label7;
     }
 }
