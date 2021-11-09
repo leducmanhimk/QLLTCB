@@ -150,7 +150,70 @@ namespace QLLTCB
         //sự kiện bấm vào nút thêm
         private void btn_add_Click(object sender, EventArgs e)
         {
-            KichHoat();
+            SqlCommand cmd;
+            string sql;
+            if (txt_masanbay.Text == "")
+            {
+                errorProvider1.SetError(txt_masanbay, "bạn chưa nhập mã!");
+                return;
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+            if (txt_khoangcach.Text == "")
+            {
+                errorProvider1.SetError(txt_khoangcach, "bạn chưa nhập khoảng cách!");
+                return;
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+            if (txt_flighttime.Text == "")
+            {
+                errorProvider1.SetError(txt_flighttime, "bạn chưa nhập thời gian!");
+                return;
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+            if (cb_DPID.SelectedItem.Equals(cb_AAID.SelectedItem) == true)
+            {
+                errorProvider1.SetError(cb_AAID, "không được để địa điểm trùng nhau");
+                errorProvider1.SetError(cb_DPID, "không được để địa điểm trùng nhau");
+                return;
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+
+
+            SqlConnection sqlConnection = new SqlConnection();
+            string con = ConfigurationManager.ConnectionStrings["QLLTCB"].ConnectionString;
+            sqlConnection = new SqlConnection(con);
+            if (sqlConnection.State != ConnectionState.Open)
+            {
+                sqlConnection.Open();
+            }
+            sql = "Select Count(*) From  Routes where ID='" + txt_masanbay.Text + "'";
+            cmd = new SqlCommand(sql, sqlConnection);
+            int val = (int)cmd.ExecuteScalar();
+            if (val > 0)
+            {
+                errorProvider1.SetError(txt_masanbay, "mã đã tồn tại trong cơ sở dũ liệu");
+                return;
+            }
+            sql = "INSERT INTO Routes(ID,DepartureAiportID,ArrivalAiportID,Distance,FlightTime)VALUES (";
+            sql += "N'" + txt_masanbay.Text + "','" + cb_DPID.SelectedItem + "','" + cb_AAID.SelectedItem + "','" + txt_khoangcach.Text + "','" + txt_flighttime.Text + "')";
+
+            cmd = new SqlCommand(sql, sqlConnection);
+            cmd.ExecuteNonQuery();
+            LoadDataRouts();
+            sqlConnection.Close();
+            MessageBox.Show("bạn đã thêm thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
        
         //sự kiện bấm vào nút cập nhật
@@ -245,7 +308,7 @@ namespace QLLTCB
                 {
                     sqlConnection.Open();
                 }
-                sql = "Select Count(*) From Aircrafts where ID like'%" + textBox4.Text + "%'";
+                sql = "Select Count(*) From Aircrafts where ID like'%" + textBox4.Text + "%' OR Name like '%"+textBox4.Text+"%'";
                 cmd = new SqlCommand(sql, sqlConnection);
                 int val = (int)cmd.ExecuteScalar();
                 if (val > 0)
@@ -288,70 +351,7 @@ namespace QLLTCB
 
         private void button2_Click(object sender, EventArgs e)
         {
-            SqlCommand cmd;
-            string sql;
-            if (txt_masanbay.Text == "")
-            {
-                errorProvider1.SetError(txt_masanbay, "bạn chưa nhập mã!");
-                return;
-            }
-            else
-            {
-                errorProvider1.Clear();
-            }
-            if (txt_khoangcach.Text == "")
-            {
-                errorProvider1.SetError(txt_khoangcach, "bạn chưa nhập khoảng cách!");
-                return;
-            }
-            else
-            {
-                errorProvider1.Clear();
-            }
-            if (txt_flighttime.Text == "")
-            {
-                errorProvider1.SetError(txt_flighttime, "bạn chưa nhập thời gian!");
-                return;
-            }
-            else
-            {
-                errorProvider1.Clear();
-            }
-            if (cb_DPID.SelectedItem.Equals(cb_AAID.SelectedItem) == true)
-            {
-                errorProvider1.SetError(cb_AAID, "không được để địa điểm trùng nhau");
-                errorProvider1.SetError(cb_DPID, "không được để địa điểm trùng nhau");
-                return;
-            }
-            else
-            {
-                errorProvider1.Clear();
-            }
-
-
-            SqlConnection sqlConnection = new SqlConnection();
-            string con = ConfigurationManager.ConnectionStrings["QLLTCB"].ConnectionString;
-            sqlConnection = new SqlConnection(con);
-            if (sqlConnection.State != ConnectionState.Open)
-            {
-                sqlConnection.Open();
-            }
-            sql = "Select Count(*) From  Routes where ID='" + txt_masanbay.Text + "'";
-            cmd = new SqlCommand(sql, sqlConnection);
-            int val = (int)cmd.ExecuteScalar();
-            if (val > 0)
-            {
-                errorProvider1.SetError(txt_masanbay, "mã đã tồn tại trong cơ sở dũ liệu");
-                return;
-            }
-            sql = "INSERT INTO Routes(ID,DepartureAiportID,ArrivalAiportID,Distance,FlightTime)VALUES (";
-            sql += "N'" + txt_masanbay.Text + "','" + cb_DPID.SelectedItem + "','" + cb_AAID.SelectedItem + "','" + txt_khoangcach.Text + "','" + txt_flighttime.Text + "')";
-
-            cmd = new SqlCommand(sql, sqlConnection);
-            cmd.ExecuteNonQuery();
             LoadDataRouts();
-            sqlConnection.Close();
-            MessageBox.Show("bạn đã thêm thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         //sự kiện khi người dùng kick và bản ghi
         private void dtgrout_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -359,8 +359,8 @@ namespace QLLTCB
             try
             {
                 txt_masanbay.Text = dtgrout[0, e.RowIndex].Value.ToString();
-                cb_DPID.ValueMember = dtgrout[1, e.RowIndex].Value.ToString();
-                cb_AAID.ValueMember = dtgrout[2, e.RowIndex].Value.ToString();
+                cb_DPID.SelectedValue =  dtgrout[1, e.RowIndex].Value.ToString();
+                cb_AAID.SelectedValue = dtgrout[2, e.RowIndex].Value.ToString();
                 txt_khoangcach.Text = dtgrout[3, e.RowIndex].Value.ToString();
                 txt_flighttime.Text = dtgrout[4, e.RowIndex].Value.ToString();
             }
@@ -369,6 +369,11 @@ namespace QLLTCB
 
                 throw;
             }
+        }
+        //sự kiwnwj làm mới trang máy bay
+        private void btn_rfar_Click(object sender, EventArgs e)
+        {
+            LoadDataAircrafts();
         }
     }
 }

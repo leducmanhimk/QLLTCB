@@ -58,6 +58,7 @@ namespace QLLTCB
             this.btn_sua = new System.Windows.Forms.Button();
             this.btn_huy = new System.Windows.Forms.Button();
             this.btn_reset = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -74,14 +75,14 @@ namespace QLLTCB
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridView1.ColumnHeadersHeight = 34;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridView1.Location = new System.Drawing.Point(11, 42);
+            this.dataGridView1.Location = new System.Drawing.Point(13, 23);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(827, 185);
+            this.dataGridView1.Size = new System.Drawing.Size(781, 185);
             this.dataGridView1.TabIndex = 1;
             // 
             // label1
@@ -89,7 +90,7 @@ namespace QLLTCB
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.LimeGreen;
-            this.label1.Location = new System.Drawing.Point(323, 6);
+            this.label1.Location = new System.Drawing.Point(317, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(157, 22);
@@ -98,16 +99,17 @@ namespace QLLTCB
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.groupBox1.Location = new System.Drawing.Point(34, 313);
+            this.groupBox1.Location = new System.Drawing.Point(54, 288);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 3, 2, 2);
-            this.groupBox1.Size = new System.Drawing.Size(745, 55);
+            this.groupBox1.Size = new System.Drawing.Size(660, 55);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Định Tuyến";
@@ -115,7 +117,7 @@ namespace QLLTCB
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(473, 25);
+            this.label4.Location = new System.Drawing.Point(529, 25);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(89, 13);
@@ -157,7 +159,7 @@ namespace QLLTCB
             this.groupBox2.Controls.Add(this.comboBox1);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.groupBox2.Location = new System.Drawing.Point(34, 231);
+            this.groupBox2.Location = new System.Drawing.Point(19, 209);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 3, 2, 2);
@@ -283,7 +285,7 @@ namespace QLLTCB
             this.groupBox3.Controls.Add(this.textBox3);
             this.groupBox3.Controls.Add(this.textBox2);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(164, 372);
+            this.groupBox3.Location = new System.Drawing.Point(148, 347);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -315,7 +317,7 @@ namespace QLLTCB
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(310, 31);
+            this.label10.Location = new System.Drawing.Point(313, 31);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(96, 13);
@@ -334,7 +336,7 @@ namespace QLLTCB
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(400, 29);
+            this.textBox3.Location = new System.Drawing.Point(410, 29);
             this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(58, 20);
@@ -342,7 +344,7 @@ namespace QLLTCB
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(235, 29);
+            this.textBox2.Location = new System.Drawing.Point(244, 29);
             this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(58, 20);
@@ -352,7 +354,7 @@ namespace QLLTCB
             // 
             this.btn_sua.BackColor = System.Drawing.Color.Gold;
             this.btn_sua.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_sua.Location = new System.Drawing.Point(177, 456);
+            this.btn_sua.Location = new System.Drawing.Point(168, 426);
             this.btn_sua.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_sua.Name = "btn_sua";
             this.btn_sua.Size = new System.Drawing.Size(89, 36);
@@ -364,7 +366,7 @@ namespace QLLTCB
             // 
             this.btn_huy.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.btn_huy.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btn_huy.Location = new System.Drawing.Point(38, 456);
+            this.btn_huy.Location = new System.Drawing.Point(33, 426);
             this.btn_huy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_huy.Name = "btn_huy";
             this.btn_huy.Size = new System.Drawing.Size(89, 36);
@@ -376,13 +378,23 @@ namespace QLLTCB
             // 
             this.btn_reset.BackColor = System.Drawing.Color.Gold;
             this.btn_reset.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.btn_reset.Location = new System.Drawing.Point(703, 456);
+            this.btn_reset.Location = new System.Drawing.Point(684, 426);
             this.btn_reset.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_reset.Name = "btn_reset";
             this.btn_reset.Size = new System.Drawing.Size(89, 36);
             this.btn_reset.TabIndex = 18;
             this.btn_reset.Text = "Làm mới";
             this.btn_reset.UseVisualStyleBackColor = false;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(335, 25);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(57, 13);
+            this.label13.TabIndex = 3;
+            this.label13.Text = "máy bay:";
             // 
             // fmLichTrinhBay
             // 
@@ -452,5 +464,6 @@ namespace QLLTCB
         private System.Windows.Forms.DataGridViewTextBoxColumn flightNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn economyPriceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn confirmedDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.Label label13;
     }
 }

@@ -156,6 +156,7 @@
     <Content Include="Images\add.png" />
     <Content Include="Images\apply.png" />
     <Content Include="Images\bn3.png" />
+    <Content Include="Images\Button-Reload-icon.png" />
     <Content Include="Images\close.png" />
     <Content Include="Images\dang xuat.png" />
     <Content Include="Images\del.png" />
@@ -175,6 +176,7 @@
     <Content Include="Images\tim.png" />
     <Content Include="Images\tk.png" />
     <Content Include="Images\xoa.png" />
+    <None Include="Resources\Button-Reload-icon.png" />
     <None Include="Resources\logomaybay2.png" />
     <None Include="Images\ảnh nền tìm kiếm  vé máy bay %282%29.jpg" />
   </ItemGroup>

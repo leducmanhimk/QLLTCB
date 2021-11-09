@@ -22,6 +22,7 @@ namespace QLLTCB
         //sự kiện khi kick vào nút  thoát
         private void btn_thoat_Click(object sender, EventArgs e)
         {
+            System.Diagnostics.Process.GetCurrentProcess().Kill();
             Application.Exit();
         }
         //hàm mở form con từ panel
@@ -76,9 +77,8 @@ namespace QLLTCB
              dialog = MessageBox.Show("Bạn có chắc là sẽ Đăng xuất?", "Đăng xuất", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialog == DialogResult.Yes)
             {
-                fmDangnhap1 dangnhap1 = new fmDangnhap1();
-                this.Hide();
-                dangnhap1.Show();
+                //tắt phiên người dùng hiện tại và mớ một phiên mới
+                Application.Restart();
             }
             else
             {

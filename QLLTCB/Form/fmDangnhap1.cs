@@ -79,5 +79,23 @@ namespace QuanLyLichTrinhChuyenBay
             
             
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                textBox1.Visible = true;
+                textBox1.Text = txt_matkhau.Text;
+            }
+            else
+            {
+                textBox1.Visible = false;
+            }
+        }
     }
 }
