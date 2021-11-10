@@ -30,9 +30,10 @@ namespace QLLTCB
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmLichTrinhBay));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Sld_dtg = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -58,32 +59,31 @@ namespace QLLTCB
             this.btn_sua = new System.Windows.Forms.Button();
             this.btn_huy = new System.Windows.Forms.Button();
             this.btn_reset = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Sld_dtg)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // Sld_dtg
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeight = 34;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 23);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(781, 185);
-            this.dataGridView1.TabIndex = 1;
+            this.Sld_dtg.AllowUserToAddRows = false;
+            this.Sld_dtg.AllowUserToDeleteRows = false;
+            this.Sld_dtg.AllowUserToResizeColumns = false;
+            this.Sld_dtg.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Sld_dtg.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            this.Sld_dtg.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.Sld_dtg.ColumnHeadersHeight = 34;
+            this.Sld_dtg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.Sld_dtg.Location = new System.Drawing.Point(13, 23);
+            this.Sld_dtg.Margin = new System.Windows.Forms.Padding(2);
+            this.Sld_dtg.Name = "Sld_dtg";
+            this.Sld_dtg.ReadOnly = true;
+            this.Sld_dtg.RowHeadersWidth = 62;
+            this.Sld_dtg.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.Sld_dtg.RowTemplate.Height = 28;
+            this.Sld_dtg.Size = new System.Drawing.Size(781, 185);
+            this.Sld_dtg.TabIndex = 1;
             // 
             // label1
             // 
@@ -106,7 +106,7 @@ namespace QLLTCB
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.groupBox1.Location = new System.Drawing.Point(54, 288);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 3, 2, 2);
             this.groupBox1.Size = new System.Drawing.Size(660, 55);
@@ -114,10 +114,20 @@ namespace QLLTCB
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Định Tuyến";
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(335, 25);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(57, 13);
+            this.label13.TabIndex = 3;
+            this.label13.Text = "máy bay:";
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(529, 25);
+            this.label4.Location = new System.Drawing.Point(507, 25);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(89, 13);
@@ -160,7 +170,7 @@ namespace QLLTCB
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.groupBox2.Location = new System.Drawing.Point(19, 209);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 3, 2, 2);
             this.groupBox2.Size = new System.Drawing.Size(745, 75);
@@ -172,7 +182,7 @@ namespace QLLTCB
             // 
             this.btn_chapnhan.Image = ((System.Drawing.Image)(resources.GetObject("btn_chapnhan.Image")));
             this.btn_chapnhan.Location = new System.Drawing.Point(597, 38);
-            this.btn_chapnhan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_chapnhan.Margin = new System.Windows.Forms.Padding(2);
             this.btn_chapnhan.Name = "btn_chapnhan";
             this.btn_chapnhan.Size = new System.Drawing.Size(126, 31);
             this.btn_chapnhan.TabIndex = 11;
@@ -193,9 +203,13 @@ namespace QLLTCB
             // 
             // comboBox3
             // 
+            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "tăng dần",
+            "giảm dần"});
             this.comboBox3.Location = new System.Drawing.Point(626, 16);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox3.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(86, 21);
             this.comboBox3.TabIndex = 9;
@@ -213,7 +227,7 @@ namespace QLLTCB
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(371, 45);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(107, 20);
             this.textBox1.TabIndex = 7;
@@ -223,7 +237,7 @@ namespace QLLTCB
             this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(105, 48);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(108, 20);
             this.dateTimePicker1.TabIndex = 6;
@@ -250,9 +264,17 @@ namespace QLLTCB
             // 
             // comboBox2
             // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "HAN",
+            "CSY",
+            "DME",
+            "KHV",
+            "NGS",
+            "LAS"});
             this.comboBox2.Location = new System.Drawing.Point(371, 14);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(107, 21);
             this.comboBox2.TabIndex = 4;
@@ -269,9 +291,17 @@ namespace QLLTCB
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "HAN",
+            "CSY",
+            "DME",
+            "KHV",
+            "NGS",
+            "LAS"});
             this.comboBox1.Location = new System.Drawing.Point(105, 18);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(108, 21);
             this.comboBox1.TabIndex = 0;
@@ -286,9 +316,9 @@ namespace QLLTCB
             this.groupBox3.Controls.Add(this.textBox2);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(148, 347);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox3.Size = new System.Drawing.Size(502, 63);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
@@ -297,7 +327,7 @@ namespace QLLTCB
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(40, 31);
+            this.label12.Location = new System.Drawing.Point(20, 31);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(40, 13);
@@ -328,16 +358,16 @@ namespace QLLTCB
             // 
             this.dateTimePicker2.CustomFormat = "dd/MM/yyyy";
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(77, 30);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker2.Location = new System.Drawing.Point(63, 30);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(98, 20);
+            this.dateTimePicker2.Size = new System.Drawing.Size(114, 20);
             this.dateTimePicker2.TabIndex = 12;
             // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(410, 29);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(58, 20);
             this.textBox3.TabIndex = 13;
@@ -345,7 +375,7 @@ namespace QLLTCB
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(244, 29);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(58, 20);
             this.textBox2.TabIndex = 12;
@@ -355,7 +385,7 @@ namespace QLLTCB
             this.btn_sua.BackColor = System.Drawing.Color.Gold;
             this.btn_sua.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_sua.Location = new System.Drawing.Point(168, 426);
-            this.btn_sua.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_sua.Margin = new System.Windows.Forms.Padding(2);
             this.btn_sua.Name = "btn_sua";
             this.btn_sua.Size = new System.Drawing.Size(89, 36);
             this.btn_sua.TabIndex = 16;
@@ -367,34 +397,25 @@ namespace QLLTCB
             this.btn_huy.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.btn_huy.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btn_huy.Location = new System.Drawing.Point(33, 426);
-            this.btn_huy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_huy.Margin = new System.Windows.Forms.Padding(2);
             this.btn_huy.Name = "btn_huy";
             this.btn_huy.Size = new System.Drawing.Size(89, 36);
             this.btn_huy.TabIndex = 17;
             this.btn_huy.Text = "Hủy chuyến bay";
             this.btn_huy.UseVisualStyleBackColor = false;
+            this.btn_huy.Click += new System.EventHandler(this.btn_huy_Click);
             // 
             // btn_reset
             // 
             this.btn_reset.BackColor = System.Drawing.Color.Gold;
             this.btn_reset.ForeColor = System.Drawing.SystemColors.Highlight;
             this.btn_reset.Location = new System.Drawing.Point(684, 426);
-            this.btn_reset.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_reset.Margin = new System.Windows.Forms.Padding(2);
             this.btn_reset.Name = "btn_reset";
             this.btn_reset.Size = new System.Drawing.Size(89, 36);
             this.btn_reset.TabIndex = 18;
             this.btn_reset.Text = "Làm mới";
             this.btn_reset.UseVisualStyleBackColor = false;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(335, 25);
-            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(57, 13);
-            this.label13.TabIndex = 3;
-            this.label13.Text = "máy bay:";
             // 
             // fmLichTrinhBay
             // 
@@ -408,12 +429,13 @@ namespace QLLTCB
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.Sld_dtg);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "fmLichTrinhBay";
             this.Text = "fmLichTrinhBay";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.fmLichTrinhBay_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.Sld_dtg)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -427,7 +449,7 @@ namespace QLLTCB
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView Sld_dtg;
        
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
