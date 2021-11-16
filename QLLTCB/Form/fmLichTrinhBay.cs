@@ -29,7 +29,6 @@ namespace QLLTCB
             {
                 sqlConnection.Open();
             }
-
             MessageBox.Show("bạn đã ấn vào nút này");
         }
 
@@ -62,7 +61,7 @@ namespace QLLTCB
             Sld_dtg.Columns[7].HeaderText = "giá thương mại";
             Sld_dtg.Refresh();
         }
-        
+
         private void btn_huy_Click(object sender, EventArgs e)
         {
             SqlConnection sqlConnection = new SqlConnection();
@@ -78,37 +77,50 @@ namespace QLLTCB
                 int count = Sld_dtg.CurrentCell.RowIndex;
                 value = (bool)Sld_dtg.Rows[count].Cells[8].Value;
             }
-                if (value == true)
+            if (value == true)
             {
-                    //sự kiện hủy chuyesn bán
-                    DialogResult dialog = MessageBox.Show("bạn muốn hủy chuyến bay này chứ!", "hủy chuyến bay", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (dialog == DialogResult.Yes)
+                //sự kiện hủy chuyesn bán
+                DialogResult dialog = MessageBox.Show("bạn muốn hủy chuyến bay này chứ!", "hủy chuyến bay", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialog == DialogResult.Yes)
+                {
+                    foreach (DataGridViewRow row in Sld_dtg.Rows)
                     {
-                        foreach (DataGridViewRow row in Sld_dtg.Rows)
-                        {
 
+                        if (this.Sld_dtg.SelectedRows.Count == 1)
+                        {//thay đổi cột thành màu đỏ
+                            int count = Sld_dtg.CurrentCell.RowIndex;
+                            Sld_dtg.Rows[count].DefaultCellStyle.BackColor = Color.Red;
+                            Sld_dtg.Rows[count].DefaultCellStyle.ForeColor = Color.White;
+                        }
+                    }
+                    string sql = "UPDATE Schedules SET Confirmed = 0 Where ID like'%" + txt_malich.Text + "%'";
+                    SqlCommand cmd = new SqlCommand(sql, sqlConnection);
+                    cmd.ExecuteNonQuery();
+                    fmLichTrinhBay_Load(sender, e);
+                }
+            }
+                if(value == false)
+                {
+                DialogResult dialog1 = MessageBox.Show("bạn muốn kích hoạt chuyến bay này chứ!", "kích hoạt chuyến bay", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                foreach (DataGridViewRow row1 in Sld_dtg.Rows)
+                    {
+                        if (dialog1 == DialogResult.Yes)
+                        {
                             if (this.Sld_dtg.SelectedRows.Count == 1)
-                            {//thay đổi cột thành màu đỏ
+                            {//thay đổi cột thành màu trắng
 
                                 int count = Sld_dtg.CurrentCell.RowIndex;
-                                Sld_dtg.Rows[count].DefaultCellStyle.BackColor = Color.Red;
-                                 Sld_dtg.Rows[count].DefaultCellStyle.ForeColor = Color.White;
-                                //string sql = "UPDATE Schedules SET Confirmed = 0 Where ID='"+Sld_dtg.SelectedCells[0]+"'";
-                                //SqlCommand cmd = new SqlCommand(sql, sqlConnection);
-                                //cmd.ExecuteNonQuery();
-                                btn_huy.Text = "kích hoạt";
-                              
+                                Sld_dtg.Rows[count].DefaultCellStyle.BackColor = Color.Aqua;
+                                Sld_dtg.Rows[count].DefaultCellStyle.ForeColor = Color.Black;       
                             }
                         }
-
-                    }
-            }
-            
-            
-            
-            
+                        string sql = "UPDATE Schedules SET Confirmed = 1 Where ID like'%" + txt_malich.Text + "%'";
+                        SqlCommand cmd = new SqlCommand(sql, sqlConnection);
+                        cmd.ExecuteNonQuery();
+                     fmLichTrinhBay_Load(sender, e);
+                }
+                }
         }
-
         private void Sld_dtg_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -146,7 +158,6 @@ namespace QLLTCB
                     
                 }
                 
-
             }
            
         }
@@ -200,6 +211,11 @@ namespace QLLTCB
                 MessageBox.Show("Lỗi!", "lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 throw;
             }
+        }
+
+        private void btn_reset_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
