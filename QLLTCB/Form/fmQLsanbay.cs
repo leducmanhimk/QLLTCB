@@ -62,7 +62,7 @@ namespace QLLTCB
             DataSet dsr = new DataSet();
             da.Fill(dsr);
             
-
+            
             dtgrout.DataSource = dsr.Tables[0];
             dtgrout.Columns[0].HeaderText = "Mã Định Tuyến";
             dtgrout.Columns[1].HeaderText = "Sân bay Đi";
@@ -366,8 +366,8 @@ namespace QLLTCB
             }
             catch (Exception)
             {
-
-                throw;
+                MessageBox.Show("lỗi!", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw ;
             }
         }
         //sự kiwnwj làm mới trang máy bay

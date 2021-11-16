@@ -22,9 +22,13 @@ namespace QuanLyLichTrinhChuyenBay
         {
             InitializeComponent();
         }
+        /// <summary>
+        ///
+        /// </summary>
         fmMain main = new fmMain();
         private void button1_Click(object sender, EventArgs e)
         {
+            //check các ràng buộc liên quan đến nhập dữ liệu
             if (txt_email.Text.Trim() == "")
             {
                 errorProvider1.SetError(txt_email, "bạn chưa điền tên tài khoản!");
@@ -44,6 +48,7 @@ namespace QuanLyLichTrinhChuyenBay
             {
                 errorProvider1.Clear();
             }
+            
             try
             {
                 SqlConnection sqlConnection = new SqlConnection();
@@ -62,12 +67,14 @@ namespace QuanLyLichTrinhChuyenBay
                     this.Hide();
                     main.Show();
                 }
+
                 else
                 {
                     MessageBox.Show("Tài khoản hoặc mật khẩu không đúng!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 
             }
+            //ngoại lệ
             catch (Exception)
             {
                 label3.Text = "kết nối thất bại!";
@@ -82,6 +89,7 @@ namespace QuanLyLichTrinhChuyenBay
 
         private void button2_Click(object sender, EventArgs e)
         {
+            //thoát
             Application.Exit();
         }
 
