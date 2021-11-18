@@ -129,8 +129,13 @@ namespace QLLTCB
                             Sld_dtg.Rows[count].DefaultCellStyle.ForeColor = Color.White;
                         }
                     }
-                    string sql = "UPDATE Schedules SET Confirmed = 0 Where ID like'%" + txt_malich.Text + "%'";
-                    SqlCommand cmd = new SqlCommand(sql, sqlConnection);
+                    //string sql = "UPDATE Schedules SET Confirmed = 0 Where ID like'%" + txt_malich.Text + "%'";
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandText = "LT_doitrangthaichuyenbay";
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Connection = sqlConnection;
+                    cmd.Parameters.AddWithValue("@malichbay", txt_malich.Text.Trim());
+                    cmd.Parameters.Add("@giatri",SqlDbType.Int).Value = 0;
                     cmd.ExecuteNonQuery();
                     LoadSD();
                 }
@@ -150,9 +155,14 @@ namespace QLLTCB
                                 Sld_dtg.Rows[count].DefaultCellStyle.ForeColor = Color.Black;       
                             }
                         }
-                        string sql = "UPDATE Schedules SET Confirmed = 1 Where ID like'%" + txt_malich.Text + "%'";
-                        SqlCommand cmd = new SqlCommand(sql, sqlConnection);
-                        cmd.ExecuteNonQuery();
+                        //string sql = "UPDATE Schedules SET Confirmed = 1 Where ID like'%" + txt_malich.Text + "%'";
+                        SqlCommand cmd = new SqlCommand();
+                    cmd.CommandText = "LT_doitrangthaichuyenbay";
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Connection = sqlConnection;
+                    cmd.Parameters.AddWithValue("@malichbay", txt_malich.Text.Trim());
+                    cmd.Parameters.Add("@giatri", SqlDbType.Int).Value = 1;
+                    cmd.ExecuteNonQuery();
                     LoadSD();
                 }
                 }
@@ -200,7 +210,7 @@ namespace QLLTCB
         private void btn_sua_Click(object sender, EventArgs e)
         {
             SqlCommand cmd;
-            string sql;
+            
             SqlConnection sqlConnection = new SqlConnection();
             string con = ConfigurationManager.ConnectionStrings["QLLTCB"].ConnectionString;
             sqlConnection = new SqlConnection(con);

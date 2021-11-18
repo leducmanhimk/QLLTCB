@@ -77,8 +77,7 @@ namespace QuanLyLichTrinhChuyenBay
             //ngoại lệ
             catch (Exception)
             {
-                label3.Text = "kết nối thất bại!";
-
+                //label3.Text = "kết nối thất bại!";
                 throw;
             }
             

@@ -33,5 +33,14 @@ namespace QLLTCB.Properties {
                 return ((string)(this["QLLichTrinhchuyenbayConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        public string QLDL1 {
+            get {
+                return ((string)(this["QLDL1"]));
+            }
+        }
     }
 }

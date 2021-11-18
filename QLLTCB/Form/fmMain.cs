@@ -80,10 +80,7 @@ namespace QLLTCB
                 //tắt phiên người dùng hiện tại và mớ một phiên mới
                 Application.Restart();
             }
-            else
-            {
-                MessageBox.Show("bạn đã hủy đằn nhập!");
-            }
+            
             
         }
     }
