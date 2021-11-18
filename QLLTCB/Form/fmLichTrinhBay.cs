@@ -36,8 +36,8 @@ namespace QLLTCB
         {
             cb_diemdi.SelectedItem = cb_diemdi.SelectedText = "HAN";
             cb_diemdien.SelectedItem = cb_diemdien.SelectedText = "HAN";
-            string sql;
-            //SqlCommand cmd;
+            
+            SqlCommand cmd;
             SqlConnection sqlConnection = new SqlConnection();
             string con = ConfigurationManager.ConnectionStrings["QLLTCB"].ConnectionString;
             sqlConnection = new SqlConnection(con);
@@ -45,13 +45,18 @@ namespace QLLTCB
             {
                 sqlConnection.Open();
             }
-            sql = "select Schedules.ID,Date,Time,DepartureAiportID,ArrivalAiportID,MakeModel,TotalSeats,EconomyPrice,Confirmed from((Schedules INNER JOIN Routes on Schedules.RouteID = Routes.ID)INNER JOIN Aircrafts on Schedules.AircraftID = Aircrafts.ID)";
-            SqlDataAdapter sqlData = new SqlDataAdapter(sql, sqlConnection);
+            cmd = new SqlCommand();
+            cmd.CommandText = "LT_hienthiall";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = sqlConnection;
+            SqlDataAdapter sqlData = new SqlDataAdapter(cmd);
             DataSet set = new DataSet();
             sqlData.Fill(set);
             Sld_dtg.DataSource = set.Tables[0];
-            Sld_dtg.Columns[0].Visible = false;
+            
             Sld_dtg.Columns[8].Visible = false;
+            Sld_dtg.Columns[0].HeaderText = "Mã";
+            Sld_dtg.Columns[0].Width = 75;
             Sld_dtg.Columns[1].HeaderText = "ngày bay";
             Sld_dtg.Columns[2].HeaderText = "thời gian";
             Sld_dtg.Columns[3].HeaderText = "mã sân bay đi";
@@ -62,6 +67,37 @@ namespace QLLTCB
             Sld_dtg.Refresh();
         }
 
+        public void LoadSD()
+        {
+            SqlCommand cmd;
+            SqlConnection sqlConnection = new SqlConnection();
+            string con = ConfigurationManager.ConnectionStrings["QLLTCB"].ConnectionString;
+            sqlConnection = new SqlConnection(con);
+            if (sqlConnection.State != ConnectionState.Open)
+            {
+                sqlConnection.Open();
+            }
+            cmd = new SqlCommand();
+            cmd.CommandText = "LT_hienthiall";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = sqlConnection;
+            SqlDataAdapter sqlData = new SqlDataAdapter(cmd);
+            DataSet set = new DataSet();
+            sqlData.Fill(set);
+            Sld_dtg.DataSource = set.Tables[0];
+
+            Sld_dtg.Columns[8].Visible = false;
+            Sld_dtg.Columns[0].HeaderText = "Mã";
+            Sld_dtg.Columns[0].Width = 75;
+            Sld_dtg.Columns[1].HeaderText = "ngày bay";
+            Sld_dtg.Columns[2].HeaderText = "thời gian";
+            Sld_dtg.Columns[3].HeaderText = "mã sân bay đi";
+            Sld_dtg.Columns[4].HeaderText = "mã sân bay đến";
+            Sld_dtg.Columns[5].HeaderText = "số hiệu";
+            Sld_dtg.Columns[6].HeaderText = "số ghế";
+            Sld_dtg.Columns[7].HeaderText = "giá thương mại";
+            Sld_dtg.Refresh();
+        }
         private void btn_huy_Click(object sender, EventArgs e)
         {
             SqlConnection sqlConnection = new SqlConnection();
@@ -96,7 +132,7 @@ namespace QLLTCB
                     string sql = "UPDATE Schedules SET Confirmed = 0 Where ID like'%" + txt_malich.Text + "%'";
                     SqlCommand cmd = new SqlCommand(sql, sqlConnection);
                     cmd.ExecuteNonQuery();
-                    fmLichTrinhBay_Load(sender, e);
+                    LoadSD();
                 }
             }
                 if(value == false)
@@ -117,7 +153,7 @@ namespace QLLTCB
                         string sql = "UPDATE Schedules SET Confirmed = 1 Where ID like'%" + txt_malich.Text + "%'";
                         SqlCommand cmd = new SqlCommand(sql, sqlConnection);
                         cmd.ExecuteNonQuery();
-                     fmLichTrinhBay_Load(sender, e);
+                    LoadSD();
                 }
                 }
         }
@@ -154,8 +190,7 @@ namespace QLLTCB
                 if (value == false)
                 {
                     Sld_dtg.Rows[i].DefaultCellStyle.BackColor = Color.Red;
-                    Sld_dtg.Rows[i].DefaultCellStyle.ForeColor = Color.White;
-                    
+                    Sld_dtg.Rows[i].DefaultCellStyle.ForeColor = Color.White;                   
                 }
                 
             }
@@ -200,11 +235,18 @@ namespace QLLTCB
             try
             {
                 dtpsuangaybay.Format = DateTimePickerFormat.Short;
-                sql = "UPDATE Schedules SET Date='" + dtpsuangaybay.Value.ToString("MM-dd-yyyy") + "',Time='" + txt_thoigian.Text + "',EconomyPrice='" + txt_giathuongmai.Text.ToString() + "' WHERE ID like'%"+txt_malich.Text+"%'";
-                cmd = new SqlCommand(sql, sqlConnection);
+               // sql = "UPDATE Schedules SET Date='" + dtpsuangaybay.Value.ToString("MM-dd-yyyy") + "',Time='" + txt_thoigian.Text + "',EconomyPrice='" + txt_giathuongmai.Text.ToString() + "' WHERE ID like'%"+txt_malich.Text+"%'";
+                cmd = new SqlCommand();
+                cmd.CommandText = "LT_sualich";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Connection = sqlConnection;
+                cmd.Parameters.AddWithValue("@ngaybay", dtpsuangaybay.Value.Date);
+                cmd.Parameters.AddWithValue("@thoigian", txt_thoigian.Text);
+                cmd.Parameters.AddWithValue("@masanbay", txt_malich.Text);
+                cmd.Parameters.AddWithValue("@giathuongmai", txt_giathuongmai.Text);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("cập nhật chuyến bay thành công!", "thành Công!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                fmLichTrinhBay_Load(sender, e);
+                LoadSD();
             }
             catch (Exception)
             {
@@ -215,7 +257,7 @@ namespace QLLTCB
 
         private void btn_reset_Click(object sender, EventArgs e)
         {
-
+            LoadSD();
         }
     }
 }

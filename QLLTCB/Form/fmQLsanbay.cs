@@ -313,10 +313,14 @@ namespace QLLTCB
                 int val = (int)cmd.ExecuteScalar();
                 if (val > 0)
                 {
-                    sql = "select * from Aircrafts where ID like'%" + textBox4.Text + "%' OR Name like '%"+textBox4.Text+"%'";
-                    cmd = new SqlCommand(sql, sqlConnection);
-                    cmd.ExecuteNonQuery();
-                    SqlDataAdapter da1 = new SqlDataAdapter(sql, sqlConnection);
+                    //sql = "select * from Aircrafts where ID like'%" + textBox4.Text + "%' OR Name like '%"+textBox4.Text+"%'";
+                    //cmd = new SqlCommand(sql, sqlConnection);
+                    cmd.CommandText = "AC_TimMB";
+                    cmd.Connection = sqlConnection;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@mamaybay", textBox4.Text);
+                    cmd.Parameters.AddWithValue("@tenmaybay", textBox4.Text);                  
+                    SqlDataAdapter da1 = new SqlDataAdapter(cmd);
                     DataSet ds = new DataSet();
                     da1.Fill(ds);
 
