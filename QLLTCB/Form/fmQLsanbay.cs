@@ -83,6 +83,7 @@ namespace QLLTCB
             InitializeComponent();
         }
 
+        //tìm kiếm tuyến đường bay theo mã
         private void btm_sreach_Click(object sender, EventArgs e)
         {
             string sql;
@@ -96,15 +97,20 @@ namespace QLLTCB
                 {
                     sqlConnection.Open();
                 }
+                //kiểm tra trước xem có tồn tại bản ghi không
                 sql = "Select Count(*) From  Routes where ID='" + txt_masanbay.Text + "'";
                 cmd = new SqlCommand(sql, sqlConnection);
                 int val = (int)cmd.ExecuteScalar();
                 if (val > 0)
                 {
-                    sql = "select * from Routes where ID='" + txt_masanbay.Text + "'";
-                    cmd = new SqlCommand(sql, sqlConnection);
+                    cmd = new SqlCommand();
+                    //sql = "select * from Routes where ID='" + txt_masanbay.Text + "'";
+                    cmd.CommandText = "RO_timtuyenbay";
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Connection = sqlConnection;
+                    cmd.Parameters.AddWithValue("@matuyenbay", txt_masanbay.Text);
                     cmd.ExecuteNonQuery();
-                    SqlDataAdapter da = new SqlDataAdapter(sql, sqlConnection);
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
                     DataSet dsr = new DataSet();
                     da.Fill(dsr);
 
@@ -139,14 +145,7 @@ namespace QLLTCB
 
 
         }
-        public void KichHoat()
-        {
-            txt_masanbay.Enabled = true;
-            txt_khoangcach.Enabled = true;
-            txt_flighttime.Enabled = true;
-            cb_AAID.Enabled = true;
-            cb_DPID.Enabled = true;
-        }
+        
         //sự kiện bấm vào nút thêm
         private void btn_add_Click(object sender, EventArgs e)
         {
@@ -206,10 +205,18 @@ namespace QLLTCB
                 errorProvider1.SetError(txt_masanbay, "mã đã tồn tại trong cơ sở dũ liệu");
                 return;
             }
-            sql = "INSERT INTO Routes(ID,DepartureAiportID,ArrivalAiportID,Distance,FlightTime)VALUES (";
-            sql += "N'" + txt_masanbay.Text + "','" + cb_DPID.SelectedItem + "','" + cb_AAID.SelectedItem + "','" + txt_khoangcach.Text + "','" + txt_flighttime.Text + "')";
+            //sql = "INSERT INTO Routes(ID,DepartureAiportID,ArrivalAiportID,Distance,FlightTime)VALUES (";
+            //sql += "N'" + txt_masanbay.Text + "','" + cb_DPID.SelectedItem + "','" + cb_AAID.SelectedItem + "','" + txt_khoangcach.Text + "','" + txt_flighttime.Text + "')";
 
-            cmd = new SqlCommand(sql, sqlConnection);
+            cmd = new SqlCommand();
+            cmd.CommandText = "RO_themtuyenbay";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = sqlConnection;
+            cmd.Parameters.AddWithValue("@matuyenbay", txt_masanbay.Text);
+            cmd.Parameters.AddWithValue("@masanbaydi", cb_DPID.SelectedItem);
+            cmd.Parameters.AddWithValue("@masanbayden", cb_AAID.SelectedItem);
+            cmd.Parameters.AddWithValue("@khoangcach", txt_khoangcach.Text);
+            cmd.Parameters.AddWithValue("@thoigian", txt_flighttime.Text);
             cmd.ExecuteNonQuery();
             LoadDataRouts();
             sqlConnection.Close();
@@ -226,8 +233,8 @@ namespace QLLTCB
             if (sqlConnection.State != ConnectionState.Open)
             {
                 sqlConnection.Open();
-            }
-            string sql;
+            } 
+            //string sql;
             if (dtgrout.Rows.Count == 0)
             {
                 MessageBox.Show("không còn dữ liệu", "thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -250,9 +257,17 @@ namespace QLLTCB
             }
             try
             {
-                sql = "UPDATE Routes SET DepartureAiportID='" + cb_DPID.SelectedItem + "',ArrivalAiportID='" + cb_AAID.SelectedItem + "',Distance='" + txt_khoangcach.Text.ToString() + "',FlightTime='" + txt_flighttime.Text + "'WHERE ID='" 
-                    + txt_masanbay.Text + "'";
-                cmd = new SqlCommand(sql, sqlConnection);
+                //sql = "UPDATE Routes SET DepartureAiportID='" + cb_DPID.SelectedItem + "',ArrivalAiportID='" + cb_AAID.SelectedItem + "',Distance='" + txt_khoangcach.Text.ToString() + "',FlightTime='" + txt_flighttime.Text + "'WHERE ID='" 
+                //    + txt_masanbay.Text + "'";
+                cmd = new SqlCommand();
+                cmd.CommandText = "RO_capnhat";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Connection = sqlConnection;
+                cmd.Parameters.AddWithValue("@madinhtuyen", txt_masanbay.Text);
+                cmd.Parameters.AddWithValue("@sanbaydi", cb_DPID.SelectedItem);
+                cmd.Parameters.AddWithValue("@sanbayden", cb_AAID.SelectedItem);
+                cmd.Parameters.AddWithValue("@khoangchach", txt_khoangcach.Text);
+                cmd.Parameters.AddWithValue("@thoigianbay", txt_flighttime.Text);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Sửa Đổi dữ Liệu thành công!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadDataRouts();
