@@ -104,5 +104,41 @@ namespace QuanLyLichTrinhChuyenBay
                 textBox1.Visible = false;
             }
         }
+
+        private void txt_email_Enter(object sender, EventArgs e)
+        {
+            if (txt_email.Text == "Email")
+            {
+                txt_email.Text = "";
+                txt_email.ForeColor = Color.Black;
+            }
+        }
+
+        private void txt_email_Leave(object sender, EventArgs e)
+        {
+            if (txt_email.Text == "")
+            {
+                txt_email.Text = "Email";
+                txt_email.ForeColor = Color.Silver;
+            }
+        }
+
+        private void txt_matkhau_Enter(object sender, EventArgs e)
+        {
+            if (txt_matkhau.Text == "Mật khẩu")
+            {
+                txt_matkhau.Text = "";
+                txt_matkhau.ForeColor = Color.Black;
+            }
+        }
+
+        private void txt_matkhau_Leave(object sender, EventArgs e)
+        {
+            if (txt_matkhau.Text == "")
+            {
+                txt_matkhau.Text = "Mật khẩu";
+                txt_matkhau.ForeColor = Color.Silver;
+            }
+        }
     }
 }

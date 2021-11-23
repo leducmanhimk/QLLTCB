@@ -377,6 +377,7 @@ namespace QLLTCB
         {
             try
             {
+                //lấy dữ liệu từ datagridview
                 txt_masanbay.Text = dtgrout[0, e.RowIndex].Value.ToString();
                 cb_DPID.SelectedValue =  dtgrout[1, e.RowIndex].Value.ToString();
                 cb_AAID.SelectedValue = dtgrout[2, e.RowIndex].Value.ToString();
@@ -396,3 +397,4 @@ namespace QLLTCB
         }
     }
 }
+

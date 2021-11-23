@@ -163,6 +163,7 @@
     <Content Include="Images\dang xuat.png" />
     <Content Include="Images\del.png" />
     <Content Include="Images\exit.png" />
+    <Content Include="Images\key.png" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\logo1.png" />
     <Content Include="Images\logo2.png" />
@@ -177,6 +178,7 @@
     <Content Include="Images\tick-icon-png-17.jpg" />
     <Content Include="Images\tim.png" />
     <Content Include="Images\tk.png" />
+    <Content Include="Images\user.png" />
     <Content Include="Images\xoa.png" />
     <None Include="Resources\Button-Reload-icon.png" />
     <None Include="Resources\logomaybay2.png" />
