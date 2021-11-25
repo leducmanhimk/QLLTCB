@@ -64,8 +64,10 @@ namespace QuanLyLichTrinhChuyenBay
                 da.Fill(dataTable);
                 if (dataTable.Rows.Count == 1)
                 {
+                  
+                    fmMain fm = new fmMain(dataTable.Rows[0][2].ToString(), dataTable.Rows[0][1].ToString());
                     this.Hide();
-                    main.Show();
+                    fm.Show();
                 }
 
                 else
@@ -139,6 +141,11 @@ namespace QuanLyLichTrinhChuyenBay
                 txt_matkhau.Text = "Mật khẩu";
                 txt_matkhau.ForeColor = Color.Silver;
             }
+        }
+
+        private void fmDangnhap1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
