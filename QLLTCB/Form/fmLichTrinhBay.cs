@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QLLTCB.KetNoi;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -19,15 +20,19 @@ namespace QLLTCB
             InitializeComponent();
             
         }
+        //sự kiện lọc chuyến bay
         private void button1_Click_1(object sender, EventArgs e)
         {
+            connect cn = new connect();
             //SqlCommand cmd;
             SqlConnection sqlConnection = new SqlConnection();
-            string con = ConfigurationManager.ConnectionStrings["QLLTCB"].ConnectionString;
-            sqlConnection = new SqlConnection(con);
+            //string con = ConfigurationManager.ConnectionStrings["QLLTCB"].ConnectionString;
+            //sqlConnection = new SqlConnection(con);
+            cn.Khoitaoketnoi(sqlConnection);
             if (sqlConnection.State != ConnectionState.Open)
             {
-                sqlConnection.Open();
+                
+                MessageBox.Show("kết nối thành công!");
             }
             MessageBox.Show("bạn đã ấn vào nút này");
         }
@@ -54,6 +59,7 @@ namespace QLLTCB
             sqlData.Fill(set);
             Sld_dtg.DataSource = set.Tables[0];
             
+            //setup các cột
             Sld_dtg.Columns[8].Visible = false;
             Sld_dtg.Columns[0].HeaderText = "Mã";
             Sld_dtg.Columns[0].Width = 75;
@@ -65,6 +71,7 @@ namespace QLLTCB
             Sld_dtg.Columns[6].HeaderText = "số ghế";
             Sld_dtg.Columns[7].HeaderText = "giá thương mại";
             Sld_dtg.Refresh();
+            sqlConnection.Close();
         }
 
         public void LoadSD()
@@ -97,6 +104,7 @@ namespace QLLTCB
             Sld_dtg.Columns[6].HeaderText = "số ghế";
             Sld_dtg.Columns[7].HeaderText = "giá thương mại";
             Sld_dtg.Refresh();
+            sqlConnection.Close();
         }
         private void btn_huy_Click(object sender, EventArgs e)
         {
@@ -107,6 +115,7 @@ namespace QLLTCB
             {
                 sqlConnection.Open();
             }
+            //lấy giá trị cofim
             bool value = true;
             if (this.Sld_dtg.SelectedRows.Count == 1)
             {
@@ -138,6 +147,7 @@ namespace QLLTCB
                     cmd.Parameters.Add("@giatri",SqlDbType.Int).Value = 0;
                     cmd.ExecuteNonQuery();
                     LoadSD();
+                    sqlConnection.Close();
                 }
             }
                 if(value == false)
@@ -164,6 +174,7 @@ namespace QLLTCB
                     cmd.Parameters.Add("@giatri", SqlDbType.Int).Value = 1;
                     cmd.ExecuteNonQuery();
                     LoadSD();
+                    sqlConnection.Close();
                 }
                 }
         }
@@ -171,10 +182,13 @@ namespace QLLTCB
         {
             try
             {
+                //lấy giá trị tương ứng với row đang được chọn
                 txt_malich.Text = Sld_dtg[0, e.RowIndex].Value.ToString();
                 dtpsuangaybay.Value = (DateTime)Sld_dtg[1, e.RowIndex].Value;
                 txt_thoigian.Text = Sld_dtg[2, e.RowIndex].Value.ToString();
+               
                 txt_giathuongmai.Text = Sld_dtg[7, e.RowIndex].Value.ToString();
+                //kiểm tra tình trạng chuyến bay
                 bool value1 = (bool)Sld_dtg[8,e.RowIndex].Value;                
                     if (value1 == false)
                     {
@@ -192,10 +206,12 @@ namespace QLLTCB
                 throw;
             }
         }
+        //sự kiện kiểm tra confim chuyến bay
         private void Sld_dtg_Paint(object sender, PaintEventArgs e)
         {
             for (int i = 0; i < Sld_dtg.Rows.Count; i++)
             {
+                //thay đổi cột thành màu đỏ nếu giá trị confim là flase
                 bool value = (bool)Sld_dtg.Rows[i].Cells[8].Value;
                 if (value == false)
                 {
@@ -206,7 +222,7 @@ namespace QLLTCB
             }
            
         }
-
+        //sự kiện bấm vào nút sửa
         private void btn_sua_Click(object sender, EventArgs e)
         {
             SqlCommand cmd;
@@ -257,6 +273,7 @@ namespace QLLTCB
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("cập nhật chuyến bay thành công!", "thành Công!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadSD();
+                sqlConnection.Close();
             }
             catch (Exception)
             {
@@ -265,6 +282,7 @@ namespace QLLTCB
             }
         }
 
+        //load lại trang
         private void btn_reset_Click(object sender, EventArgs e)
         {
             LoadSD();

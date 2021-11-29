@@ -46,6 +46,7 @@ namespace QLLTCB
             dataGridView2.Columns[3].Width = 50;
             dataGridView2.Columns[4].Width = 50;
             dataGridView2.Refresh();
+            sqlConnection.Close();
         }
         public void LoadDataRouts()
         {
@@ -271,7 +272,7 @@ namespace QLLTCB
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Sửa Đổi dữ Liệu thành công!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadDataRouts();
-
+                sqlConnection.Close();
             }
             catch (Exception)
             {

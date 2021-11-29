@@ -15,7 +15,7 @@ namespace QLLTCB.KetNoi
         public connect() { }
         //khởi tạo kết nối
         public void Khoitaoketnoi(SqlConnection con) {
-           
+            
             string connec = ConfigurationManager.ConnectionStrings["QLLTCB"].ConnectionString;
             con = new SqlConnection(connec);
             if (con.State != ConnectionState.Open)
