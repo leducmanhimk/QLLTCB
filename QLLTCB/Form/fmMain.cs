@@ -78,6 +78,12 @@ namespace QLLTCB
         {
             OpenChildForm(new fmthongtincanhan(Temail,Tname));
         }
+
+        private void bnt_export_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new fmcsv());
+        }
+
         //sự kiện khi kick nào nút đẵng xuất
         private void btn_dangxuat_Click(object sender, EventArgs e)
         {
