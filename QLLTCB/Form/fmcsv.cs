@@ -151,12 +151,12 @@ namespace QLLTCB
             DataTable imported_data = GetDataFromFile();
 
             if (imported_data == null) return;
-
+/*
             SaveImportDataToDatabase(imported_data);
 
             MessageBox.Show("load data succ.....!");
             txtFileName.Text = string.Empty;
-            Cursor = Cursors.Default;
+  */          Cursor = Cursors.Default;
         }
 
         private void button3_Click(object sender, EventArgs e)

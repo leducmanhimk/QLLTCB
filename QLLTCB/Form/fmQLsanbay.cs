@@ -284,7 +284,7 @@ namespace QLLTCB
         //sự kiện khi nạp form
         private void fmQLsanbay_Load(object sender, EventArgs e)
         {
-            toolTip1.SetToolTip(btm_sreach, "tìm kiếm theo mã định tuyến");
+            toolTip1.SetToolTip(btm_sreach, "tìm kiếm theo mã định tuyến"); 
             toolTip1.SetToolTip(btn_update, "chỉnh sủa các thông tin của định tuyến");
             toolTip1.SetToolTip(btn_add, "thêm một bản ghi mới");
             //đặt giá trị mặc định cho cb
