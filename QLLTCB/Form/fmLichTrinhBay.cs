@@ -265,7 +265,7 @@ namespace QLLTCB
         }
         //sự kiện kiểm tra confim chuyến bay
         private void Sld_dtg_Paint(object sender, PaintEventArgs e)
-        {/*
+        {
             for (int i = 0; i < Sld_dtg.Rows.Count; i++)
             {
                 //thay đổi cột thành màu đỏ nếu giá trị confim là flase
@@ -277,7 +277,7 @@ namespace QLLTCB
                 }
                 
             }
-           */
+           
         }
         //sự kiện bấm vào nút sửa
         private void btn_sua_Click(object sender, EventArgs e)
