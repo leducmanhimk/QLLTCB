@@ -23,24 +23,81 @@ namespace QLLTCB
         //sự kiện lọc chuyến bay
         private void button1_Click_1(object sender, EventArgs e)
         {
-            connect cn = new connect();
-            //SqlCommand cmd;
-            SqlConnection sqlConnection = new SqlConnection();
-            //string con = ConfigurationManager.ConnectionStrings["QLLTCB"].ConnectionString;
-            //sqlConnection = new SqlConnection(con);
-            cn.Khoitaoketnoi(sqlConnection);
-            if (sqlConnection.State != ConnectionState.Open)
+            string sql;
+            SqlCommand cmd;
+            if (cb_diemdi.SelectedItem.Equals(cb_diemden.SelectedItem) == true)
             {
-                
-                MessageBox.Show("kết nối thành công!");
+                errorProvider1.SetError(cb_diemdi, "không được để địa điểm trùng nhau");
+                errorProvider1.SetError(cb_diemden, "không được để địa điểm trùng nhau");
+                return;
             }
-            MessageBox.Show("bạn đã ấn vào nút này");
+            else
+            {
+                errorProvider1.Clear();
+            }
+            try
+            {
+                SqlConnection sqlConnection = new SqlConnection();
+                string con = ConfigurationManager.ConnectionStrings["QLLTCB"].ConnectionString;
+                sqlConnection = new SqlConnection(con);
+                if (sqlConnection.State != ConnectionState.Open)
+                {
+                    sqlConnection.Open();
+                }
+                //kiểm tra trước xem có tồn tại bản ghi không
+                sql = "Select Count(*) From Aircrafts where MakeModel='" + txt_sohieubay.Text + "'";
+                cmd = new SqlCommand(sql, sqlConnection);
+                int val = (int)cmd.ExecuteScalar();
+                if (val > 0)
+                {
+                    //sql = "select * from Aircrafts where ID like'%" + textBox4.Text + "%' OR Name like '%"+textBox4.Text+"%'";
+                    //cmd = new SqlCommand(sql, sqlConnection);
+                    cmd.CommandText = "AC_TimSHB";
+                    cmd.Connection = sqlConnection;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@makemodel", txt_sohieubay.Text);
+                    cmd.Parameters.AddWithValue("@diemdi", cb_diemdi.SelectedItem);
+                    cmd.Parameters.AddWithValue("@diemden", cb_diemden.SelectedItem);
+                    cmd.ExecuteNonQuery();
+                    SqlDataAdapter da1 = new SqlDataAdapter(cmd);
+                    DataSet ds = new DataSet();
+                    da1.Fill(ds);
+                    Sld_dtg.DataSource = ds.Tables[0];
+           
+            
+            //setup các cột
+                  //  Sld_dtg.Columns[8].Visible = false;
+                    Sld_dtg.Columns[0].HeaderText = "Mã";
+                    Sld_dtg.Columns[1].HeaderText = "ngày bay";
+                    Sld_dtg.Columns[2].HeaderText = "thời gian";
+                    Sld_dtg.Columns[3].HeaderText = "mã sân bay đi";
+                    Sld_dtg.Columns[4].HeaderText = "mã sân bay đến";
+                    Sld_dtg.Columns[5].HeaderText = "số hiệu";
+                    Sld_dtg.Columns[6].HeaderText = "số ghế";
+                    Sld_dtg.Columns[7].HeaderText = "giá thương mại";
+                   
+                    Sld_dtg.Columns[0].Width = 75;                  
+                    Sld_dtg.Refresh();
+                    sqlConnection.Close();    
+            }
+          else
+                {
+                    MessageBox.Show("Không tìm thấy bản ghi!", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Lỗi!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
+          
         }
 
         private void fmLichTrinhBay_Load(object sender, EventArgs e)
         {
+            cb_diemden.SelectedItem = cb_diemden.SelectedText = "HAN";
             cb_diemdi.SelectedItem = cb_diemdi.SelectedText = "HAN";
-            cb_diemdien.SelectedItem = cb_diemdien.SelectedText = "HAN";
             
             SqlCommand cmd;
             SqlConnection sqlConnection = new SqlConnection();
@@ -208,7 +265,7 @@ namespace QLLTCB
         }
         //sự kiện kiểm tra confim chuyến bay
         private void Sld_dtg_Paint(object sender, PaintEventArgs e)
-        {
+        {/*
             for (int i = 0; i < Sld_dtg.Rows.Count; i++)
             {
                 //thay đổi cột thành màu đỏ nếu giá trị confim là flase
@@ -220,7 +277,7 @@ namespace QLLTCB
                 }
                 
             }
-           
+           */
         }
         //sự kiện bấm vào nút sửa
         private void btn_sua_Click(object sender, EventArgs e)

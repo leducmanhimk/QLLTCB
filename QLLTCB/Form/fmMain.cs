@@ -71,6 +71,7 @@ namespace QLLTCB
         //sự kiện khi kick vào nút admin
         private void btn_admin_Click(object sender, EventArgs e)
         {
+            //1234
 
         }
         //sự kiện khi kich vào nút tài khoản

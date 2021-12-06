@@ -152,11 +152,20 @@ namespace QLLTCB
 
             if (imported_data == null) return;
 
+
             
 
             MessageBox.Show("load data succ.....!");
             
             Cursor = Cursors.Default;
+
+/*
+            SaveImportDataToDatabase(imported_data);
+
+            MessageBox.Show("load data succ.....!");
+            txtFileName.Text = string.Empty;
+  */          Cursor = Cursors.Default;
+
         }
 
         private void button3_Click(object sender, EventArgs e)
