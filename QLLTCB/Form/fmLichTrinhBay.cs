@@ -23,6 +23,9 @@ namespace QLLTCB
         //sự kiện lọc chuyến bay
         private void button1_Click_1(object sender, EventArgs e)
         {
+            dtpnayloc. Format = DateTimePickerFormat.Short;
+            DateTime loc;
+            loc = dtpnayloc.Value;
             string sql;
             SqlCommand cmd;
             if (cb_diemdi.SelectedItem.Equals(cb_diemden.SelectedItem) == true)
@@ -58,6 +61,7 @@ namespace QLLTCB
                     cmd.Parameters.AddWithValue("@makemodel", txt_sohieubay.Text);
                     cmd.Parameters.AddWithValue("@diemdi", cb_diemdi.SelectedItem);
                     cmd.Parameters.AddWithValue("@diemden", cb_diemden.SelectedItem);
+                    cmd.Parameters.AddWithValue("@loc", loc);
                     cmd.ExecuteNonQuery();
                     SqlDataAdapter da1 = new SqlDataAdapter(cmd);
                     DataSet ds = new DataSet();
