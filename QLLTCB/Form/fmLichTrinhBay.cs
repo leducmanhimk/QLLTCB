@@ -48,13 +48,12 @@ namespace QLLTCB
                     sqlConnection.Open();
                 }
                 //kiểm tra trước xem có tồn tại bản ghi không
-                sql = "Select Count(*) From Aircrafts where MakeModel='" + txt_sohieubay.Text + "'";
+                sql = "Select Count(*) From Schedules where FlightNumber='" + txt_sohieubay.Text + "'";
                 cmd = new SqlCommand(sql, sqlConnection);
                 int val = (int)cmd.ExecuteScalar();
                 if (val > 0)
                 {
-                    //sql = "select * from Aircrafts where ID like'%" + textBox4.Text + "%' OR Name like '%"+textBox4.Text+"%'";
-                    //cmd = new SqlCommand(sql, sqlConnection);
+                    
                     cmd.CommandText = "AC_TimSHB";
                     cmd.Connection = sqlConnection;
                     cmd.CommandType = CommandType.StoredProcedure;

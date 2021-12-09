@@ -65,7 +65,7 @@ namespace QuanLyLichTrinhChuyenBay
                 if (dataTable.Rows.Count == 1)
                 {
                   
-                    fmMain fm = new fmMain(dataTable.Rows[0][2].ToString(), dataTable.Rows[0][1].ToString());
+                    fmMain fm = new fmMain(dataTable.Rows[0][2].ToString(), dataTable.Rows[0][1].ToString(), dataTable.Rows[0][3].ToString());
                     this.Hide();
                     fm.Show();
                 }
