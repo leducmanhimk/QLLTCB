@@ -132,7 +132,7 @@ namespace QLLTCB
             Sld_dtg.Columns[6].HeaderText = "số ghế";
             Sld_dtg.Columns[7].HeaderText = "giá thương mại";
             Sld_dtg.Refresh();
-            sqlConnection.Close();
+           
         }
 
         public void LoadSD()
@@ -165,7 +165,7 @@ namespace QLLTCB
             Sld_dtg.Columns[6].HeaderText = "số ghế";
             Sld_dtg.Columns[7].HeaderText = "giá thương mại";
             Sld_dtg.Refresh();
-            sqlConnection.Close();
+            
         }
         private void btn_huy_Click(object sender, EventArgs e)
         {
@@ -208,7 +208,7 @@ namespace QLLTCB
                     cmd.Parameters.Add("@giatri",SqlDbType.Int).Value = 0;
                     cmd.ExecuteNonQuery();
                     LoadSD();
-                    sqlConnection.Close();
+                   
                 }
             }
                 if(value == false)
@@ -235,7 +235,7 @@ namespace QLLTCB
                     cmd.Parameters.Add("@giatri", SqlDbType.Int).Value = 1;
                     cmd.ExecuteNonQuery();
                     LoadSD();
-                    sqlConnection.Close();
+                   
                 }
                 }
         }
@@ -334,7 +334,7 @@ namespace QLLTCB
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("cập nhật chuyến bay thành công!", "thành Công!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadSD();
-                sqlConnection.Close();
+               
             }
             catch (Exception)
             {

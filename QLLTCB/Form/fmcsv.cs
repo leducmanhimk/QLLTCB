@@ -133,6 +133,7 @@ namespace QLLTCB
                         cmd.ExecuteNonQuery();
                         count++;
                         MessageBox.Show("thêm thành công!");
+                        return;
                     }
                     else
                     {
