@@ -396,6 +396,11 @@ namespace QLLTCB
         {
             LoadDataAircrafts();
         }
+
+        private void txt_masanbay_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

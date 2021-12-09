@@ -50,12 +50,12 @@ namespace QLLTCB
             this.txt_masanbay = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_rfar = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.btn_rfar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgrout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel1.SuspendLayout();
@@ -263,6 +263,7 @@ namespace QLLTCB
             this.txt_masanbay.Name = "txt_masanbay";
             this.txt_masanbay.Size = new System.Drawing.Size(51, 20);
             this.txt_masanbay.TabIndex = 1;
+            this.txt_masanbay.TextChanged += new System.EventHandler(this.txt_masanbay_TextChanged);
             // 
             // label2
             // 
@@ -284,6 +285,16 @@ namespace QLLTCB
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(393, 107);
             this.panel2.TabIndex = 7;
+            // 
+            // btn_rfar
+            // 
+            this.btn_rfar.Image = global::QLLTCB.Properties.Resources.Button_Reload_icon;
+            this.btn_rfar.Location = new System.Drawing.Point(210, 15);
+            this.btn_rfar.Name = "btn_rfar";
+            this.btn_rfar.Size = new System.Drawing.Size(34, 35);
+            this.btn_rfar.TabIndex = 8;
+            this.btn_rfar.UseVisualStyleBackColor = true;
+            this.btn_rfar.Click += new System.EventHandler(this.btn_rfar_Click);
             // 
             // label7
             // 
@@ -317,16 +328,6 @@ namespace QLLTCB
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // btn_rfar
-            // 
-            this.btn_rfar.Image = global::QLLTCB.Properties.Resources.Button_Reload_icon;
-            this.btn_rfar.Location = new System.Drawing.Point(210, 15);
-            this.btn_rfar.Name = "btn_rfar";
-            this.btn_rfar.Size = new System.Drawing.Size(34, 35);
-            this.btn_rfar.TabIndex = 8;
-            this.btn_rfar.UseVisualStyleBackColor = true;
-            this.btn_rfar.Click += new System.EventHandler(this.btn_rfar_Click);
             // 
             // fmQLsanbay
             // 
