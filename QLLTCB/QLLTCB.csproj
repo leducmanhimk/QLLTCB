@@ -74,6 +74,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form\fmQLAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\fmQLAdmin.Designer.cs">
+      <DependentUpon>fmQLAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\fmcsv.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\fmMain.resx">
       <DependentUpon>fmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\fmQLAdmin.resx">
+      <DependentUpon>fmQLAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\fmQLsanbay.resx">
       <DependentUpon>fmQLsanbay.cs</DependentUpon>
