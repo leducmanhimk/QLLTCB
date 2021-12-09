@@ -95,79 +95,52 @@ namespace QLLTCB
                 MessageBox.Show("No Record To Export !!!", "Info");
             }
         }
-        private DataTable GetDataFromFile()
-        {
-
-            DataTable importedData = new DataTable();
-            string header = "ID,Date,Time,AircraftID,RouteID,FlightNumber,";
-
-            try
-            {
-                using (StreamReader sr = new StreamReader(label2.Text))
-                {
-                    if (string.IsNullOrEmpty(header))
-                    {
-                        header = sr.ReadLine();
-                    }
-
-                    string[] headerColumns = header.Split(',');
-                    foreach (string headerColumn in headerColumns)
-                    {
-                        importedData.Columns.Add(headerColumn);
-                    }
-
-                    while (!sr.EndOfStream)
-                    {
-                        string line = sr.ReadLine();
-                        if (string.IsNullOrEmpty(line)) continue;
-                        string[] fields = line.Split(',');
-                        DataRow importedRow = importedData.NewRow();
-
-                        for (int i = 0; i < fields.Count(); i++)
-                        {
-
-                            importedRow[i] = fields[i];
-
-                        }
-
-                        importedData.Rows.Add(importedRow);
-                    }
-                }
-
-
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("the file could not be read:");
-                Console.WriteLine(e.Message);
-            }
-
-            return importedData;
-        }
+       
         private void button2_Click(object sender, EventArgs e)
         {
-            Cursor = Cursors.WaitCursor;
-
-            DataTable imported_data = GetDataFromFile();
-
-            if (imported_data == null) return;
-
-
-            
-
-            MessageBox.Show("load data succ.....!");
-            
-            Cursor = Cursors.Default;
-
-/*
-            SaveImportDataToDatabase(imported_data);
-
-            MessageBox.Show("load data succ.....!");
-            txtFileName.Text = string.Empty;
-  */          Cursor = Cursors.Default;
-
+            SqlCommand cmd;
+            int count = 0;
+            SqlConnection sqlConnection = new SqlConnection();
+            string con = ConfigurationManager.ConnectionStrings["QLLTCB"].ConnectionString;
+            sqlConnection = new SqlConnection(con);
+            if (sqlConnection.State != ConnectionState.Open)
+            {
+                sqlConnection.Open();
+            }         
+            string[] rawtext = System.IO.File.ReadAllLines(label2.Text);
+            string[] data = null;
+            string chu = "";
+            foreach (string textinline in rawtext)
+            {              
+                data = textinline.Split(',');
+                chu = data[0];
+                for (int i = 0; i < data.Count(); i++)
+                {
+                    if (chu.Equals("ADD"))
+                    {
+                        cmd = new SqlCommand();
+                        cmd.CommandText = "SH_themlichbay";
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Connection = sqlConnection;
+                        cmd.Parameters.AddWithValue("@machuyenbay", data[1].ToString().Trim());
+                        cmd.Parameters.AddWithValue("@ngaybay", data[2]);
+                        cmd.Parameters.AddWithValue("@thoigian", data[3]);
+                        cmd.Parameters.AddWithValue("@mamaybay", data[4]);
+                        cmd.Parameters.AddWithValue("@matuyenbay", data[5]);
+                        cmd.Parameters.AddWithValue("@sohieubay", data[6]);
+                        cmd.Parameters.AddWithValue("@giathuongmai", data[7]);
+                        cmd.Parameters.AddWithValue("@tinhtrang", data[9]);
+                        cmd.ExecuteNonQuery();
+                        count++;
+                        MessageBox.Show("thêm thành công!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("thêm thất bại!");
+                    }
+                }
+            }
         }
-
         private void button3_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFile = new OpenFileDialog();

@@ -32,6 +32,7 @@ namespace QLLTCB
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmMain));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.bnt_export = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_lichbay = new System.Windows.Forms.Button();
@@ -45,7 +46,6 @@ namespace QLLTCB
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelchild = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.bnt_export = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -73,6 +73,22 @@ namespace QLLTCB
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(186, 583);
             this.panel1.TabIndex = 10;
+            // 
+            // bnt_export
+            // 
+            this.bnt_export.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.bnt_export.Image = ((System.Drawing.Image)(resources.GetObject("bnt_export.Image")));
+            this.bnt_export.Location = new System.Drawing.Point(17, 215);
+            this.bnt_export.Margin = new System.Windows.Forms.Padding(2);
+            this.bnt_export.Name = "bnt_export";
+            this.bnt_export.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.bnt_export.Size = new System.Drawing.Size(155, 56);
+            this.bnt_export.TabIndex = 9;
+            this.bnt_export.Text = "Nhập file CSV";
+            this.bnt_export.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bnt_export.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.bnt_export.UseVisualStyleBackColor = true;
+            this.bnt_export.Click += new System.EventHandler(this.bnt_export_Click);
             // 
             // panel2
             // 
@@ -196,7 +212,7 @@ namespace QLLTCB
             this.panel3.Location = new System.Drawing.Point(186, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(805, 52);
+            this.panel3.Size = new System.Drawing.Size(832, 52);
             this.panel3.TabIndex = 9;
             // 
             // pictureBox3
@@ -227,24 +243,8 @@ namespace QLLTCB
             this.panelchild.Location = new System.Drawing.Point(186, 52);
             this.panelchild.Margin = new System.Windows.Forms.Padding(2);
             this.panelchild.Name = "panelchild";
-            this.panelchild.Size = new System.Drawing.Size(805, 531);
+            this.panelchild.Size = new System.Drawing.Size(832, 531);
             this.panelchild.TabIndex = 11;
-            // 
-            // bnt_export
-            // 
-            this.bnt_export.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.bnt_export.Image = ((System.Drawing.Image)(resources.GetObject("bnt_export.Image")));
-            this.bnt_export.Location = new System.Drawing.Point(17, 215);
-            this.bnt_export.Margin = new System.Windows.Forms.Padding(2);
-            this.bnt_export.Name = "bnt_export";
-            this.bnt_export.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.bnt_export.Size = new System.Drawing.Size(155, 56);
-            this.bnt_export.TabIndex = 9;
-            this.bnt_export.Text = "Nhập file CSV";
-            this.bnt_export.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bnt_export.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.bnt_export.UseVisualStyleBackColor = true;
-            this.bnt_export.Click += new System.EventHandler(this.bnt_export_Click);
             // 
             // fmMain
             // 
@@ -253,7 +253,7 @@ namespace QLLTCB
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(991, 583);
+            this.ClientSize = new System.Drawing.Size(1018, 583);
             this.Controls.Add(this.panelchild);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
