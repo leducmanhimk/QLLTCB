@@ -19,7 +19,7 @@ namespace QLLTCB
         {
             InitializeComponent();
         }
-
+        //hien form admin
         private void fmQLAdmin_Load(object sender, EventArgs e)
         {
             SqlCommand cmd;
@@ -46,7 +46,7 @@ namespace QLLTCB
             btnLuu.Enabled = false;
             btnHuy.Enabled = false;
         }
-
+        //sự kiện khi ấn nút thêm
         private void btnThem_Click(object sender, EventArgs e)
         {
             txtMaAdmin.Enabled = true;
@@ -62,7 +62,7 @@ namespace QLLTCB
             txtMaAdmin.Enabled = true; //cho phép nhập mới
             txtMaAdmin.Focus();
         }
-
+        //sự kiện khi ấn nút lưu
         private void btnLuu_Click(object sender, EventArgs e)
         {
             SqlCommand cmd;
@@ -92,7 +92,7 @@ namespace QLLTCB
                 MessageBox.Show("Bạn chưa nhập mật khẩu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-
+            //khởi tạo sql
             SqlConnection sqlConnection = new SqlConnection();
             string con = ConfigurationManager.ConnectionStrings["QLLTCB"].ConnectionString;
             sqlConnection = new SqlConnection(con);
@@ -108,7 +108,7 @@ namespace QLLTCB
                 MessageBox.Show("mã admin đã tồn tại trong cơ sở dũ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-
+            //thực thi sql 
 
             cmd = new SqlCommand();
             cmd.CommandText = "AD_themAdmin";
@@ -124,13 +124,13 @@ namespace QLLTCB
             sqlConnection.Close();
             MessageBox.Show("bạn đã thêm thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-
+        // sự kiện khi ấn nút hủy
         private void btnHuy_Click(object sender, EventArgs e)
         {
             ResetValue();
             HideText();
         }
-
+        // sự kiện khi ấn nút xóa
         private void btnXoa_Click(object sender, EventArgs e)
         {
             string sql;
@@ -151,6 +151,7 @@ namespace QLLTCB
             btnHuy.Enabled = false;
             btnLuu.Enabled = false;
         }
+        // hiện data from admins
         public void Loaddataform()
         {
 
@@ -182,6 +183,7 @@ namespace QLLTCB
             dgv1.Refresh();
             sqlConnection.Close();
         }
+        // ẩn button
         private void HideText()
         {
             txtMaAdmin.Enabled = false;
@@ -190,6 +192,7 @@ namespace QLLTCB
             txtDienThoai.Enabled = false;
             txtPass.Enabled = false;
         }
+        // cho phép nhập mới
         private void ResetValue()
         {
             txtMaAdmin.Text = "";
@@ -198,6 +201,7 @@ namespace QLLTCB
             txtDienThoai.Text = "";
             txtPass.Text = "";
         }
+        // tùy chỉnh dgv
         public void LoadDataGridView()
         {
             string sql;
