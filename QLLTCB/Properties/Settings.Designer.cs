@@ -37,9 +37,11 @@ namespace QLLTCB.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        public string QLDL1 {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Appdata\\QLLic" +
+            "hTrinhchuyenbay.mdf;Integrated Security=True;Connect Timeout=30")]
+        public string QLLT1 {
             get {
-                return ((string)(this["QLDL1"]));
+                return ((string)(this["QLLT1"]));
             }
         }
     }

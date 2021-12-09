@@ -92,8 +92,7 @@ namespace QLLTCB
             try
             {
                 SqlConnection sqlConnection = new SqlConnection();
-                string con = ConfigurationManager.ConnectionStrings["QLLTCB"].ConnectionString;
-                sqlConnection = new SqlConnection(con);
+                sqlConnection.ConnectionString = Properties.Settings.Default.QLLT1;
                 if (sqlConnection.State != ConnectionState.Open)
                 {
                     sqlConnection.Open();
