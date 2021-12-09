@@ -239,6 +239,7 @@ namespace QLLTCB
                 }
                 }
         }
+        //sự kiện khi nguoiwfw dùng kick vào bản ghi
         private void Sld_dtg_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -259,7 +260,9 @@ namespace QLLTCB
                     else
                     {
                         btn_huy.Text = "Hủy chuyến bay";
-                    }             
+                    }       
+                    //
+
             }
             catch (Exception)
             {

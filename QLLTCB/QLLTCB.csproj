@@ -174,10 +174,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Appdata\QLLichTrinhchuyenbay.mdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Appdata\QLLichTrinhchuyenbay_log.ldf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>QLLichTrinhchuyenbay.mdf</DependentUpon>
     </Content>
     <Content Include="Images\2.png" />

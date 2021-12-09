@@ -120,22 +120,22 @@ namespace QLLTCB
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(496, 203);
+            this.label3.Location = new System.Drawing.Point(452, 205);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 20);
+            this.label3.Size = new System.Drawing.Size(165, 20);
             this.label3.TabIndex = 5;
-            this.label3.Text = "label3";
+            this.label3.Text = "số bản ghi được thêm:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(501, 294);
+            this.label4.Location = new System.Drawing.Point(452, 294);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 20);
+            this.label4.Size = new System.Drawing.Size(151, 20);
             this.label4.TabIndex = 6;
-            this.label4.Text = "label4";
+            this.label4.Text = "số bản ghi được sửa";
             // 
             // textBox1
             // 

@@ -100,6 +100,7 @@ namespace QLLTCB
         {
             SqlCommand cmd;
             int count = 0;
+            int count1 = 0;
             SqlConnection sqlConnection = new SqlConnection();
             string con = ConfigurationManager.ConnectionStrings["QLLTCB"].ConnectionString;
             sqlConnection = new SqlConnection(con);
@@ -111,7 +112,8 @@ namespace QLLTCB
             string[] data = null;
             string chu = "";
             foreach (string textinline in rawtext)
-            {              
+            {
+                MessageBox.Show(textinline);
                 data = textinline.Split(',');
                 chu = data[0];
                 for (int i = 0; i < data.Count(); i++)
@@ -131,16 +133,30 @@ namespace QLLTCB
                         cmd.Parameters.AddWithValue("@giathuongmai", data[7]);
                         cmd.Parameters.AddWithValue("@tinhtrang", data[9]);
                         cmd.ExecuteNonQuery();
-                        count++;
-                        MessageBox.Show("thêm thành công!");
-                        return;
+                        count++;                      
                     }
-                    else
+                    
+                    if (chu.Equals("EDIT"))
                     {
-                        MessageBox.Show("thêm thất bại!");
+                        cmd = new SqlCommand();
+                        cmd.CommandText = "SH_suatuyenbay";
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Connection = sqlConnection;
+                        cmd.Parameters.AddWithValue("@machuyenbay", data[1].ToString().Trim());
+                        cmd.Parameters.AddWithValue("@ngaybay", data[2]);
+                        cmd.Parameters.AddWithValue("@thoigian", data[3]);
+                        cmd.Parameters.AddWithValue("@mamaybay", data[4]);
+                        cmd.Parameters.AddWithValue("@matuyenbay", data[5]);
+                        cmd.Parameters.AddWithValue("@sohieubay", data[6]);
+                        cmd.Parameters.AddWithValue("@giathuongmai", data[7]);
+                        cmd.Parameters.AddWithValue("@tinhtrang", data[9]);
+                        cmd.ExecuteNonQuery();
+                        count1++;                                             
                     }
                 }
             }
+            label3.Text = "Số bản ghi thêm mới:" + count;
+            label4.Text = "Số bản ghi được sửa" + count1;
         }
         private void button3_Click(object sender, EventArgs e)
         {
