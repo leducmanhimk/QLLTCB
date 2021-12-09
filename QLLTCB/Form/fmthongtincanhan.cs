@@ -82,7 +82,7 @@ namespace QLLTCB
                         DataSet ds = new DataSet();
                         da1.Fill(ds);
                         DialogResult dialog = new DialogResult();
-                        dialog=MessageBox.Show("Doi mat khau thanh cong !", "Thong bao!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        dialog=MessageBox.Show("Đổi mật khẩu thành công.Mời bạn đăng nhập lại để tiếp tục sử dụng!", "Thong bao!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         if (dialog == DialogResult.OK)
                         {
                             //tắt phiên người dùng hiện tại và mớ một phiên mới
