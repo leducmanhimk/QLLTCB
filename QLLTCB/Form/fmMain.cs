@@ -15,17 +15,18 @@ namespace QLLTCB
     public partial class fmMain : Form
     {
         private Form currenChildForm;
-        string Temail = "", Tname = "";
+        string Temail = "", Tname = "",Tphone="";
         
         public fmMain()
         {
             InitializeComponent();
         }
-        public fmMain(string Email, string Name)
+        public fmMain(string Email, string Name,string Phone)
         {
             InitializeComponent();
             this.Temail = Email;
             this.Tname = Name;
+            this.Tphone = Phone;
         }
         //sự kiện khi kick vào nút  thoát
         private void btn_thoat_Click(object sender, EventArgs e)
@@ -77,7 +78,7 @@ namespace QLLTCB
         //sự kiện khi kich vào nút tài khoản
         private void btn_taikhoan_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new fmthongtincanhan(Temail,Tname));
+            OpenChildForm(new fmthongtincanhan(Temail,Tname,Tphone));
         }
 
         private void bnt_export_Click(object sender, EventArgs e)
