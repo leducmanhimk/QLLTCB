@@ -116,8 +116,7 @@ namespace QLLTCB
                 MessageBox.Show(textinline);
                 data = textinline.Split(',');
                 chu = data[0];
-                for (int i = 0; i < data.Count(); i++)
-                {
+                
                     if (chu.Equals("ADD"))
                     {
                         cmd = new SqlCommand();
@@ -154,7 +153,7 @@ namespace QLLTCB
                         count1++;                                             
                     }
                 }
-            }
+            
             label3.Text = "Số bản ghi thêm mới:" + count;
             label4.Text = "Số bản ghi được sửa" + count1;
         }
