@@ -35,20 +35,7 @@ namespace QLLTCB
             lbdienthoai.Text = strNhan2;
         }
 
-        private void fmthongtincanhan_Load(object sender, EventArgs e)
-        {
-            SqlConnection sqlConnection = new SqlConnection();
-            string connect = ConfigurationManager.ConnectionStrings["QLLTCB"].ConnectionString;
-            sqlConnection = new SqlConnection(connect);
-            if (sqlConnection.State != ConnectionState.Open)
-            {
-                sqlConnection.Open();
-            }
-            txbName.Enabled = false;
-            txbPhone.Enabled = false;
-            txbEmail.Enabled = false;
-
-        }
+        
 
 
         private void btnUpdate_Click_1(object sender, EventArgs e)
@@ -91,6 +78,7 @@ namespace QLLTCB
                             //tắt phiên người dùng hiện tại và mớ một phiên mới
                             Application.Restart();
                         }
+                        sqlConnection.Close();
                     }
                     else
                     {
@@ -103,6 +91,57 @@ namespace QLLTCB
                 }
 
             }
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            SqlCommand cmd;
+            SqlConnection sqlConnection = new SqlConnection();
+            string connect = ConfigurationManager.ConnectionStrings["QLLTCB"].ConnectionString;
+            sqlConnection = new SqlConnection(connect);
+            if (sqlConnection.State != ConnectionState.Open)
+            {
+                sqlConnection.Open();
+            }
+            try
+            {
+                cmd = new SqlCommand();
+                cmd.CommandText = "TTCN_capnhat";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Connection = sqlConnection;
+                cmd.Parameters.AddWithValue("@email", txbEmail.Text);
+                cmd.Parameters.AddWithValue("@name", txbName.Text);
+                cmd.Parameters.AddWithValue("@phone", txbPhone.Text);
+                cmd.ExecuteNonQuery();     
+                DialogResult dialog = new DialogResult();
+                dialog = MessageBox.Show("Sửa Đổi dữ Liệu thành công,Mời đăng nhập lại để cập nhật dữ liệu!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (dialog == DialogResult.OK)
+                {
+                    //tắt phiên người dùng hiện tại và mớ một phiên mới
+                    Application.Restart();
+                }
+                sqlConnection.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Thất bại!,sửa đổi dữ liệu thất bại", "thất bại!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
+
+        
+    }
+
+        private void fmthongtincanhan_Load(object sender, EventArgs e)
+        {
+            SqlConnection sqlConnection = new SqlConnection();
+            string connect = ConfigurationManager.ConnectionStrings["QLLTCB"].ConnectionString;
+            sqlConnection = new SqlConnection(connect);
+            if (sqlConnection.State != ConnectionState.Open)
+            {
+                sqlConnection.Open();
+            }
+
+            txbEmail.Enabled = false;
         }
     }
 }
