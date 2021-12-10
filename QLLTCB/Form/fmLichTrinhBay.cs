@@ -236,11 +236,39 @@ namespace QLLTCB
                     LoadSD();
                    
                 }
-                }
+            }
         }
         //sự kiện khi nguoiwfw dùng kick vào bản ghi
         private void Sld_dtg_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            SqlCommand cmd;
+            SqlConnection sqlConnection = new SqlConnection();
+            string con = ConfigurationManager.ConnectionStrings["QLLTCB"].ConnectionString;
+            sqlConnection = new SqlConnection(con);
+            if (sqlConnection.State != ConnectionState.Open)
+            {
+                sqlConnection.Open();
+            }
+            
+            string sql = "select AirPorts.Name,Countries.Name from(AirPorts inner join Countries on AirPorts.CountryID = Countries.ID) where AirPorts.ID ='" + Sld_dtg[3, e.RowIndex].Value.ToString() + "'";
+            cmd = new SqlCommand(sql, sqlConnection);
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                label9.Text = reader.GetString(0).ToString();
+                label15.Text = reader.GetString(1).ToString();
+            }
+            reader.Close();
+             sql = "select AirPorts.Name,Countries.Name from(AirPorts inner join Countries on AirPorts.CountryID = Countries.ID) where AirPorts.ID ='" + Sld_dtg[4, e.RowIndex].Value.ToString() + "'";
+            cmd = new SqlCommand(sql, sqlConnection);
+            SqlDataReader reader1 = cmd.ExecuteReader();
+           SqlCommand cmd1 = new SqlCommand(sql, sqlConnection);
+            while (reader1.Read())
+            {
+                label14.Text = reader1.GetString(0).ToString();
+                label16.Text = reader1.GetString(1).ToString();
+            }
+            reader1.Close();
             try
             {
                 //lấy giá trị tương ứng với row đang được chọn
@@ -249,6 +277,7 @@ namespace QLLTCB
                 txt_thoigian.Text = Sld_dtg[2, e.RowIndex].Value.ToString();
                
                 txt_giathuongmai.Text = Sld_dtg[7, e.RowIndex].Value.ToString();
+                
                 //kiểm tra tình trạng chuyến bay
                 bool value1 = (bool)Sld_dtg[8,e.RowIndex].Value;                
                     if (value1 == false)
@@ -280,6 +309,11 @@ namespace QLLTCB
                 {
                     Sld_dtg.Rows[i].DefaultCellStyle.BackColor = Color.Red;
                     Sld_dtg.Rows[i].DefaultCellStyle.ForeColor = Color.White;                   
+                }
+                else
+                {
+                    Sld_dtg.Rows[i].DefaultCellStyle.BackColor = Color.White;
+                    Sld_dtg.Rows[i].DefaultCellStyle.ForeColor = Color.Black;
                 }
                 
             }

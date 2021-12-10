@@ -115,10 +115,14 @@ namespace QLLTCB
             {
                 foreach (string textinline in rawtext)
                 {
-                    MessageBox.Show(textinline);
+                    //MessageBox.Show(textinline);
+                    if (textinline.Equals(data))
+                    {
+
+                    }
                     data = textinline.Split(',');
                     chu = data[0];
-
+                    
                     if (chu.Equals("ADD"))
                     {
                         cmd = new SqlCommand();
@@ -136,7 +140,6 @@ namespace QLLTCB
                         cmd.ExecuteNonQuery();
                         count++;
                     }
-
                     if (chu.Equals("EDIT"))
                     {
                         cmd = new SqlCommand();
