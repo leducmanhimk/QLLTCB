@@ -31,13 +31,13 @@ namespace QLLTCB
         {
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -65,16 +65,6 @@ namespace QLLTCB
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(82, 209);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(129, 57);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "nhập file CSV";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label2);
@@ -95,16 +85,6 @@ namespace QLLTCB
             this.label2.Size = new System.Drawing.Size(51, 20);
             this.label2.TabIndex = 4;
             this.label2.Text = "label2";
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(82, 58);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(129, 45);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Chọn File";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // groupBox2
             // 
@@ -135,6 +115,33 @@ namespace QLLTCB
             this.label4.Size = new System.Drawing.Size(151, 20);
             this.label4.TabIndex = 6;
             this.label4.Text = "số bản ghi được sửa";
+            // 
+            // button3
+            // 
+            this.button3.Image = global::QLLTCB.Properties.Resources.imoport2;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(82, 58);
+            this.button3.Name = "button3";
+            this.button3.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.button3.Size = new System.Drawing.Size(129, 56);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "Chọn File";
+            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.Image = global::QLLTCB.Properties.Resources.add;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(82, 208);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(144, 56);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "nhập file CSV";
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // fmcsv
             // 

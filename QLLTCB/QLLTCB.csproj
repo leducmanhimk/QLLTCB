@@ -207,6 +207,13 @@
     <Content Include="Images\tk.png" />
     <Content Include="Images\user.png" />
     <Content Include="Images\xoa.png" />
+    <None Include="Resources\del.png" />
+    <None Include="Resources\refesh.png" />
+    <None Include="Resources\xoa.png" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\imoport2.png" />
+    <None Include="Resources\myinf.png" />
+    <None Include="Resources\add1.png" />
     <None Include="Resources\Button-Reload-icon.png" />
     <None Include="Resources\logomaybay2.png" />
     <None Include="Images\ảnh nền tìm kiếm  vé máy bay %282%29.jpg" />
