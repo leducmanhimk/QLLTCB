@@ -71,9 +71,9 @@ namespace QLLTCB
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(692, 149);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 17);
+            this.label1.Size = new System.Drawing.Size(55, 17);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Name";
+            this.label1.Text = "Họ Tên";
             // 
             // label2
             // 
@@ -159,11 +159,11 @@ namespace QLLTCB
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(689, 212);
+            this.label6.Location = new System.Drawing.Point(677, 208);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(49, 17);
+            this.label6.Size = new System.Drawing.Size(81, 17);
             this.label6.TabIndex = 11;
-            this.label6.Text = "Phone";
+            this.label6.Text = "Điện Thoại ";
             // 
             // txbPhone
             // 
