@@ -34,66 +34,60 @@ namespace QLLTCB
             lbemail.Text = strNhan;
             lbdienthoai.Text = strNhan2;
         }
-
-        
-
-
-        private void btnUpdate_Click_1(object sender, EventArgs e)
+        private void btnDoimk_Click(object sender, EventArgs e)
         {
+            SqlCommand cmd;
+            SqlConnection sqlConnection = new SqlConnection();
+            string connect = ConfigurationManager.ConnectionStrings["QLLTCB"].ConnectionString;
+            sqlConnection = new SqlConnection(connect);
+            if (sqlConnection.State != ConnectionState.Open)
             {
-                SqlCommand cmd;
-                SqlConnection sqlConnection = new SqlConnection();
-                string connect = ConfigurationManager.ConnectionStrings["QLLTCB"].ConnectionString;
-                sqlConnection = new SqlConnection(connect);
-                if (sqlConnection.State != ConnectionState.Open)
+                sqlConnection.Open();
+            }
+            SqlDataAdapter da = new SqlDataAdapter("select * from Admins where Admin_email=N'" + txbEmail.Text.Trim() + "'and Admin_password=N'" + txbPass.Text.Trim() + "'", sqlConnection);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            if (dt.Rows.Count == 1)
+            {
+                if (txbNewPass.Text == txbReen.Text)
                 {
-                    sqlConnection.Open();
-                }
-                SqlDataAdapter da = new SqlDataAdapter("select * from Admins where Admin_email=N'" + txbEmail.Text.Trim() + "'and Admin_password=N'" + txbPass.Text.Trim() + "'", sqlConnection);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                if (dt.Rows.Count == 1)
-                {
-                    if (txbNewPass.Text == txbReen.Text)
+                    /*  SqlDataAdapter da1 = new SqlDataAdapter("update Admins set Admin_password=N'" + txbNewPass.Text + "' where Admin_email=N'" + txbEmail.Text.Trim() + "'", sqlConnection);
+                      DataTable dt1 = new DataTable();
+                      da1.Fill(dt1);
+                      MessageBox.Show("Doi mat khau thanh cong !", "Thong bao!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                 */
+                    cmd = new SqlCommand();
+                    cmd.CommandText = "fm_doimatkhau";
+                    cmd.Connection = sqlConnection;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@newpass", txbNewPass.Text);
+                    cmd.Parameters.AddWithValue("@email", txbEmail.Text);
+                    cmd.ExecuteNonQuery();
+                    SqlDataAdapter da1 = new SqlDataAdapter(cmd);
+                    DataSet ds = new DataSet();
+                    da1.Fill(ds);
+                    DialogResult dialog = new DialogResult();
+                    dialog = MessageBox.Show("Đổi mật khẩu thành công.Mời bạn đăng nhập lại để tiếp tục sử dụng!", "Thong bao!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (dialog == DialogResult.OK)
                     {
-                        /*  SqlDataAdapter da1 = new SqlDataAdapter("update Admins set Admin_password=N'" + txbNewPass.Text + "' where Admin_email=N'" + txbEmail.Text.Trim() + "'", sqlConnection);
-                          DataTable dt1 = new DataTable();
-                          da1.Fill(dt1);
-                          MessageBox.Show("Doi mat khau thanh cong !", "Thong bao!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                     */
-                        cmd = new SqlCommand();
-                        cmd.CommandText = "fm_doimatkhau";
-                        cmd.Connection = sqlConnection;
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@newpass", txbNewPass.Text);
-                        cmd.Parameters.AddWithValue("@email", txbEmail.Text);
-                        cmd.ExecuteNonQuery();
-                        SqlDataAdapter da1 = new SqlDataAdapter(cmd);
-                        DataSet ds = new DataSet();
-                        da1.Fill(ds);
-                        DialogResult dialog = new DialogResult();
-                        dialog=MessageBox.Show("Đổi mật khẩu thành công.Mời bạn đăng nhập lại để tiếp tục sử dụng!", "Thong bao!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        if (dialog == DialogResult.OK)
-                        {
-                            //tắt phiên người dùng hiện tại và mớ một phiên mới
-                            Application.Restart();
-                        }
-                        sqlConnection.Close();
+                        //tắt phiên người dùng hiện tại và mớ một phiên mới
+                        Application.Restart();
                     }
-                    else
-                    {
-                        MessageBox.Show(" NewPass và Reen không trùng hoặc bạn chưa nhập liệu!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    sqlConnection.Close();
                 }
                 else
                 {
-                    MessageBox.Show(" Bạn chưa nhập liệu!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(" NewPass và Reen không trùng hoặc bạn chưa nhập liệu!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
             }
+            else
+            {
+                MessageBox.Show(" Bạn chưa nhập liệu!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
-        private void btnSua_Click(object sender, EventArgs e)
+        private void btnCapNhat_Click(object sender, EventArgs e)
         {
             SqlCommand cmd;
             SqlConnection sqlConnection = new SqlConnection();
@@ -112,7 +106,7 @@ namespace QLLTCB
                 cmd.Parameters.AddWithValue("@email", txbEmail.Text);
                 cmd.Parameters.AddWithValue("@name", txbName.Text);
                 cmd.Parameters.AddWithValue("@phone", txbPhone.Text);
-                cmd.ExecuteNonQuery();     
+                cmd.ExecuteNonQuery();
                 DialogResult dialog = new DialogResult();
                 dialog = MessageBox.Show("Sửa Đổi dữ Liệu thành công,Mời đăng nhập lại để cập nhật dữ liệu!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 if (dialog == DialogResult.OK)
@@ -127,9 +121,7 @@ namespace QLLTCB
                 MessageBox.Show("Thất bại!,sửa đổi dữ liệu thất bại", "thất bại!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 throw;
             }
-
-        
-    }
+        }
 
         private void fmthongtincanhan_Load(object sender, EventArgs e)
         {
@@ -140,8 +132,8 @@ namespace QLLTCB
             {
                 sqlConnection.Open();
             }
-
             txbEmail.Enabled = false;
         }
     }
-}
+    }
+
