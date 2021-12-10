@@ -26,7 +26,7 @@ namespace QLLTCB
             SqlConnection sqlConnection = new SqlConnection();
             string con = ConfigurationManager.ConnectionStrings["QLLTCB"].ConnectionString;
             sqlConnection = new SqlConnection(con);
-            if (sqlConnection.State != ConnectionState.Open) ;
+            if (sqlConnection.State != ConnectionState.Open)
             {
                 sqlConnection.Open();
             }

@@ -81,11 +81,11 @@ namespace QLLTCB
                             }
 
                             File.WriteAllLines(sfd.FileName, outputCsv, Encoding.UTF8);
-                            MessageBox.Show("Data Exported Successfully !!!", "Info");
+                            MessageBox.Show("xuất dữ liệu thành công !!!", "Info");
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("Error :" + ex.Message);
+                            MessageBox.Show("lỗi :" + ex.Message);
                         }
                     }
                 }
@@ -111,12 +111,14 @@ namespace QLLTCB
             string[] rawtext = System.IO.File.ReadAllLines(label2.Text);
             string[] data = null;
             string chu = "";
-            foreach (string textinline in rawtext)
+            try
             {
-                MessageBox.Show(textinline);
-                data = textinline.Split(',');
-                chu = data[0];
-                
+                foreach (string textinline in rawtext)
+                {
+                    MessageBox.Show(textinline);
+                    data = textinline.Split(',');
+                    chu = data[0];
+
                     if (chu.Equals("ADD"))
                     {
                         cmd = new SqlCommand();
@@ -132,9 +134,9 @@ namespace QLLTCB
                         cmd.Parameters.AddWithValue("@giathuongmai", data[7]);
                         cmd.Parameters.AddWithValue("@tinhtrang", data[9]);
                         cmd.ExecuteNonQuery();
-                        count++;                      
+                        count++;
                     }
-                    
+
                     if (chu.Equals("EDIT"))
                     {
                         cmd = new SqlCommand();
@@ -150,12 +152,18 @@ namespace QLLTCB
                         cmd.Parameters.AddWithValue("@giathuongmai", data[7]);
                         cmd.Parameters.AddWithValue("@tinhtrang", data[9]);
                         cmd.ExecuteNonQuery();
-                        count1++;                                             
+                        count1++;
                     }
+                    MessageBox.Show("Import thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    label3.Text = "Số bản ghi thêm mới:" + count;
+                    label4.Text = "Số bản ghi được sửa" + count1;
                 }
-            
-            label3.Text = "Số bản ghi thêm mới:" + count;
-            label4.Text = "Số bản ghi được sửa" + count1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("lỗi" + ex.Message, "!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
         }
         private void button3_Click(object sender, EventArgs e)
         {
