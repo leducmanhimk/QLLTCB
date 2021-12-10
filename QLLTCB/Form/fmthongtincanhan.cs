@@ -30,6 +30,9 @@ namespace QLLTCB
             txbName.Text = strNhan1;
             strNhan2 = giatrinhan2;
             txbPhone.Text = strNhan2;
+            lbname.Text = strNhan1;
+            lbemail.Text = strNhan;
+            lbdienthoai.Text = strNhan2;
         }
 
         private void fmthongtincanhan_Load(object sender, EventArgs e)
