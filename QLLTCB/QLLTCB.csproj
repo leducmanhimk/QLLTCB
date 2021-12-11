@@ -74,6 +74,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form\fmthongtincanhan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\fmthongtincanhan.Designer.cs">
+      <DependentUpon>fmthongtincanhan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\fmQLAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,12 +91,6 @@
     </Compile>
     <Compile Include="Form\fmcsv.Designer.cs">
       <DependentUpon>fmcsv.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form\fmthongtincanhan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\fmthongtincanhan.Designer.cs">
-      <DependentUpon>fmthongtincanhan.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\fmQLsanbay.cs">
       <SubType>Form</SubType>
@@ -125,6 +125,9 @@
     <Compile Include="KetNoi\connect.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form\fmthongtincanhan.resx">
+      <DependentUpon>fmthongtincanhan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\fmcsv.resx">
       <DependentUpon>fmcsv.cs</DependentUpon>
     </EmbeddedResource>
@@ -142,9 +145,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\fmQLsanbay.resx">
       <DependentUpon>fmQLsanbay.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\fmthongtincanhan.resx">
-      <DependentUpon>fmthongtincanhan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
