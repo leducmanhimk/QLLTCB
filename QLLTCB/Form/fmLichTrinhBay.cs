@@ -163,6 +163,8 @@ namespace QLLTCB
             Sld_dtg.Columns[5].HeaderText = "số hiệu";
             Sld_dtg.Columns[6].HeaderText = "số ghế";
             Sld_dtg.Columns[7].HeaderText = "giá thương mại";
+            Sld_dtg.Columns[9].Visible = false;
+            Sld_dtg.Columns[10].Visible = false;
             Sld_dtg.Refresh();
             
         }
@@ -256,7 +258,7 @@ namespace QLLTCB
             while (reader.Read())
             {
                 label9.Text = reader.GetString(0).ToString();
-                label15.Text = reader.GetString(1).ToString();
+                label15.Text ="("+ reader.GetString(1).ToString()+")";
             }
             reader.Close();
              sql = "select AirPorts.Name,Countries.Name from(AirPorts inner join Countries on AirPorts.CountryID = Countries.ID) where AirPorts.ID ='" + Sld_dtg[4, e.RowIndex].Value.ToString() + "'";
@@ -265,10 +267,22 @@ namespace QLLTCB
            SqlCommand cmd1 = new SqlCommand(sql, sqlConnection);
             while (reader1.Read())
             {
-                label14.Text = reader1.GetString(0).ToString();
-                label16.Text = reader1.GetString(1).ToString();
+                label14.Text =reader1.GetString(0).ToString();
+                label16.Text = "("+reader1.GetString(1).ToString() +")";
             }
             reader1.Close();
+             sql = "select Aircrafts.Name,Distance  from Aircrafts,Routes where Aircrafts.ID= '"+Sld_dtg[10,e.RowIndex].Value+"' and   Routes.ID ='"+Sld_dtg[9,e.RowIndex].Value+"'";
+            cmd = new SqlCommand(sql, sqlConnection);
+           
+            cmd = new SqlCommand(sql, sqlConnection);
+            SqlDataReader reader2 = cmd.ExecuteReader();
+            int quangduong = 0;
+            while (reader2.Read())
+            {
+                label17.Text = reader2.GetString(0).ToString();
+                label18.Text = reader2.GetDouble(1).ToString() + "km";
+            }
+            reader2.Close();
             try
             {
                 //lấy giá trị tương ứng với row đang được chọn
