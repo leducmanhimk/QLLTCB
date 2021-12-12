@@ -101,6 +101,7 @@ namespace QLLTCB
             SqlCommand cmd;
             int count = 0;
             int count1 = 0;
+            int count2 = 0;
             SqlConnection sqlConnection = new SqlConnection();
             string con = ConfigurationManager.ConnectionStrings["QLLTCB"].ConnectionString;
             sqlConnection = new SqlConnection(con);
@@ -116,51 +117,57 @@ namespace QLLTCB
                 foreach (string textinline in rawtext)
                 {
                     //MessageBox.Show(textinline);
-                    if (textinline.Equals(data))
-                    {
-
-                    }
+                    
                     data = textinline.Split(',');
                     chu = data[0];
-                    
-                    if (chu.Equals("ADD"))
+                    if (data.Count() == 10)
                     {
-                        cmd = new SqlCommand();
-                        cmd.CommandText = "SH_themlichbay";
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Connection = sqlConnection;
-                        cmd.Parameters.AddWithValue("@machuyenbay", data[1].ToString().Trim());
-                        cmd.Parameters.AddWithValue("@ngaybay", data[2]);
-                        cmd.Parameters.AddWithValue("@thoigian", data[3]);
-                        cmd.Parameters.AddWithValue("@mamaybay", data[4]);
-                        cmd.Parameters.AddWithValue("@matuyenbay", data[5]);
-                        cmd.Parameters.AddWithValue("@sohieubay", data[6]);
-                        cmd.Parameters.AddWithValue("@giathuongmai", data[7]);
-                        cmd.Parameters.AddWithValue("@tinhtrang", data[9]);
-                        cmd.ExecuteNonQuery();
-                        count++;
+                        
+                       
+                        if (chu.Equals("ADD"))
+                        {
+                            cmd = new SqlCommand();
+                            cmd.CommandText = "SH_themlichbay";
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Connection = sqlConnection;
+                            cmd.Parameters.AddWithValue("@machuyenbay", data[1].ToString().Trim());
+                            cmd.Parameters.AddWithValue("@ngaybay", data[2]);
+                            cmd.Parameters.AddWithValue("@thoigian", data[3]);
+                            cmd.Parameters.AddWithValue("@mamaybay", data[4]);
+                            cmd.Parameters.AddWithValue("@matuyenbay", data[5]);
+                            cmd.Parameters.AddWithValue("@sohieubay", data[6]);
+                            cmd.Parameters.AddWithValue("@giathuongmai", data[7]);
+                            cmd.Parameters.AddWithValue("@tinhtrang", data[9]);
+                            cmd.ExecuteNonQuery();
+                            count++;
+                        }
+                        if (chu.Equals("EDIT"))
+                        {
+                            cmd = new SqlCommand();
+                            cmd.CommandText = "SH_suatuyenbay";
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Connection = sqlConnection;
+                            cmd.Parameters.AddWithValue("@machuyenbay", data[1].ToString().Trim());
+                            cmd.Parameters.AddWithValue("@ngaybay", data[2]);
+                            cmd.Parameters.AddWithValue("@thoigian", data[3]);
+                            cmd.Parameters.AddWithValue("@mamaybay", data[4]);
+                            cmd.Parameters.AddWithValue("@matuyenbay", data[5]);
+                            cmd.Parameters.AddWithValue("@sohieubay", data[6]);
+                            cmd.Parameters.AddWithValue("@giathuongmai", data[7]);
+                            cmd.Parameters.AddWithValue("@tinhtrang", data[9]);
+                            cmd.ExecuteNonQuery();
+                            count1++;
+                        }
                     }
-                    if (chu.Equals("EDIT"))
+                    else
                     {
-                        cmd = new SqlCommand();
-                        cmd.CommandText = "SH_suatuyenbay";
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Connection = sqlConnection;
-                        cmd.Parameters.AddWithValue("@machuyenbay", data[1].ToString().Trim());
-                        cmd.Parameters.AddWithValue("@ngaybay", data[2]);
-                        cmd.Parameters.AddWithValue("@thoigian", data[3]);
-                        cmd.Parameters.AddWithValue("@mamaybay", data[4]);
-                        cmd.Parameters.AddWithValue("@matuyenbay", data[5]);
-                        cmd.Parameters.AddWithValue("@sohieubay", data[6]);
-                        cmd.Parameters.AddWithValue("@giathuongmai", data[7]);
-                        cmd.Parameters.AddWithValue("@tinhtrang", data[9]);
-                        cmd.ExecuteNonQuery();
-                        count1++;
+                        count2++;
                     }
-                    MessageBox.Show("Import thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    label3.Text = "Số bản ghi thêm mới:" + count;
-                    label4.Text = "Số bản ghi được sửa" + count1;
                 }
+                label3.Text = "Số bản ghi thêm mới:" + count;
+                label4.Text = "Số bản ghi được sửa" + count1;
+                label6.Text = "Số bản ghi thiếu dữ liệu" + count2;
+                MessageBox.Show("Import thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -177,4 +184,5 @@ namespace QLLTCB
             label2.Text = openFile.FileName;
         }
     }
+
 }
