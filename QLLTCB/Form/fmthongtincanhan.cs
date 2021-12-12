@@ -87,7 +87,20 @@ namespace QLLTCB
 
         }
 
-        private void btnCapNhat_Click(object sender, EventArgs e)
+     
+        private void fmthongtincanhan_Load(object sender, EventArgs e)
+        {
+            SqlConnection sqlConnection = new SqlConnection();
+            string connect = ConfigurationManager.ConnectionStrings["QLLTCB"].ConnectionString;
+            sqlConnection = new SqlConnection(connect);
+            if (sqlConnection.State != ConnectionState.Open)
+            {
+                sqlConnection.Open();
+            }
+            txbEmail.Enabled = false;
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
         {
             SqlCommand cmd;
             SqlConnection sqlConnection = new SqlConnection();
@@ -121,18 +134,6 @@ namespace QLLTCB
                 MessageBox.Show("Thất bại!,sửa đổi dữ liệu thất bại", "thất bại!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 throw;
             }
-        }
-
-        private void fmthongtincanhan_Load(object sender, EventArgs e)
-        {
-            SqlConnection sqlConnection = new SqlConnection();
-            string connect = ConfigurationManager.ConnectionStrings["QLLTCB"].ConnectionString;
-            sqlConnection = new SqlConnection(connect);
-            if (sqlConnection.State != ConnectionState.Open)
-            {
-                sqlConnection.Open();
-            }
-            txbEmail.Enabled = false;
         }
     }
     }
