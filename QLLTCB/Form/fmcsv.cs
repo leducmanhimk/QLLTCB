@@ -95,7 +95,7 @@ namespace QLLTCB
                 MessageBox.Show("No Record To Export !!!", "Info");
             }
         }
-       
+        
         private void button2_Click(object sender, EventArgs e)
         {
             SqlCommand cmd;
@@ -184,5 +184,5 @@ namespace QLLTCB
             label2.Text = openFile.FileName;
         }
     }
-
+    
 }

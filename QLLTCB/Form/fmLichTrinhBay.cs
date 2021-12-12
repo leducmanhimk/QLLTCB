@@ -28,7 +28,11 @@ namespace QLLTCB
             loc = dtpnayloc.Value;
             string sql;
             SqlCommand cmd;
-            if (cb_diemdi.SelectedItem.Equals(cb_diemden.SelectedItem) == true)
+            if (cb_diemdi.SelectedItem.ToString() == "sân bay"  && cb_diemden.SelectedItem.ToString() == "sân bay")
+            {
+                errorProvider1.Clear();
+            }
+          else if (cb_diemdi.SelectedItem.Equals(cb_diemden.SelectedItem) == true)
             {
                 errorProvider1.SetError(cb_diemdi, "không được để địa điểm trùng nhau");
                 errorProvider1.SetError(cb_diemden, "không được để địa điểm trùng nhau");
@@ -47,13 +51,10 @@ namespace QLLTCB
                 {
                     sqlConnection.Open();
                 }
-                //kiểm tra trước xem có tồn tại bản ghi không
-                sql = "Select Count(*) From Schedules where FlightNumber='" + txt_sohieubay.Text + "'";
-                cmd = new SqlCommand(sql, sqlConnection);
-                int val = (int)cmd.ExecuteScalar();
-                if (val > 0)
-                {
-                    
+               
+                cmd = new SqlCommand();
+               
+              
                     cmd.CommandText = "AC_TimSHB";
                     cmd.Connection = sqlConnection;
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -82,11 +83,7 @@ namespace QLLTCB
                     Sld_dtg.Columns[0].Width = 75;                  
                     Sld_dtg.Refresh();
                     sqlConnection.Close();    
-            }
-          else
-                {
-                    MessageBox.Show("Không tìm thấy bản ghi!", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+             
                 
             }
             catch (Exception)
@@ -99,9 +96,10 @@ namespace QLLTCB
 
         private void fmLichTrinhBay_Load(object sender, EventArgs e)
         {
-            cb_diemden.SelectedItem = cb_diemden.SelectedText = "HAN";
-            cb_diemdi.SelectedItem = cb_diemdi.SelectedText = "HAN";
-            
+            cb_diemden.SelectedItem = cb_diemden.SelectedText = "sân bay";
+            cb_diemdi.SelectedItem = cb_diemdi.SelectedText = "sân bay";
+            this.dtpnayloc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpnayloc.CustomFormat = " ";
             SqlCommand cmd;
             SqlConnection sqlConnection = new SqlConnection();
             string con = ConfigurationManager.ConnectionStrings["QLLTCB"].ConnectionString;
@@ -130,6 +128,8 @@ namespace QLLTCB
             Sld_dtg.Columns[5].HeaderText = "số hiệu";
             Sld_dtg.Columns[6].HeaderText = "số ghế";
             Sld_dtg.Columns[7].HeaderText = "giá thương mại";
+            Sld_dtg.Columns[9].Visible = false;
+            Sld_dtg.Columns[10].Visible = false;
             Sld_dtg.Refresh();
            
         }
@@ -276,7 +276,7 @@ namespace QLLTCB
            
             cmd = new SqlCommand(sql, sqlConnection);
             SqlDataReader reader2 = cmd.ExecuteReader();
-            int quangduong = 0;
+            
             while (reader2.Read())
             {
                 label17.Text = reader2.GetString(0).ToString();

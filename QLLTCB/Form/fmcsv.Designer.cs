@@ -38,7 +38,6 @@ namespace QLLTCB
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -145,20 +144,10 @@ namespace QLLTCB
             this.label4.TabIndex = 6;
             this.label4.Text = "số bản ghi được sửa:[xxx]";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(452, 291);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(181, 20);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "số bản ghi trùng lặp:[xxx]";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(452, 351);
+            this.label6.Location = new System.Drawing.Point(452, 291);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(204, 20);
@@ -171,7 +160,6 @@ namespace QLLTCB
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1208, 740);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox2);
@@ -200,7 +188,6 @@ namespace QLLTCB
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
     }
 }

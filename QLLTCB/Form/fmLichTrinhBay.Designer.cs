@@ -304,6 +304,7 @@ namespace QLLTCB
             this.cb_diemden.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_diemden.FormattingEnabled = true;
             this.cb_diemden.Items.AddRange(new object[] {
+            "sân bay",
             "ADH",
             "AJU",
             "BSB",
@@ -336,6 +337,7 @@ namespace QLLTCB
             this.cb_diemdi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_diemdi.FormattingEnabled = true;
             this.cb_diemdi.Items.AddRange(new object[] {
+            "sân bay",
             "ADH",
             "AJU",
             "BSB",
