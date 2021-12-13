@@ -37,33 +37,22 @@ namespace QLLTCB
             SqlDataAdapter sqlData = new SqlDataAdapter(cmd);
             DataSet set = new DataSet();
             sqlData.Fill(set);
+
             dgv1.DataSource = set.Tables[0];
-            txtMaAdmin.Enabled = false;
-            txtTenAdmin.Enabled = false;
-            txtEmail.Enabled = false;
-            txtDienThoai.Enabled = false;
-            txtPass.Enabled = false;
-            btnLuu.Enabled = false;
-            btnHuy.Enabled = false;
+           
+            dgv1.Columns[0].HeaderText = "Mã admin";
+            dgv1.Columns[1].HeaderText = "Tên admin";
+            dgv1.Columns[2].HeaderText = "Email";
+            dgv1.Columns[3].HeaderText = "Điện thoại";
+            dgv1.Columns[4].HeaderText = "Mật khẩu";
+
+           
+            dgv1.Columns[4].Visible = false;
+            dgv1.Refresh();
+
         }
         //sự kiện khi ấn nút thêm
         private void btnThem_Click(object sender, EventArgs e)
-        {
-            txtMaAdmin.Enabled = true;
-            txtTenAdmin.Enabled = true;
-            txtEmail.Enabled = true;
-            txtDienThoai.Enabled = true;
-            txtPass.Enabled = true;
-            btnXoa.Enabled = false;
-            btnLuu.Enabled = true;
-            btnHuy.Enabled = true;
-            btnThem.Enabled = false;
-            ResetValue();// xóa trắng text box
-            txtMaAdmin.Enabled = true; //cho phép nhập mới
-            txtMaAdmin.Focus();
-        }
-        //sự kiện khi ấn nút lưu
-        private void btnLuu_Click(object sender, EventArgs e)
         {
             SqlCommand cmd;
             string sql;
@@ -124,12 +113,8 @@ namespace QLLTCB
             sqlConnection.Close();
             MessageBox.Show("bạn đã thêm thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-        // sự kiện khi ấn nút hủy
-        private void btnHuy_Click(object sender, EventArgs e)
-        {
-            ResetValue();
-            HideText();
-        }
+       
+       
         // sự kiện khi ấn nút xóa
         private void btnXoa_Click(object sender, EventArgs e)
         {
@@ -148,8 +133,8 @@ namespace QLLTCB
             }
             ResetValue();
             HideText();
-            btnHuy.Enabled = false;
-            btnLuu.Enabled = false;
+            
+          
         }
         // hiện data from admins
         public void Loaddataform()
@@ -175,11 +160,8 @@ namespace QLLTCB
             dgv1.Columns[3].HeaderText = "Điện thoại";
             dgv1.Columns[4].HeaderText = "Mật khẩu";
 
-            dgv1.Columns[0].Width = 60;
-            dgv1.Columns[1].Width = 100;
-            dgv1.Columns[2].Width = 100;
-            dgv1.Columns[3].Width = 60;
-            dgv1.Columns[4].Width = 60;
+          
+            dgv1.Columns[4].Visible = false;
             dgv1.Refresh();
             sqlConnection.Close();
         }
@@ -212,14 +194,20 @@ namespace QLLTCB
             dgv1.Columns[2].HeaderText = "Điện thoại";
             dgv1.Columns[3].HeaderText = "Email";
             dgv1.Columns[4].HeaderText = "Mật khẩu";
-            dgv1.Columns[0].Width = 100;
-            dgv1.Columns[1].Width = 150;
-            dgv1.Columns[2].Width = 150;
-            dgv1.Columns[3].Width = 100;
-            dgv1.Columns[4].Width = 100;
+            
             dgv1.AllowUserToAddRows = false;
             dgv1.EditMode = DataGridViewEditMode.EditProgrammatically;
+            dgv1.Columns[4].Visible = false;
         }
 
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            Loaddataform();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
