@@ -345,6 +345,10 @@ namespace QLLTCB
             {
                 sqlConnection.Open();
             }
+            if (txt_giathuongmai.Text == "" || txt_thoigian.Text == "")
+            {
+                MessageBox.Show("không được để trống dữ liệu!", "thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             if (dtpsuangaybay.Value == null)
             {
                 errorProvider1.SetError(dtpsuangaybay, "bạn chưa nhập ngày!");
@@ -396,6 +400,9 @@ namespace QLLTCB
         //load lại trang
         private void btn_reset_Click(object sender, EventArgs e)
         {
+            cb_diemden.SelectedItem = cb_diemden.SelectedText = "sân bay";
+            cb_diemdi.SelectedItem = cb_diemdi.SelectedText = "sân bay";
+            txt_sohieubay.Text = "";
             LoadSD();
         }
     }
