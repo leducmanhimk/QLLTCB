@@ -348,31 +348,9 @@ namespace QLLTCB
             if (txt_giathuongmai.Text == "" || txt_thoigian.Text == "")
             {
                 MessageBox.Show("không được để trống dữ liệu!", "thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
-            if (dtpsuangaybay.Value == null)
-            {
-                errorProvider1.SetError(dtpsuangaybay, "bạn chưa nhập ngày!");
-            }
-            else
-            {
-                errorProvider1.Clear();
-            }
-            if (txt_thoigian.Text == "")
-            {
-               errorProvider1.SetError(txt_thoigian, "bạn chưa nhập thời gian!");
-            }
-            else
-            {
-                errorProvider1.Clear();
-            }
-            if (txt_giathuongmai.Text == "")
-            {
-                errorProvider1.SetError(txt_giathuongmai, "bạn chưa nhập giá!");
-            }
-            else
-            {
-                errorProvider1.Clear();
-            }
+           
             try
             {
                 dtpsuangaybay.Format = DateTimePickerFormat.Short;
