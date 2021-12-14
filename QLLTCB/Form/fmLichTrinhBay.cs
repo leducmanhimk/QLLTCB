@@ -18,21 +18,23 @@ namespace QLLTCB
         public fmLichTrinhBay()
         {
             InitializeComponent();
-            
+
         }
         //sự kiện lọc chuyến bay
         private void button1_Click_1(object sender, EventArgs e)
         {
-            dtpnayloc. Format = DateTimePickerFormat.Short;
+            dtpnayloc.Format = DateTimePickerFormat.Short;
             DateTime loc;
+
             loc = dtpnayloc.Value;
-            string sql;
+            SqlDataAdapter da1;
+            DataSet ds;
             SqlCommand cmd;
-            if (cb_diemdi.SelectedItem.ToString() == "sân bay"  && cb_diemden.SelectedItem.ToString() == "sân bay")
+            if (cb_diemdi.SelectedItem.ToString() == "sân bay" && cb_diemden.SelectedItem.ToString() == "sân bay")
             {
                 errorProvider1.Clear();
             }
-          else if (cb_diemdi.SelectedItem.Equals(cb_diemden.SelectedItem) == true)
+            else if (cb_diemdi.SelectedItem.Equals(cb_diemden.SelectedItem) == true)
             {
                 errorProvider1.SetError(cb_diemdi, "không được để địa điểm trùng nhau");
                 errorProvider1.SetError(cb_diemden, "không được để địa điểm trùng nhau");
@@ -51,10 +53,26 @@ namespace QLLTCB
                 {
                     sqlConnection.Open();
                 }
-               
-                cmd = new SqlCommand();
-               
-              
+                if (cb_diemdi.SelectedItem.ToString() != "sân bay" && cb_diemden.SelectedItem.ToString() == "sân bay" || cb_diemdi.SelectedItem.ToString() == "sân bay" && cb_diemden.SelectedItem.ToString() != "sân bay")
+                {
+                    cmd = new SqlCommand();
+                    cmd.CommandText = "LT_locsanbay";
+                    cmd.Connection = sqlConnection;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@diemdi", cb_diemdi.SelectedItem);
+                    cmd.Parameters.AddWithValue("@diemden", cb_diemden.SelectedItem);
+                    cmd.ExecuteNonQuery();
+                    da1 = new SqlDataAdapter(cmd);
+                    ds = new DataSet();
+                    da1.Fill(ds);
+                    Sld_dtg.DataSource = ds.Tables[0];
+                    setupcolum();
+                    sqlConnection.Close();
+
+                }
+                else 
+                {
+                    cmd = new SqlCommand();
                     cmd.CommandText = "AC_TimSHB";
                     cmd.Connection = sqlConnection;
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -63,37 +81,38 @@ namespace QLLTCB
                     cmd.Parameters.AddWithValue("@diemden", cb_diemden.SelectedItem);
                     cmd.Parameters.AddWithValue("@loc", loc);
                     cmd.ExecuteNonQuery();
-                    SqlDataAdapter da1 = new SqlDataAdapter(cmd);
-                    DataSet ds = new DataSet();
+                    da1 = new SqlDataAdapter(cmd);
+                    ds = new DataSet();
                     da1.Fill(ds);
                     Sld_dtg.DataSource = ds.Tables[0];
-           
-            
-            //setup các cột
-                  //  Sld_dtg.Columns[8].Visible = false;
-                    Sld_dtg.Columns[0].HeaderText = "Mã";
-                    Sld_dtg.Columns[1].HeaderText = "ngày bay";
-                    Sld_dtg.Columns[2].HeaderText = "thời gian";
-                    Sld_dtg.Columns[3].HeaderText = "mã sân bay đi";
-                    Sld_dtg.Columns[4].HeaderText = "mã sân bay đến";
-                    Sld_dtg.Columns[5].HeaderText = "số hiệu";
-                    Sld_dtg.Columns[6].HeaderText = "số ghế";
-                    Sld_dtg.Columns[7].HeaderText = "giá thương mại";
-                   
-                    Sld_dtg.Columns[0].Width = 75;                  
-                    Sld_dtg.Refresh();
-                    sqlConnection.Close();    
-             
-                
+
+
+                    setupcolum();
+                    sqlConnection.Close();
+                }
             }
             catch (Exception)
             {
                 MessageBox.Show("Lỗi!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 throw;
             }
-          
-        }
 
+        }
+        public void setupcolum()
+        {
+            Sld_dtg.Columns[0].HeaderText = "Mã";
+            Sld_dtg.Columns[1].HeaderText = "ngày bay";
+            Sld_dtg.Columns[2].HeaderText = "thời gian";
+            Sld_dtg.Columns[3].HeaderText = "mã sân bay đi";
+            Sld_dtg.Columns[4].HeaderText = "mã sân bay đến";
+            Sld_dtg.Columns[5].HeaderText = "số hiệu";
+            Sld_dtg.Columns[6].HeaderText = "số ghế";
+            Sld_dtg.Columns[7].HeaderText = "giá thương mại";
+
+            Sld_dtg.Columns[0].Width = 75;
+            Sld_dtg.Refresh();
+
+        }
         private void fmLichTrinhBay_Load(object sender, EventArgs e)
         {
             cb_diemden.SelectedItem = cb_diemden.SelectedText = "sân bay";
@@ -116,7 +135,7 @@ namespace QLLTCB
             DataSet set = new DataSet();
             sqlData.Fill(set);
             Sld_dtg.DataSource = set.Tables[0];
-            
+
             //setup các cột
             Sld_dtg.Columns[8].Visible = false;
             Sld_dtg.Columns[0].HeaderText = "Mã";
@@ -131,7 +150,7 @@ namespace QLLTCB
             Sld_dtg.Columns[9].Visible = false;
             Sld_dtg.Columns[10].Visible = false;
             Sld_dtg.Refresh();
-           
+
         }
 
         public void LoadSD()
@@ -166,7 +185,7 @@ namespace QLLTCB
             Sld_dtg.Columns[9].Visible = false;
             Sld_dtg.Columns[10].Visible = false;
             Sld_dtg.Refresh();
-            
+
         }
         private void btn_huy_Click(object sender, EventArgs e)
         {
@@ -206,29 +225,29 @@ namespace QLLTCB
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Connection = sqlConnection;
                     cmd.Parameters.AddWithValue("@malichbay", txt_malich.Text.Trim());
-                    cmd.Parameters.Add("@giatri",SqlDbType.Int).Value = 0;
+                    cmd.Parameters.Add("@giatri", SqlDbType.Int).Value = 0;
                     cmd.ExecuteNonQuery();
                     LoadSD();
-                   
+
                 }
             }
-                if(value == false)
-                {
+            if (value == false)
+            {
                 DialogResult dialog1 = MessageBox.Show("bạn muốn kích hoạt chuyến bay này chứ!", "kích hoạt chuyến bay", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 foreach (DataGridViewRow row1 in Sld_dtg.Rows)
+                {
+                    if (dialog1 == DialogResult.Yes)
                     {
-                        if (dialog1 == DialogResult.Yes)
-                        {
-                            if (this.Sld_dtg.SelectedRows.Count == 1)
-                            {//thay đổi cột thành màu trắng
+                        if (this.Sld_dtg.SelectedRows.Count == 1)
+                        {//thay đổi cột thành màu trắng
 
-                                int count = Sld_dtg.CurrentCell.RowIndex;
-                                Sld_dtg.Rows[count].DefaultCellStyle.BackColor = Color.Aqua;
-                                Sld_dtg.Rows[count].DefaultCellStyle.ForeColor = Color.Black;       
-                            }
+                            int count = Sld_dtg.CurrentCell.RowIndex;
+                            Sld_dtg.Rows[count].DefaultCellStyle.BackColor = Color.Aqua;
+                            Sld_dtg.Rows[count].DefaultCellStyle.ForeColor = Color.Black;
                         }
-                        //string sql = "UPDATE Schedules SET Confirmed = 1 Where ID like'%" + txt_malich.Text + "%'";
-                        SqlCommand cmd = new SqlCommand();
+                    }
+                    //string sql = "UPDATE Schedules SET Confirmed = 1 Where ID like'%" + txt_malich.Text + "%'";
+                    SqlCommand cmd = new SqlCommand();
                     cmd.CommandText = "LT_doitrangthaichuyenbay";
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Connection = sqlConnection;
@@ -236,7 +255,7 @@ namespace QLLTCB
                     cmd.Parameters.Add("@giatri", SqlDbType.Int).Value = 1;
                     cmd.ExecuteNonQuery();
                     LoadSD();
-                   
+
                 }
             }
         }
@@ -251,32 +270,32 @@ namespace QLLTCB
             {
                 sqlConnection.Open();
             }
-            
+
             string sql = "select AirPorts.Name,Countries.Name from(AirPorts inner join Countries on AirPorts.CountryID = Countries.ID) where AirPorts.ID ='" + Sld_dtg[3, e.RowIndex].Value.ToString() + "'";
             cmd = new SqlCommand(sql, sqlConnection);
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
                 label9.Text = reader.GetString(0).ToString();
-                label15.Text ="("+ reader.GetString(1).ToString()+")";
+                label15.Text = "(" + reader.GetString(1).ToString() + ")";
             }
             reader.Close();
-             sql = "select AirPorts.Name,Countries.Name from(AirPorts inner join Countries on AirPorts.CountryID = Countries.ID) where AirPorts.ID ='" + Sld_dtg[4, e.RowIndex].Value.ToString() + "'";
+            sql = "select AirPorts.Name,Countries.Name from(AirPorts inner join Countries on AirPorts.CountryID = Countries.ID) where AirPorts.ID ='" + Sld_dtg[4, e.RowIndex].Value.ToString() + "'";
             cmd = new SqlCommand(sql, sqlConnection);
             SqlDataReader reader1 = cmd.ExecuteReader();
-           SqlCommand cmd1 = new SqlCommand(sql, sqlConnection);
+            SqlCommand cmd1 = new SqlCommand(sql, sqlConnection);
             while (reader1.Read())
             {
-                label14.Text =reader1.GetString(0).ToString();
-                label16.Text = "("+reader1.GetString(1).ToString() +")";
+                label14.Text = reader1.GetString(0).ToString();
+                label16.Text = "(" + reader1.GetString(1).ToString() + ")";
             }
             reader1.Close();
-             sql = "select Aircrafts.Name,Distance  from Aircrafts,Routes where Aircrafts.ID= '"+Sld_dtg[10,e.RowIndex].Value+"' and   Routes.ID ='"+Sld_dtg[9,e.RowIndex].Value+"'";
+            sql = "select Aircrafts.Name,Distance  from Aircrafts,Routes where Aircrafts.ID= '" + Sld_dtg[10, e.RowIndex].Value + "' and   Routes.ID ='" + Sld_dtg[9, e.RowIndex].Value + "'";
             cmd = new SqlCommand(sql, sqlConnection);
-           
+
             cmd = new SqlCommand(sql, sqlConnection);
             SqlDataReader reader2 = cmd.ExecuteReader();
-            
+
             while (reader2.Read())
             {
                 label17.Text = reader2.GetString(0).ToString();
@@ -289,21 +308,21 @@ namespace QLLTCB
                 txt_malich.Text = Sld_dtg[0, e.RowIndex].Value.ToString();
                 dtpsuangaybay.Value = (DateTime)Sld_dtg[1, e.RowIndex].Value;
                 txt_thoigian.Text = Sld_dtg[2, e.RowIndex].Value.ToString();
-               
+
                 txt_giathuongmai.Text = Sld_dtg[7, e.RowIndex].Value.ToString();
-                
+
                 //kiểm tra tình trạng chuyến bay
-                bool value1 = (bool)Sld_dtg[8,e.RowIndex].Value;                
-                    if (value1 == false)
-                    {
-                        
-                        btn_huy.Text = "kích hoạt";
-                    }
-                    else
-                    {
-                        btn_huy.Text = "Hủy chuyến bay";
-                    }       
-                    //
+                bool value1 = (bool)Sld_dtg[8, e.RowIndex].Value;
+                if (value1 == false)
+                {
+
+                    btn_huy.Text = "kích hoạt";
+                }
+                else
+                {
+                    btn_huy.Text = "Hủy chuyến bay";
+                }
+                //
 
             }
             catch (Exception)
@@ -322,22 +341,22 @@ namespace QLLTCB
                 if (value == false)
                 {
                     Sld_dtg.Rows[i].DefaultCellStyle.BackColor = Color.Red;
-                    Sld_dtg.Rows[i].DefaultCellStyle.ForeColor = Color.White;                   
+                    Sld_dtg.Rows[i].DefaultCellStyle.ForeColor = Color.White;
                 }
                 else
                 {
                     Sld_dtg.Rows[i].DefaultCellStyle.BackColor = Color.White;
                     Sld_dtg.Rows[i].DefaultCellStyle.ForeColor = Color.Black;
                 }
-                
+
             }
-           
+
         }
         //sự kiện bấm vào nút sửa
         private void btn_sua_Click(object sender, EventArgs e)
         {
             SqlCommand cmd;
-            
+
             SqlConnection sqlConnection = new SqlConnection();
             string con = ConfigurationManager.ConnectionStrings["QLLTCB"].ConnectionString;
             sqlConnection = new SqlConnection(con);
@@ -350,11 +369,11 @@ namespace QLLTCB
                 MessageBox.Show("không được để trống dữ liệu!", "thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-           
+
             try
             {
                 dtpsuangaybay.Format = DateTimePickerFormat.Short;
-               // sql = "UPDATE Schedules SET Date='" + dtpsuangaybay.Value.ToString("MM-dd-yyyy") + "',Time='" + txt_thoigian.Text + "',EconomyPrice='" + txt_giathuongmai.Text.ToString() + "' WHERE ID like'%"+txt_malich.Text+"%'";
+                // sql = "UPDATE Schedules SET Date='" + dtpsuangaybay.Value.ToString("MM-dd-yyyy") + "',Time='" + txt_thoigian.Text + "',EconomyPrice='" + txt_giathuongmai.Text.ToString() + "' WHERE ID like'%"+txt_malich.Text+"%'";
                 cmd = new SqlCommand();
                 cmd.CommandText = "LT_sualich";
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -366,7 +385,7 @@ namespace QLLTCB
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("cập nhật chuyến bay thành công!", "thành Công!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadSD();
-               
+
             }
             catch (Exception)
             {
