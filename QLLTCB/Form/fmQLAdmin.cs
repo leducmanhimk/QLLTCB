@@ -51,6 +51,11 @@ namespace QLLTCB
            
             dgv1.Columns[4].Visible = false;
             dgv1.Refresh();
+            dgv1.Columns[0].Width = 125;
+            dgv1.Columns[1].Width = 125;
+            dgv1.Columns[2].Width = 140;
+            dgv1.Columns[3].Width = 125;
+            dgv1.Columns[4].Width = 125;
             HideText();
 
         }
@@ -113,6 +118,11 @@ namespace QLLTCB
           
             dgv1.Columns[4].Visible = false;
             dgv1.Refresh();
+            dgv1.Columns[0].Width = 125;
+            dgv1.Columns[1].Width = 125;
+            dgv1.Columns[2].Width = 140;
+            dgv1.Columns[3].Width = 125;
+            dgv1.Columns[4].Width = 125;
             sqlConnection.Close();
         }
         // ẩn button
