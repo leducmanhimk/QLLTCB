@@ -1,4 +1,6 @@
-﻿using System;
+﻿using QLLTCB;
+using QLLTCB.KetNoi;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -207,7 +209,48 @@ namespace QLLTCB
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (txtTimKiem.Text == "")
+            {
+                MessageBox.Show("bạn chưa nhập giá trị");
+            }
+            SqlCommand cmd;
+            string sql;
+            SqlConnection sqlConnection = new SqlConnection();
+            string con = ConfigurationManager.ConnectionStrings["QLLTCB"].ConnectionString;
+            sqlConnection = new SqlConnection(con);
+            if (sqlConnection.State != ConnectionState.Open)
+            {
+                sqlConnection.Open();
+            }
+            sql = "Select Count(*) From Admins where ID like'%" + txtTimKiem.Text + "%' OR Admin_name like '%" + txtTimKiem.Text + "%'";
+            cmd = new SqlCommand(sql, sqlConnection);
+            int val = (int)cmd.ExecuteScalar();
+            if (val > 0)
+            {
+                cmd = new SqlCommand();
 
+
+                cmd.CommandText = "AD_timkiem";
+                cmd.Connection = sqlConnection;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@ten", txtTimKiem.Text);
+                cmd.Parameters.AddWithValue("@giatri", txtTimKiem.Text);
+
+                cmd.ExecuteNonQuery();
+                SqlDataAdapter da1 = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                da1.Fill(ds);
+                sqlConnection.Close();
+            }
+            else
+            {
+                MessageBox.Show("không tìm thấy admin!", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }
