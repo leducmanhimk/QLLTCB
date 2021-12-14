@@ -61,6 +61,8 @@ namespace QLLTCB
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@diemdi", cb_diemdi.SelectedItem);
                     cmd.Parameters.AddWithValue("@diemden", cb_diemden.SelectedItem);
+                    cmd.Parameters.AddWithValue("@ngay", loc);
+                    cmd.Parameters.AddWithValue("@sohieu", txt_sohieubay.Text);
                     cmd.ExecuteNonQuery();
                     da1 = new SqlDataAdapter(cmd);
                     ds = new DataSet();
@@ -85,8 +87,6 @@ namespace QLLTCB
                     ds = new DataSet();
                     da1.Fill(ds);
                     Sld_dtg.DataSource = ds.Tables[0];
-
-
                     setupcolum();
                     sqlConnection.Close();
                 }
@@ -98,6 +98,7 @@ namespace QLLTCB
             }
 
         }
+        
         public void setupcolum()
         {
             Sld_dtg.Columns[0].HeaderText = "Mã";

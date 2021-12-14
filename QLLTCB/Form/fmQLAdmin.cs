@@ -266,22 +266,29 @@ namespace QLLTCB
                 return;
             }
             //thực thi sql 
-
-            cmd = new SqlCommand();
-            cmd.CommandText = "AD_themAdmin";
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Connection = sqlConnection;
-            cmd.Parameters.AddWithValue("@maadmin", txtMaAdmin.Text);
-            cmd.Parameters.AddWithValue("@tenadmin", txtTenAdmin.Text);
-            cmd.Parameters.AddWithValue("@email", txtEmail.Text);
-            cmd.Parameters.AddWithValue("@dienthoai", txtDienThoai.Text);
-            cmd.Parameters.AddWithValue("@matkhau", txtPass.Text);
-            cmd.ExecuteNonQuery();
-            Loaddataform();
-            sqlConnection.Close();
-            MessageBox.Show("bạn đã thêm thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            HideText();
-            ResetValue();
+            try
+            {
+                cmd = new SqlCommand();
+                cmd.CommandText = "AD_themAdmin";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Connection = sqlConnection;
+                cmd.Parameters.AddWithValue("@maadmin", txtMaAdmin.Text);
+                cmd.Parameters.AddWithValue("@tenadmin", txtTenAdmin.Text);
+                cmd.Parameters.AddWithValue("@email", txtEmail.Text);
+                cmd.Parameters.AddWithValue("@dienthoai", txtDienThoai.Text);
+                cmd.Parameters.AddWithValue("@matkhau", txtPass.Text);
+                cmd.ExecuteNonQuery();
+                Loaddataform();
+                sqlConnection.Close();
+                MessageBox.Show("bạn đã thêm thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                HideText();
+                ResetValue();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("lỗi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
         }
     }
 }
