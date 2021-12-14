@@ -48,8 +48,12 @@ namespace QLLTCB
             this.btnThem = new System.Windows.Forms.Button();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btn_add = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -66,11 +70,11 @@ namespace QLLTCB
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.LimeGreen;
-            this.label1.Location = new System.Drawing.Point(329, 19);
+            this.label1.Location = new System.Drawing.Point(308, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(151, 25);
+            this.label1.Size = new System.Drawing.Size(179, 25);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Quản lý admin";
+            this.label1.Text = "Danh sách admin";
             // 
             // dgv1
             // 
@@ -84,35 +88,35 @@ namespace QLLTCB
             // 
             // txtPass
             // 
-            this.txtPass.Location = new System.Drawing.Point(504, 334);
+            this.txtPass.Location = new System.Drawing.Point(90, 107);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(180, 20);
             this.txtPass.TabIndex = 13;
             // 
             // txtDienThoai
             // 
-            this.txtDienThoai.Location = new System.Drawing.Point(504, 312);
+            this.txtDienThoai.Location = new System.Drawing.Point(90, 85);
             this.txtDienThoai.Name = "txtDienThoai";
             this.txtDienThoai.Size = new System.Drawing.Size(180, 20);
             this.txtDienThoai.TabIndex = 12;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(504, 290);
+            this.txtEmail.Location = new System.Drawing.Point(90, 63);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(180, 20);
             this.txtEmail.TabIndex = 11;
             // 
             // txtTenAdmin
             // 
-            this.txtTenAdmin.Location = new System.Drawing.Point(504, 268);
+            this.txtTenAdmin.Location = new System.Drawing.Point(90, 41);
             this.txtTenAdmin.Name = "txtTenAdmin";
             this.txtTenAdmin.Size = new System.Drawing.Size(180, 20);
             this.txtTenAdmin.TabIndex = 10;
             // 
             // txtMaAdmin
             // 
-            this.txtMaAdmin.Location = new System.Drawing.Point(504, 246);
+            this.txtMaAdmin.Location = new System.Drawing.Point(90, 19);
             this.txtMaAdmin.Name = "txtMaAdmin";
             this.txtMaAdmin.Size = new System.Drawing.Size(180, 20);
             this.txtMaAdmin.TabIndex = 9;
@@ -120,7 +124,7 @@ namespace QLLTCB
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(428, 334);
+            this.label6.Location = new System.Drawing.Point(14, 107);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(52, 13);
             this.label6.TabIndex = 8;
@@ -129,7 +133,7 @@ namespace QLLTCB
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(428, 312);
+            this.label5.Location = new System.Drawing.Point(14, 85);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(55, 13);
             this.label5.TabIndex = 7;
@@ -138,7 +142,7 @@ namespace QLLTCB
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(428, 290);
+            this.label4.Location = new System.Drawing.Point(14, 63);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(32, 13);
             this.label4.TabIndex = 6;
@@ -147,7 +151,7 @@ namespace QLLTCB
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(428, 268);
+            this.label3.Location = new System.Drawing.Point(14, 41);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 13);
             this.label3.TabIndex = 5;
@@ -156,7 +160,7 @@ namespace QLLTCB
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(428, 246);
+            this.label2.Location = new System.Drawing.Point(14, 19);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 4;
@@ -166,7 +170,7 @@ namespace QLLTCB
             // 
             this.btn_lammoi.Image = global::QLLTCB.Properties.Resources.refesh;
             this.btn_lammoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_lammoi.Location = new System.Drawing.Point(163, 323);
+            this.btn_lammoi.Location = new System.Drawing.Point(102, 321);
             this.btn_lammoi.Name = "btn_lammoi";
             this.btn_lammoi.Size = new System.Drawing.Size(75, 34);
             this.btn_lammoi.TabIndex = 2;
@@ -179,7 +183,7 @@ namespace QLLTCB
             // 
             this.btnXoa.Image = global::QLLTCB.Properties.Resources.xoa;
             this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa.Location = new System.Drawing.Point(163, 366);
+            this.btnXoa.Location = new System.Drawing.Point(102, 364);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 34);
             this.btnXoa.TabIndex = 1;
@@ -191,7 +195,7 @@ namespace QLLTCB
             // 
             this.btnThem.Image = global::QLLTCB.Properties.Resources.add;
             this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem.Location = new System.Drawing.Point(163, 278);
+            this.btnThem.Location = new System.Drawing.Point(102, 276);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(75, 34);
             this.btnThem.TabIndex = 0;
@@ -202,8 +206,8 @@ namespace QLLTCB
             // 
             // txtTimKiem
             // 
-            this.txtTimKiem.Location = new System.Drawing.Point(99, 242);
-            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTimKiem.Location = new System.Drawing.Point(99, 253);
+            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(179, 20);
             this.txtTimKiem.TabIndex = 14;
@@ -211,42 +215,75 @@ namespace QLLTCB
             // button1
             // 
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(291, 240);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Location = new System.Drawing.Point(289, 246);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(43, 30);
             this.button1.TabIndex = 15;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(99, 239);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(49, 13);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "Tìm kiếm";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btn_add);
+            this.groupBox1.Controls.Add(this.txtMaAdmin);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.txtTenAdmin);
+            this.groupBox1.Controls.Add(this.txtPass);
+            this.groupBox1.Controls.Add(this.txtEmail);
+            this.groupBox1.Controls.Add(this.txtDienThoai);
+            this.groupBox1.Location = new System.Drawing.Point(382, 241);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(302, 190);
+            this.groupBox1.TabIndex = 17;
+            this.groupBox1.TabStop = false;
+            // 
+            // btn_add
+            // 
+            this.btn_add.Location = new System.Drawing.Point(136, 133);
+            this.btn_add.Name = "btn_add";
+            this.btn_add.Size = new System.Drawing.Size(80, 29);
+            this.btn_add.TabIndex = 14;
+            this.btn_add.Text = "Đồng Ý";
+            this.btn_add.UseVisualStyleBackColor = true;
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
+            // 
             // fmQLAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(856, 450);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.btn_lammoi);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnThem);
-            this.Controls.Add(this.txtPass);
             this.Controls.Add(this.dgv1);
-            this.Controls.Add(this.txtDienThoai);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.txtMaAdmin);
-            this.Controls.Add(this.txtTenAdmin);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label5);
             this.Name = "fmQLAdmin";
             this.Text = "fmQLAdmin";
             this.Load += new System.EventHandler(this.fmQLAdmin_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -272,5 +309,8 @@ namespace QLLTCB
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btn_add;
     }
 }

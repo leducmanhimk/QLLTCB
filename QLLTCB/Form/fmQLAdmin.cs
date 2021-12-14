@@ -51,69 +51,17 @@ namespace QLLTCB
            
             dgv1.Columns[4].Visible = false;
             dgv1.Refresh();
+            HideText();
 
         }
         //sự kiện khi ấn nút thêm
         private void btnThem_Click(object sender, EventArgs e)
         {
-            SqlCommand cmd;
-            string sql;
-            if (txtMaAdmin.Text == "")
-            {
-                MessageBox.Show("Bạn chưa nhập mã admin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            if (txtTenAdmin.Text == "")
-            {
-                MessageBox.Show("Bạn chưa nhập tên admin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            if (txtEmail.Text == "")
-            {
-                MessageBox.Show("Bạn chưa nhập Email", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            if (txtDienThoai.Text == "")
-            {
-                MessageBox.Show("Bạn chưa điện thoại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            if (txtPass.Text == "")
-            {
-                MessageBox.Show("Bạn chưa nhập mật khẩu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            //khởi tạo sql
-            SqlConnection sqlConnection = new SqlConnection();
-            string con = ConfigurationManager.ConnectionStrings["QLLTCB"].ConnectionString;
-            sqlConnection = new SqlConnection(con);
-            if (sqlConnection.State != ConnectionState.Open)
-            {
-                sqlConnection.Open();
-            }
-            sql = "Select Count(*) From  Routes where ID='" + txtMaAdmin.Text + "'";
-            cmd = new SqlCommand(sql, sqlConnection);
-            int val = (int)cmd.ExecuteScalar();
-            if (val > 0)
-            {
-                MessageBox.Show("mã admin đã tồn tại trong cơ sở dũ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            //thực thi sql 
-
-            cmd = new SqlCommand();
-            cmd.CommandText = "AD_themAdmin";
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Connection = sqlConnection;
-            cmd.Parameters.AddWithValue("@maadmin", txtMaAdmin.Text);
-            cmd.Parameters.AddWithValue("@tenadmin", txtTenAdmin.Text);
-            cmd.Parameters.AddWithValue("@email", txtEmail.Text);
-            cmd.Parameters.AddWithValue("@dienthoai", txtDienThoai.Text);
-            cmd.Parameters.AddWithValue("@matkhau", txtPass.Text);
-            cmd.ExecuteNonQuery();
-            Loaddataform();
-            sqlConnection.Close();
-            MessageBox.Show("bạn đã thêm thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            txtMaAdmin.Enabled = true;
+            txtTenAdmin.Enabled = true;
+            txtEmail.Enabled = true;
+            txtDienThoai.Enabled = true;
+            txtPass.Enabled = true;
         }
        
        
@@ -238,7 +186,7 @@ namespace QLLTCB
                     cmd.CommandText = "AD_timkiem";
                     cmd.Connection = sqlConnection;
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@ten", txtTimKiem.Text);
+                    
                     cmd.Parameters.AddWithValue("@giatri", txtTimKiem.Text);
 
                     cmd.ExecuteNonQuery();
@@ -260,6 +208,70 @@ namespace QLLTCB
 
                 throw;
             }
+        }
+
+        private void btn_add_Click(object sender, EventArgs e)
+        {
+            SqlCommand cmd;
+            string sql;
+            if (txtMaAdmin.Text == "")
+            {
+                MessageBox.Show("Bạn chưa nhập mã admin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (txtTenAdmin.Text == "")
+            {
+                MessageBox.Show("Bạn chưa nhập tên admin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (txtEmail.Text == "")
+            {
+                MessageBox.Show("Bạn chưa nhập Email", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (txtDienThoai.Text == "")
+            {
+                MessageBox.Show("Bạn chưa điện thoại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (txtPass.Text == "")
+            {
+                MessageBox.Show("Bạn chưa nhập mật khẩu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            //khởi tạo sql
+            SqlConnection sqlConnection = new SqlConnection();
+            string con = ConfigurationManager.ConnectionStrings["QLLTCB"].ConnectionString;
+            sqlConnection = new SqlConnection(con);
+            if (sqlConnection.State != ConnectionState.Open)
+            {
+                sqlConnection.Open();
+            }
+            sql = "Select Count(*) From  Routes where ID='" + txtMaAdmin.Text + "'";
+            cmd = new SqlCommand(sql, sqlConnection);
+            int val = (int)cmd.ExecuteScalar();
+            if (val > 0)
+            {
+                MessageBox.Show("mã admin đã tồn tại trong cơ sở dũ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            //thực thi sql 
+
+            cmd = new SqlCommand();
+            cmd.CommandText = "AD_themAdmin";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = sqlConnection;
+            cmd.Parameters.AddWithValue("@maadmin", txtMaAdmin.Text);
+            cmd.Parameters.AddWithValue("@tenadmin", txtTenAdmin.Text);
+            cmd.Parameters.AddWithValue("@email", txtEmail.Text);
+            cmd.Parameters.AddWithValue("@dienthoai", txtDienThoai.Text);
+            cmd.Parameters.AddWithValue("@matkhau", txtPass.Text);
+            cmd.ExecuteNonQuery();
+            Loaddataform();
+            sqlConnection.Close();
+            MessageBox.Show("bạn đã thêm thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            HideText();
+            ResetValue();
         }
     }
 }
