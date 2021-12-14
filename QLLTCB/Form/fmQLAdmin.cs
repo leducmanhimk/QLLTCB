@@ -212,6 +212,7 @@ namespace QLLTCB
             if (txtTimKiem.Text == "")
             {
                 MessageBox.Show("bạn chưa nhập giá trị");
+                return;
             }
             SqlCommand cmd;
             string sql;
@@ -225,26 +226,34 @@ namespace QLLTCB
             sql = "Select Count(*) From Admins where ID like'%" + txtTimKiem.Text + "%' OR Admin_name like '%" + txtTimKiem.Text + "%'";
             cmd = new SqlCommand(sql, sqlConnection);
             int val = (int)cmd.ExecuteScalar();
-            if (val > 0)
+
+
+            try
             {
-                cmd = new SqlCommand();
+                if (val > 0)
+                {
+                    cmd = new SqlCommand();
 
 
-                cmd.CommandText = "AD_timkiem";
-                cmd.Connection = sqlConnection;
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@ten", txtTimKiem.Text);
-                cmd.Parameters.AddWithValue("@giatri", txtTimKiem.Text);
+                    cmd.CommandText = "AD_timkiem";
+                    cmd.Connection = sqlConnection;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@ten", txtTimKiem.Text);
+                    cmd.Parameters.AddWithValue("@giatri", txtTimKiem.Text);
 
-                cmd.ExecuteNonQuery();
-                SqlDataAdapter da1 = new SqlDataAdapter(cmd);
-                DataSet ds = new DataSet();
-                da1.Fill(ds);
-                sqlConnection.Close();
-            }
-            else
-            {
-                MessageBox.Show("không tìm thấy admin!", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    cmd.ExecuteNonQuery();
+                    SqlDataAdapter da1 = new SqlDataAdapter(cmd);
+                    DataSet ds = new DataSet();
+                    da1.Fill(ds);
+                    dgv1.DataSource = ds.Tables[0];
+                    sqlConnection.Close();
+
+                }
+                else
+                {
+                    MessageBox.Show("không tìm thấy admin!", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
             }
             catch (Exception)
             {
