@@ -70,12 +70,12 @@ namespace QLLTCB
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(68, 51);
+            this.label1.Location = new System.Drawing.Point(50, 50);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
+            this.label1.Size = new System.Drawing.Size(46, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Họ Tên";
+            this.label1.Text = "Họ Tên:";
             // 
             // label2
             // 
@@ -83,44 +83,44 @@ namespace QLLTCB
             this.label2.Location = new System.Drawing.Point(1, 254);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 13);
+            this.label2.Size = new System.Drawing.Size(115, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Nhập lại mật khẩu mới";
+            this.label2.Text = "Nhập lại mật khẩu mới:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 218);
+            this.label3.Location = new System.Drawing.Point(1, 220);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(99, 13);
+            this.label3.Size = new System.Drawing.Size(102, 13);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Nhập mật khẩu mới";
+            this.label3.Text = "Nhập mật khẩu mới:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(23, 184);
+            this.label4.Location = new System.Drawing.Point(1, 185);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 13);
+            this.label4.Size = new System.Drawing.Size(92, 13);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Mật khẩu hiện tại";
+            this.label4.Text = "Mật khẩu hiện tại:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(74, 106);
+            this.label5.Location = new System.Drawing.Point(50, 100);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(32, 13);
+            this.label5.Size = new System.Drawing.Size(35, 13);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Email";
+            this.label5.Text = "Email:";
             // 
             // btnUpdate
             // 
             this.btnUpdate.Location = new System.Drawing.Point(161, 285);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(82, 34);
             this.btnUpdate.TabIndex = 5;
@@ -130,7 +130,7 @@ namespace QLLTCB
             // txbName
             // 
             this.txbName.Location = new System.Drawing.Point(110, 48);
-            this.txbName.Margin = new System.Windows.Forms.Padding(2);
+            this.txbName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txbName.Name = "txbName";
             this.txbName.Size = new System.Drawing.Size(193, 20);
             this.txbName.TabIndex = 6;
@@ -138,7 +138,7 @@ namespace QLLTCB
             // txbNewPass
             // 
             this.txbNewPass.Location = new System.Drawing.Point(111, 216);
-            this.txbNewPass.Margin = new System.Windows.Forms.Padding(2);
+            this.txbNewPass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txbNewPass.Name = "txbNewPass";
             this.txbNewPass.Size = new System.Drawing.Size(193, 20);
             this.txbNewPass.TabIndex = 7;
@@ -146,7 +146,7 @@ namespace QLLTCB
             // txbReen
             // 
             this.txbReen.Location = new System.Drawing.Point(112, 251);
-            this.txbReen.Margin = new System.Windows.Forms.Padding(2);
+            this.txbReen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txbReen.Name = "txbReen";
             this.txbReen.Size = new System.Drawing.Size(193, 20);
             this.txbReen.TabIndex = 8;
@@ -154,7 +154,7 @@ namespace QLLTCB
             // txbPass
             // 
             this.txbPass.Location = new System.Drawing.Point(111, 181);
-            this.txbPass.Margin = new System.Windows.Forms.Padding(2);
+            this.txbPass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txbPass.Name = "txbPass";
             this.txbPass.Size = new System.Drawing.Size(193, 20);
             this.txbPass.TabIndex = 9;
@@ -162,7 +162,7 @@ namespace QLLTCB
             // txbEmail
             // 
             this.txbEmail.Location = new System.Drawing.Point(111, 96);
-            this.txbEmail.Margin = new System.Windows.Forms.Padding(2);
+            this.txbEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txbEmail.Name = "txbEmail";
             this.txbEmail.Size = new System.Drawing.Size(193, 20);
             this.txbEmail.TabIndex = 10;
@@ -173,14 +173,14 @@ namespace QLLTCB
             this.label6.Location = new System.Drawing.Point(49, 78);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(62, 13);
+            this.label6.Size = new System.Drawing.Size(65, 13);
             this.label6.TabIndex = 11;
-            this.label6.Text = "Điện Thoại ";
+            this.label6.Text = "Điện Thoại :";
             // 
             // txbPhone
             // 
             this.txbPhone.Location = new System.Drawing.Point(110, 72);
-            this.txbPhone.Margin = new System.Windows.Forms.Padding(2);
+            this.txbPhone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txbPhone.Name = "txbPhone";
             this.txbPhone.Size = new System.Drawing.Size(193, 20);
             this.txbPhone.TabIndex = 12;
@@ -189,7 +189,7 @@ namespace QLLTCB
             // 
             this.pictureBox4.Image = global::QLLTCB.Properties.Resources.icons8_phone_25;
             this.pictureBox4.Location = new System.Drawing.Point(24, 176);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(21, 35);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -200,7 +200,7 @@ namespace QLLTCB
             // 
             this.pictureBox3.Image = global::QLLTCB.Properties.Resources.email;
             this.pictureBox3.Location = new System.Drawing.Point(26, 124);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(21, 35);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -211,7 +211,7 @@ namespace QLLTCB
             // 
             this.pictureBox2.Image = global::QLLTCB.Properties.Resources.name;
             this.pictureBox2.Location = new System.Drawing.Point(26, 74);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(21, 35);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -278,53 +278,55 @@ namespace QLLTCB
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.LimeGreen;
-            this.label7.Location = new System.Drawing.Point(294, 21);
+            this.label7.Location = new System.Drawing.Point(251, 19);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(169, 25);
+            this.label7.Size = new System.Drawing.Size(247, 31);
             this.label7.TabIndex = 14;
             this.label7.Text = "Thông tin cá nhân";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(104, 122);
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(79, 122);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(209, 26);
+            this.label11.Size = new System.Drawing.Size(252, 26);
             this.label11.TabIndex = 15;
-            this.label11.Text = "nếu chỉ thay đổi thông tin cá nhân,vui lòng\r\n không nhập vào trường mật khẩu";
+            this.label11.Text = "nếu chỉ thay đổi thông tin cá nhân,vui lòng\r\n       không nhập vào trường mật khẩ" +
+    "u";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label12.Location = new System.Drawing.Point(47, 16);
+            this.label12.Location = new System.Drawing.Point(28, 16);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(114, 17);
+            this.label12.Size = new System.Drawing.Size(173, 25);
             this.label12.TabIndex = 17;
             this.label12.Text = "Thông tin của tôi";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label13.Location = new System.Drawing.Point(124, 20);
+            this.label13.Location = new System.Drawing.Point(63, 16);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(177, 17);
+            this.label13.Size = new System.Drawing.Size(268, 25);
             this.label13.TabIndex = 18;
             this.label13.Text = "Thay đổi thông tin cá nhân";
             // 
             // btnSua
             // 
             this.btnSua.Location = new System.Drawing.Point(168, 150);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(74, 28);
             this.btnSua.TabIndex = 19;
@@ -335,8 +337,8 @@ namespace QLLTCB
             // pictureBox1
             // 
             this.pictureBox1.Image = global::QLLTCB.Properties.Resources.or;
-            this.pictureBox1.Location = new System.Drawing.Point(322, 189);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Location = new System.Drawing.Point(308, 200);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(113, 73);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -355,9 +357,9 @@ namespace QLLTCB
             this.groupBox1.Controls.Add(this.pictureBox2);
             this.groupBox1.Controls.Add(this.lbemail);
             this.groupBox1.Controls.Add(this.lbdienthoai);
-            this.groupBox1.Location = new System.Drawing.Point(32, 120);
+            this.groupBox1.Location = new System.Drawing.Point(35, 100);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(236, 328);
+            this.groupBox1.Size = new System.Drawing.Size(236, 335);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             // 
@@ -390,12 +392,12 @@ namespace QLLTCB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(818, 496);
+            this.ClientSize = new System.Drawing.Size(818, 456);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label7);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "fmthongtincanhan";
             this.Text = "fmthongtincanhan";
             this.Load += new System.EventHandler(this.fmthongtincanhan_Load);
