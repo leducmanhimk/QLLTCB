@@ -103,31 +103,77 @@ namespace QLLTCB
         private void btnSua_Click(object sender, EventArgs e)
         {
             SqlCommand cmd;
-            SqlConnection sqlConnection = new SqlConnection();
+           /* SqlConnection sqlConnection = new SqlConnection();
             string connect = ConfigurationManager.ConnectionStrings["QLLTCB"].ConnectionString;
             sqlConnection = new SqlConnection(connect);
             if (sqlConnection.State != ConnectionState.Open)
             {
                 sqlConnection.Open();
-            }
+            }*/
             try
             {
-                cmd = new SqlCommand();
-                cmd.CommandText = "TTCN_capnhat";
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Connection = sqlConnection;
-                cmd.Parameters.AddWithValue("@email", txbEmail.Text);
-                cmd.Parameters.AddWithValue("@name", txbName.Text);
-                cmd.Parameters.AddWithValue("@phone", txbPhone.Text);
-                cmd.ExecuteNonQuery();
-                DialogResult dialog = new DialogResult();
-                dialog = MessageBox.Show("Sửa Đổi dữ Liệu thành công,Mời đăng nhập lại để cập nhật dữ liệu!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                if (dialog == DialogResult.OK)
+                SqlConnection sqlConnection = new SqlConnection();
+                string connect = ConfigurationManager.ConnectionStrings["QLLTCB"].ConnectionString;
+                sqlConnection = new SqlConnection(connect);
+                if (sqlConnection.State != ConnectionState.Open)
                 {
-                    //tắt phiên người dùng hiện tại và mớ một phiên mới
-                    Application.Restart();
+                    sqlConnection.Open();
                 }
-                sqlConnection.Close();
+                if (txbPass.Text != "")
+                {
+                    if (txbNewPass.Text == "")
+                    {
+
+                        cmd = new SqlCommand();
+                        cmd.CommandText = "TTCN_capnhat";
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Connection = sqlConnection;
+                        cmd.Parameters.AddWithValue("@email", txbEmail.Text);
+                        cmd.Parameters.AddWithValue("@name", txbName.Text);
+                        cmd.Parameters.AddWithValue("@phone", txbPhone.Text);
+
+                        cmd.ExecuteNonQuery();
+                        DialogResult dialog = new DialogResult();
+                        dialog = MessageBox.Show("Sửa Đổi dữ Liệu thành công,Mời đăng nhập lại để cập nhật dữ liệu!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (dialog == DialogResult.OK)
+                        {
+                            //tắt phiên người dùng hiện tại và mớ một phiên mới
+                            Application.Restart();
+                        }
+                        sqlConnection.Close();
+                    }
+                    else
+                    {
+                        if (txbNewPass.Text == txbReen.Text)
+                        {
+                            cmd = new SqlCommand();
+                            cmd.CommandText = "TTCN_capnhatmk";
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Connection = sqlConnection;
+                            cmd.Parameters.AddWithValue("@email", txbEmail.Text);
+                            cmd.Parameters.AddWithValue("@newpass", txbNewPass.Text);
+                            cmd.Parameters.AddWithValue("@name", txbName.Text);
+                            cmd.Parameters.AddWithValue("@phone", txbPhone.Text);
+                            cmd.ExecuteNonQuery();
+                            DialogResult dialog = new DialogResult();
+                            dialog = MessageBox.Show("Sửa Đổi dữ Liệu thành công,Mời đăng nhập lại để cập nhật dữ liệu!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            if (dialog == DialogResult.OK)
+                            {
+                                //tắt phiên người dùng hiện tại và mớ một phiên mới
+                                Application.Restart();
+                            }
+                            sqlConnection.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("mật khẩu mới và mật khẩu nhập lại không trùng khớp!", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Bạn phải nhập mật khẩu để thay đổi thông tin!", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             catch (Exception)
             {
