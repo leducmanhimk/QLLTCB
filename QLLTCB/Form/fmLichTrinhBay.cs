@@ -23,7 +23,7 @@ namespace QLLTCB
         //sự kiện lọc chuyến bay
         private void button1_Click_1(object sender, EventArgs e)
         {
-            dtpnayloc.Format = DateTimePickerFormat.Short;
+          
             DateTime loc;
 
             loc = dtpnayloc.Value;
@@ -89,6 +89,8 @@ namespace QLLTCB
                     Sld_dtg.DataSource = ds.Tables[0];
                     setupcolum();
                     sqlConnection.Close();
+
+                    
                 }
             }
             catch (Exception)
@@ -112,7 +114,7 @@ namespace QLLTCB
 
             Sld_dtg.Columns[0].Width = 75;
             Sld_dtg.Refresh();
-
+            
         }
         private void fmLichTrinhBay_Load(object sender, EventArgs e)
         {
@@ -328,7 +330,6 @@ namespace QLLTCB
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
@@ -338,6 +339,7 @@ namespace QLLTCB
             for (int i = 0; i < Sld_dtg.Rows.Count; i++)
             {
                 //thay đổi cột thành màu đỏ nếu giá trị confim là flase
+                //code nhuw thay day
                 bool value = (bool)Sld_dtg.Rows[i].Cells[8].Value;
                 if (value == false)
                 {
@@ -373,6 +375,7 @@ namespace QLLTCB
 
             try
             {
+                //vieet cho dep
                 dtpsuangaybay.Format = DateTimePickerFormat.Short;
                 // sql = "UPDATE Schedules SET Date='" + dtpsuangaybay.Value.ToString("MM-dd-yyyy") + "',Time='" + txt_thoigian.Text + "',EconomyPrice='" + txt_giathuongmai.Text.ToString() + "' WHERE ID like'%"+txt_malich.Text+"%'";
                 cmd = new SqlCommand();
@@ -401,7 +404,21 @@ namespace QLLTCB
             cb_diemden.SelectedItem = cb_diemden.SelectedText = "sân bay";
             cb_diemdi.SelectedItem = cb_diemdi.SelectedText = "sân bay";
             txt_sohieubay.Text = "";
+            dtpnayloc.CustomFormat = " ";
             LoadSD();
+        }
+
+        private void dtpnayloc_ValueChanged(object sender, EventArgs e)
+        {
+            dtpnayloc.CustomFormat = "dd/MM/yyyy";
+        }
+
+        private void dtpnayloc_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Back || e.KeyCode == Keys.Delete)
+            {
+                dtpnayloc.CustomFormat = " ";
+            }
         }
     }
 }

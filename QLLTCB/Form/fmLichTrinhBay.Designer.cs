@@ -90,7 +90,7 @@ namespace QLLTCB
             this.Sld_dtg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.Sld_dtg.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.Sld_dtg.Location = new System.Drawing.Point(13, 24);
-            this.Sld_dtg.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Sld_dtg.Margin = new System.Windows.Forms.Padding(2);
             this.Sld_dtg.Name = "Sld_dtg";
             this.Sld_dtg.ReadOnly = true;
             this.Sld_dtg.RowHeadersWidth = 62;
@@ -128,7 +128,7 @@ namespace QLLTCB
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.groupBox1.Location = new System.Drawing.Point(13, 322);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 3, 2, 2);
             this.groupBox1.Size = new System.Drawing.Size(815, 55);
@@ -250,7 +250,7 @@ namespace QLLTCB
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.groupBox2.Location = new System.Drawing.Point(13, 234);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 3, 2, 2);
             this.groupBox2.Size = new System.Drawing.Size(808, 75);
@@ -262,7 +262,7 @@ namespace QLLTCB
             // 
             this.btn_chapnhan.Image = ((System.Drawing.Image)(resources.GetObject("btn_chapnhan.Image")));
             this.btn_chapnhan.Location = new System.Drawing.Point(597, 38);
-            this.btn_chapnhan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_chapnhan.Margin = new System.Windows.Forms.Padding(2);
             this.btn_chapnhan.Name = "btn_chapnhan";
             this.btn_chapnhan.Size = new System.Drawing.Size(126, 31);
             this.btn_chapnhan.TabIndex = 11;
@@ -284,20 +284,25 @@ namespace QLLTCB
             // txt_sohieubay
             // 
             this.txt_sohieubay.Location = new System.Drawing.Point(431, 49);
-            this.txt_sohieubay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_sohieubay.Margin = new System.Windows.Forms.Padding(2);
             this.txt_sohieubay.Name = "txt_sohieubay";
             this.txt_sohieubay.Size = new System.Drawing.Size(107, 20);
             this.txt_sohieubay.TabIndex = 7;
             // 
             // dtpnayloc
             // 
-            this.dtpnayloc.CustomFormat = "";
-            this.dtpnayloc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpnayloc.CalendarForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dtpnayloc.CustomFormat = " ";
+            this.dtpnayloc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.errorProvider1.SetIconAlignment(this.dtpnayloc, System.Windows.Forms.ErrorIconAlignment.TopLeft);
             this.dtpnayloc.Location = new System.Drawing.Point(172, 44);
-            this.dtpnayloc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpnayloc.Margin = new System.Windows.Forms.Padding(2);
             this.dtpnayloc.Name = "dtpnayloc";
             this.dtpnayloc.Size = new System.Drawing.Size(108, 20);
             this.dtpnayloc.TabIndex = 6;
+            this.dtpnayloc.Value = new System.DateTime(2021, 12, 15, 9, 47, 40, 0);
+            this.dtpnayloc.ValueChanged += new System.EventHandler(this.dtpnayloc_ValueChanged);
+            this.dtpnayloc.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dtpnayloc_KeyDown);
             // 
             // label7
             // 
@@ -339,7 +344,7 @@ namespace QLLTCB
             "NGS",
             "SGN"});
             this.cb_diemden.Location = new System.Drawing.Point(431, 18);
-            this.cb_diemden.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cb_diemden.Margin = new System.Windows.Forms.Padding(2);
             this.cb_diemden.Name = "cb_diemden";
             this.cb_diemden.Size = new System.Drawing.Size(107, 21);
             this.cb_diemden.TabIndex = 4;
@@ -374,7 +379,7 @@ namespace QLLTCB
             "NGS",
             "SGN"});
             this.cb_diemdi.Location = new System.Drawing.Point(172, 14);
-            this.cb_diemdi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cb_diemdi.Margin = new System.Windows.Forms.Padding(2);
             this.cb_diemdi.Name = "cb_diemdi";
             this.cb_diemdi.Size = new System.Drawing.Size(108, 21);
             this.cb_diemdi.TabIndex = 0;
@@ -389,9 +394,9 @@ namespace QLLTCB
             this.groupBox3.Controls.Add(this.txt_thoigian);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(157, 381);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox3.Size = new System.Drawing.Size(502, 63);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
@@ -432,7 +437,7 @@ namespace QLLTCB
             this.dtpsuangaybay.CustomFormat = "";
             this.dtpsuangaybay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpsuangaybay.Location = new System.Drawing.Point(68, 29);
-            this.dtpsuangaybay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpsuangaybay.Margin = new System.Windows.Forms.Padding(2);
             this.dtpsuangaybay.Name = "dtpsuangaybay";
             this.dtpsuangaybay.Size = new System.Drawing.Size(114, 20);
             this.dtpsuangaybay.TabIndex = 12;
@@ -441,7 +446,7 @@ namespace QLLTCB
             // txt_giathuongmai
             // 
             this.txt_giathuongmai.Location = new System.Drawing.Point(415, 31);
-            this.txt_giathuongmai.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_giathuongmai.Margin = new System.Windows.Forms.Padding(2);
             this.txt_giathuongmai.Name = "txt_giathuongmai";
             this.txt_giathuongmai.Size = new System.Drawing.Size(58, 20);
             this.txt_giathuongmai.TabIndex = 13;
@@ -449,7 +454,7 @@ namespace QLLTCB
             // txt_thoigian
             // 
             this.txt_thoigian.Location = new System.Drawing.Point(249, 30);
-            this.txt_thoigian.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_thoigian.Margin = new System.Windows.Forms.Padding(2);
             this.txt_thoigian.Name = "txt_thoigian";
             this.txt_thoigian.Size = new System.Drawing.Size(58, 20);
             this.txt_thoigian.TabIndex = 12;
@@ -459,7 +464,7 @@ namespace QLLTCB
             this.btn_sua.BackColor = System.Drawing.Color.Gold;
             this.btn_sua.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_sua.Location = new System.Drawing.Point(174, 469);
-            this.btn_sua.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_sua.Margin = new System.Windows.Forms.Padding(2);
             this.btn_sua.Name = "btn_sua";
             this.btn_sua.Size = new System.Drawing.Size(89, 36);
             this.btn_sua.TabIndex = 16;
@@ -472,7 +477,7 @@ namespace QLLTCB
             this.btn_huy.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.btn_huy.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btn_huy.Location = new System.Drawing.Point(37, 469);
-            this.btn_huy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_huy.Margin = new System.Windows.Forms.Padding(2);
             this.btn_huy.Name = "btn_huy";
             this.btn_huy.Size = new System.Drawing.Size(89, 36);
             this.btn_huy.TabIndex = 17;
@@ -485,7 +490,7 @@ namespace QLLTCB
             this.btn_reset.BackColor = System.Drawing.Color.Gold;
             this.btn_reset.ForeColor = System.Drawing.SystemColors.Highlight;
             this.btn_reset.Location = new System.Drawing.Point(710, 469);
-            this.btn_reset.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_reset.Margin = new System.Windows.Forms.Padding(2);
             this.btn_reset.Name = "btn_reset";
             this.btn_reset.Size = new System.Drawing.Size(89, 36);
             this.btn_reset.TabIndex = 18;
@@ -500,7 +505,7 @@ namespace QLLTCB
             // txt_malich
             // 
             this.txt_malich.Location = new System.Drawing.Point(663, 415);
-            this.txt_malich.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_malich.Margin = new System.Windows.Forms.Padding(2);
             this.txt_malich.Name = "txt_malich";
             this.txt_malich.Size = new System.Drawing.Size(68, 20);
             this.txt_malich.TabIndex = 19;
@@ -509,7 +514,7 @@ namespace QLLTCB
             // txt_masanbaydi
             // 
             this.txt_masanbaydi.Location = new System.Drawing.Point(663, 394);
-            this.txt_masanbaydi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_masanbaydi.Margin = new System.Windows.Forms.Padding(2);
             this.txt_masanbaydi.Name = "txt_masanbaydi";
             this.txt_masanbaydi.Size = new System.Drawing.Size(68, 20);
             this.txt_masanbaydi.TabIndex = 20;
@@ -518,7 +523,7 @@ namespace QLLTCB
             // txt_tensanbaydi
             // 
             this.txt_tensanbaydi.Location = new System.Drawing.Point(743, 394);
-            this.txt_tensanbaydi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_tensanbaydi.Margin = new System.Windows.Forms.Padding(2);
             this.txt_tensanbaydi.Name = "txt_tensanbaydi";
             this.txt_tensanbaydi.Size = new System.Drawing.Size(68, 20);
             this.txt_tensanbaydi.TabIndex = 21;
@@ -527,7 +532,7 @@ namespace QLLTCB
             // txt_tensanbayden
             // 
             this.txt_tensanbayden.Location = new System.Drawing.Point(743, 415);
-            this.txt_tensanbayden.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_tensanbayden.Margin = new System.Windows.Forms.Padding(2);
             this.txt_tensanbayden.Name = "txt_tensanbayden";
             this.txt_tensanbayden.Size = new System.Drawing.Size(68, 20);
             this.txt_tensanbayden.TabIndex = 22;
@@ -536,7 +541,7 @@ namespace QLLTCB
             // txt_matensanbayden
             // 
             this.txt_matensanbayden.Location = new System.Drawing.Point(663, 435);
-            this.txt_matensanbayden.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_matensanbayden.Margin = new System.Windows.Forms.Padding(2);
             this.txt_matensanbayden.Name = "txt_matensanbayden";
             this.txt_matensanbayden.Size = new System.Drawing.Size(68, 20);
             this.txt_matensanbayden.TabIndex = 23;
@@ -561,7 +566,7 @@ namespace QLLTCB
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Sld_dtg);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "fmLichTrinhBay";
             this.Text = "fmLichTrinhBay";
             this.Load += new System.EventHandler(this.fmLichTrinhBay_Load);
