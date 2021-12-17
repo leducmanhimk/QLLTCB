@@ -30,9 +30,14 @@ namespace QLLTCB
             SqlDataAdapter da1 = new SqlDataAdapter(sql1, sqlConnection);
             DataSet ds = new DataSet();
             da1.Fill(ds);
-
-            //chỉnh sửa độ rộng của cột
             dataGridView2.DataSource = ds.Tables[0];
+            //chỉnh sửa độ rộng của cột
+            setupcolummaybay();
+            sqlConnection.Close();
+        }
+        public void setupcolummaybay()
+        {
+          
             dataGridView2.Columns[0].HeaderText = "Mã máy Bay";
             dataGridView2.Columns[1].HeaderText = "Tên Máy bay";
             dataGridView2.Columns[2].HeaderText = "Mã Số Hiệu";
@@ -46,7 +51,6 @@ namespace QLLTCB
             dataGridView2.Columns[3].Width = 50;
             dataGridView2.Columns[4].Width = 50;
             dataGridView2.Refresh();
-            sqlConnection.Close();
         }
         public void LoadDataRouts()
         {
@@ -65,6 +69,11 @@ namespace QLLTCB
             
             
             dtgrout.DataSource = dsr.Tables[0];
+            setupcolumtuyenduong();
+            sqlConnection.Close();
+        }
+        public void setupcolumtuyenduong()
+        {
             dtgrout.Columns[0].HeaderText = "Mã Định Tuyến";
             dtgrout.Columns[1].HeaderText = "Sân bay Đi";
             dtgrout.Columns[2].HeaderText = "Sân bay Đến";
@@ -77,7 +86,6 @@ namespace QLLTCB
             dtgrout.Columns[3].Width = 60;
             dtgrout.Columns[4].Width = 60;
             dtgrout.Refresh();
-            sqlConnection.Close();
         }
         public fmQLsanbay()
         {
@@ -116,18 +124,7 @@ namespace QLLTCB
 
 
                     dtgrout.DataSource = dsr.Tables[0];
-                    dtgrout.Columns[0].HeaderText = "Mã Định Tuyến";
-                    dtgrout.Columns[1].HeaderText = "Sân bay Đi";
-                    dtgrout.Columns[2].HeaderText = "Sân bay Đến";
-                    dtgrout.Columns[3].HeaderText = "Khoảng cách";
-                    dtgrout.Columns[4].HeaderText = "Thời Gian";
-
-                    dtgrout.Columns[0].Width = 60;
-                    dtgrout.Columns[1].Width = 80;
-                    dtgrout.Columns[2].Width = 80;
-                    dtgrout.Columns[3].Width = 60;
-                    dtgrout.Columns[4].Width = 60;
-                    dtgrout.Refresh();
+                    setupcolumtuyenduong();
                     sqlConnection.Close();
                 }
                 else
@@ -311,7 +308,7 @@ namespace QLLTCB
             SqlCommand cmd;
             if (textBox4.Text == "")
             {
-                MessageBox.Show("bạn chưa nhập giá trị");
+                MessageBox.Show("bạn chưa nhập giá trị","Thông baos!",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
 
             try
@@ -341,19 +338,7 @@ namespace QLLTCB
 
                     //chỉnh sửa độ rộng của cột
                     dataGridView2.DataSource = ds.Tables[0];
-                    dataGridView2.Columns[0].HeaderText = "Mã máy Bay";
-                    dataGridView2.Columns[1].HeaderText = "Tên Máy bay";
-                    dataGridView2.Columns[2].HeaderText = "Mã Số Hiệu";
-                    dataGridView2.Columns[3].HeaderText = "Tổng số ghế";
-                    dataGridView2.Columns[4].HeaderText = "Ghế thương mại";
-                    dataGridView2.Columns[5].HeaderText = "Ghế thương nhân";
-
-                    dataGridView2.Columns[0].Width = 50;
-                    dataGridView2.Columns[1].Width = 50;
-                    dataGridView2.Columns[2].Width = 50;
-                    dataGridView2.Columns[3].Width = 50;
-                    dataGridView2.Columns[4].Width = 50;
-                    dataGridView2.Refresh();
+                    setupcolummaybay();
                     sqlConnection.Close();
                 }
                 else
@@ -363,7 +348,7 @@ namespace QLLTCB
             }
             catch (Exception)
             {
-
+                
                 throw;
             }
         }
