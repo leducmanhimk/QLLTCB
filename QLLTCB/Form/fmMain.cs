@@ -27,6 +27,7 @@ namespace QLLTCB
             this.Temail = Email;
             this.Tname = Name;
             this.Tphone = Phone;
+          
         }
         //sự kiện khi kick vào nút  thoát
         private void btn_thoat_Click(object sender, EventArgs e)
