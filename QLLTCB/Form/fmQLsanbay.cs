@@ -53,8 +53,7 @@ namespace QLLTCB
             dataGridView2.Refresh();
         }
         public void LoadDataRouts()
-        {
-           
+        {  
             SqlConnection sqlConnection = new SqlConnection();
             string con = ConfigurationManager.ConnectionStrings["QLLTCB"].ConnectionString;
             sqlConnection = new SqlConnection(con);

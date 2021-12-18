@@ -26,8 +26,7 @@ namespace QLLTCB
             InitializeComponent();
             this.Temail = Email;
             this.Tname = Name;
-            this.Tphone = Phone;
-          
+            this.Tphone = Phone;         
         }
         //sự kiện khi kick vào nút  thoát
         private void btn_thoat_Click(object sender, EventArgs e)
@@ -63,6 +62,7 @@ namespace QLLTCB
             toolTip1.SetToolTip(btn_thoat, "thoát khỏi ứng dụng");
             toolTip1.SetToolTip(btn_admin, "quản lý thông tin người dùng");
             toolTip1.SetToolTip(btn_dangxuat, "đăng xuất khỏi chương trình");
+            toolTip1.SetToolTip(bnt_export, "áp dụng thay đổi lịch");
         }
         //sự kiện khi kich vào nút sân bay
         private void btn_sanbay_Click(object sender, EventArgs e)
