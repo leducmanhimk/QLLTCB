@@ -56,7 +56,7 @@ namespace QLLTCB
                         catch (IOException ex)
                         {
                             fileError = true;
-                            MessageBox.Show("It wasn't possible to write the data to the disk." + ex.Message);
+                            MessageBox.Show("Không thể ghi dữ liệu vào đĩa." + ex.Message);
                         }
                     }
                     if (!fileError)

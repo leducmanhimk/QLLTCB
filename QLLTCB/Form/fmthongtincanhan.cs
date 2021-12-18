@@ -30,12 +30,10 @@ namespace QLLTCB
             strNhan1 = giatrinhan1;
             txbName.Text = strNhan1;
             strNhan2 = giatrinhan2;
-            txbPhone.Text = strNhan2;
-            lbname.Text = strNhan1;
-            lbemail.Text = strNhan;
-            lbdienthoai.Text = strNhan2;
-            
-           
+            txbPhone.Text = strNhan2.Trim();
+            lbname.Text = strNhan1.Trim();
+            lbemail.Text = strNhan.Trim();
+            lbdienthoai.Text = strNhan2.Trim();
         }
         
      
