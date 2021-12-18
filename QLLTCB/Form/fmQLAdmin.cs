@@ -73,17 +73,25 @@ namespace QLLTCB
         // sự kiện khi ấn nút xóa
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            string sql;
-
-            if (txtMaAdmin.Text == "")
+            SqlConnection sqlConnection = new SqlConnection();
+            string con = ConfigurationManager.ConnectionStrings["QLLTCB"].ConnectionString;
+            sqlConnection = new SqlConnection(con);
+            if (sqlConnection.State != ConnectionState.Open)
             {
-                MessageBox.Show("Bạn chưa chọn bản ghi nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                sqlConnection.Open();
+            }
+            string sql;
+            if (txt_maadmin.Text == "")
+            {
+                MessageBox.Show("bạn chưa chọn bản ghi", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 return;
             }
             if (MessageBox.Show("Bạn có muốn xóa không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
-                sql = "DELETE Admin WHERE ID=N'" + txtMaAdmin.Text + "'";
-                LoadDataGridView();
+                sql = "DELETE from Admins WHERE ID=N'" + txt_maadmin.Text + "'";
+                SqlCommand cmd = new SqlCommand(sql,sqlConnection);
+                cmd.ExecuteNonQuery();
+                Loaddataform();
                 ResetValue();
             }
             ResetValue();
@@ -289,6 +297,11 @@ namespace QLLTCB
                 MessageBox.Show("lỗi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 throw;
             }
+        }
+
+        private void dgv1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txt_maadmin.Text = dgv1[0, e.RowIndex].Value.ToString();
         }
     }
 }
